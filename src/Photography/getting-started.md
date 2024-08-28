@@ -53,7 +53,7 @@ article: false
 Welcome, This is my photogophy gallery.
 
 <figure>
-  <img src="/blog/photos/DSC_2950.jpg" alt="Riding a bicycle through the bridge tunnel with the sunrise ahead." title="Riding a bicycle through the bridge tunnel with the sunrise ahead." />
+  <img src="/assets/photos/DSC_2950.jpg" alt="Riding a bicycle through the bridge tunnel with the sunrise ahead." title="Riding a bicycle through the bridge tunnel with the sunrise ahead." />
 </figure>
 <blockquote>
   <p class="styled-paragraph">Riding a bicycle through the bridge tunnel with the sunrise ahead.</p>
