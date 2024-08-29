@@ -1,16 +1,13 @@
 # name 可以自定义
 name: Deploy GitHub Pages
 
-# 触发条件：在 push 到 main/master 分支后，新的 Github 项目 应该都是 main，而之前的项目一般都是 master
 on:
   push:
     branches:
       - main
 
-# 任务
 jobs:
   build-and-deploy:
-    # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
       # 拉取代码
@@ -19,14 +16,24 @@ jobs:
         with:
           persist-credentials: false
 
-      # 生成静态文件
-      - name: Build
-        run: npm install && npm run docs:build
+      # 设置 Node.js 版本
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # 使用与你项目匹配的 Node.js 版本
+
+      # 安装依赖并构建项目
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run docs:build
 
       # 部署到 GitHub Pages
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 也就是我们刚才生成的 secret
-          BRANCH: gh-pages # 部署到 gh-pages 分支，因为 main 分支存放的一般是源码，而 gh-pages 分支则用来存放生成的静态文件
-          FOLDER: src/.vuepress/dist # vuepress 生成的静态文件存放的地方
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 使用 GitHub Token 部署
+          BRANCH: gh-pages # 部署到 gh-pages 分支
+          FOLDER: src/.vuepress/dist # VuePress 生成的静态文件目录
+          CLEAN: true # 清理之前的发布内容，确保内容干净
+          BUILD_SCRIPT: npm run docs:build # 如果有特定的构建命令，可以指定
