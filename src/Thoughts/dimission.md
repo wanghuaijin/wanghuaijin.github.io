@@ -17,7 +17,7 @@ sticky: true
 <!-- more -->
 
 <figure>
-  <img src="/assets/photos/yl1.jpeg" alt="图" title="亿联总部大楼" height="600" />
+  <img src="/assets/photos/yl1.jpeg" alt="图" title="亿联总部大楼" max-height="600" />
 </figure>
 <blockquote>
   <footer style="text-align: center;">亿联总部大楼</footer>
@@ -34,7 +34,7 @@ sticky: true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在我的工作期间，冯祺担任我的导师，帮助我迅速熟悉公司业务，并指导我尽快进入工作状态。我的两位校友，赵振华和邱志豪，技术能力出众，我向他们请教了许多技术问题。刘同政和我一样是新入职的应届生，勤奋好学，令人印象深刻。卡米拉则是一位从入职起便专注于波束形成研究的同事。团队中的每位成员都非常友善且技术精湛。在工作期间，我从他们身上学到了许多宝贵的知识，也深感他们对我的耐心帮助与指导。
 
 <figure>
-  <img src="/assets/photos/yl2.jpeg" alt="图" title="我的工位所在，没人是常态" height="600"/>
+  <img src="/assets/photos/yl2.jpeg" alt="图" title="我的工位所在，没人是常态" max-height="600"/>
 </figure>
 <blockquote>
   <footer style="text-align: center;">我的工位所在，没人是常态</footer>
@@ -45,10 +45,10 @@ sticky: true
 
 
 <table><tr>
-<td><img src="/assets/photos/yl5.jpeg" border=0 height="600"></td>
-<td><img src="/assets/photos/yl6.jpeg" border=0 height="600"></td>
-<td><img src="/assets/photos/yl9.jpeg" border=0 height="600"></td>
-<td><img src="/assets/photos/yl7.jpeg" border=0 height="600"></td>
+<td><img src="/assets/photos/yl5.jpeg" border=0 max-height="600"></td>
+<td><img src="/assets/photos/yl6.jpeg" border=0 max-height="600"></td>
+<td><img src="/assets/photos/yl9.jpeg" border=0 max-height="600"></td>
+<td><img src="/assets/photos/yl7.jpeg" border=0 max-height="600"></td>
 </tr></table>
 <blockquote>
   <footer style="text-align: center;">亲自做实验的地方</footer>
@@ -65,7 +65,7 @@ sticky: true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在厦门地区，亿联的待遇算是较为优厚的。第一年的税前薪资大约为30万元（公司25万元，人才补贴5万元），税后到手工资加上公积金也接近30万元（因为现在的缴税基数较高，且公司公积金按最高比例缴纳）。亿联的五险也是按最高比例缴纳的，这在私有企业中算是比较好的待遇。此外，我所在的岗位加班情况并不严重，平常工作时间为早上9点至下午6点半，偶尔有一两天的加班到晚上8点半，周末双休。
 
 <figure>
-  <img src="/assets/photos/yl4.jpeg" alt="图" title="偶尔也开会" height="600"/>
+  <img src="/assets/photos/yl4.jpeg" alt="图" title="偶尔也开会" max-height="600"/>
 </figure>
 <blockquote>
   <footer style="text-align: center;">偶尔也开会</footer>
@@ -85,7 +85,7 @@ sticky: true
 - 提升测试能力：从冯祺及其他测试同事那里，我学到了许多测试相关的技能，包括硬件、协议和算法问题的排查等。
 
 <figure>
-  <img src="/assets/photos/yl8.jpeg" alt="图" title="偶尔也有点收获"/>
+  <img src="/assets/photos/yl8.jpeg" alt="图" title="偶尔也有点收获" max-height="600"/>
 </figure>
 <blockquote>
   <footer style="text-align: center;">偶尔也有点收获</footer>
@@ -143,7 +143,7 @@ sticky: true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最后，也是最为严重的，他似乎固执己见，活在自己的世界里。尽管他在以上各方面都存在明显不足，但我们每个人都处于一个不断学习和改进的过程。然而，他却坚信自己是对的，与他沟通几乎毫无结果。他的技术能力停留在自己的认知范围内，难以接受和学习更多的新知识；他坚持自己阅读的文献，忽视那些更有价值的文章；他对自己的代码风格感到满意，即使看到更好的代码风格也不愿调整。这种固执不仅限制了他个人的进步，也阻碍了团队的整体发展。
 
 <figure>
-  <img src="/assets/photos/yl10.jpeg" alt="图" title="滚蛋前夕" height="600"/>
+  <img src="/assets/photos/yl10.jpeg" alt="图" title="滚蛋前夕" max-height="600"/>
 </figure>
 <blockquote>
   <footer style="text-align: center;">滚蛋前夕</footer>
