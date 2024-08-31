@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://ciaotomorrow.github.io/sitemap.xml
