@@ -20,6 +20,7 @@ jobs:
         # action 配置详见 https://github.com/actions/checkout
         uses: actions/checkout@v4
         with:
+          persist-credentials: false
           # 如果本项目包含了子模块 (git submodules)，需要将此项设置为 true
           # submodules: true
 
