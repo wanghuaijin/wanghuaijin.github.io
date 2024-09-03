@@ -15,6 +15,11 @@ jobs:
 
     # 步骤
     steps:
+    - name: Clean up previous deployment
+      run: |
+        git worktree prune
+        rm -rf github-pages-deploy-action-temp-deployment-folder
+
       # 第一步: 下载源码
       - name: Checkout
         # action 配置详见 https://github.com/actions/checkout
