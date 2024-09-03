@@ -48,7 +48,10 @@ projects:
     desc: Snippets in mathematics
     link: /Snippets/
 
-
+  - icon: friend
+    name: NLA
+    desc: Numerical Linear Algebra
+    link: /NLA/
   # - icon: https://theme-hope-assets.vuejs.press/logo.svg
   #   name: custom item
   #   desc: Detailed description of this custom item

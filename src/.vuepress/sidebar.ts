@@ -65,7 +65,18 @@ export default sidebar({
       text: "Tools",
       icon: "fa-solid fa-toolbox",
       link: "/Tools/",
-      children: ["online.md"],
+      children: ["online.md", "settings.md"],
     },
   ],
+  "/NLA/": [
+    "/Homepage.md",
+    {
+      text: "Numerical Linear Algebra",
+      icon: "fa-solid fa-folder-open",
+      link: "/NLA/",
+      children: [
+        "nla01.md",
+      ],
+    }
+  ]
 });
