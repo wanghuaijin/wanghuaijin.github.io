@@ -19,11 +19,6 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Clean up previous deployment
-        run: |
-          git worktree prune
-          rm -rf github-pages-deploy-action-temp-deployment-folder
-
       - uses: actions/cache@v3
         id: node-modules
         with:
@@ -32,12 +27,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-modules-
 
-      - name: Install Dependencies
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: npm install
+      # - name: Install Dependencies
+      #   if: steps.node-modules.outputs.cache-hit != 'true'
+      #   run: npm install
 
       - name: Build
-        run: npm run docs:build
+        run: npm install && npm run docs:build
 
       # - name: Deploy
       #   uses: JamesIves/github-pages-deploy-action@v4
