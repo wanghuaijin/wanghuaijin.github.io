@@ -8,6 +8,7 @@ icon: "fa-brands fa-internet-explorer"
 
 - 官网文档：[https://theme-hope.vuejs.press/zh/](https://theme-hope.vuejs.press/zh/)
 - 组件库：[https://plugin-components.vuejs.press/zh/](https://plugin-components.vuejs.press/zh/)
+- Github介绍：[https://mister-hope.com/code/github/deploy.html](https://mister-hope.com/code/github/deploy.html)
 
 ### icon查询
 [https://fontawesome.com/search?o=r&m=free](https://fontawesome.com/search?o=r&m=free)

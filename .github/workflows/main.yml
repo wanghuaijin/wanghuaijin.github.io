@@ -37,28 +37,28 @@ jobs:
           # token:
 
       # 缓存 node_modules 以避免重复安装
-      - uses: actions/cache@v3
-        id: node-modules
-        with:
-          # 需要缓存的路径
-          path: node_modules/
-          # 缓存的 key
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          # 恢复 key
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+      # - uses: actions/cache@v3
+      #   id: node-modules
+      #   with:
+      #     # 需要缓存的路径
+      #     path: node_modules/
+      #     # 缓存的 key
+      #     key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      #     # 恢复 key
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-modules-
 
       # 安装依赖
-      - name: Install Deps
-        # 只有没有命中缓存才会执行
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        # 严格按照 yarn.lock 安装依赖
-        run: yarn install --frozen-lockfile
+      # - name: Install Deps
+      #   # 只有没有命中缓存才会执行
+      #   if: steps.node-modules.outputs.cache-hit != 'true'
+      #   # 严格按照 yarn.lock 安装依赖
+      #   run: yarn install --frozen-lockfile
 
       # 构建项目
       - name: Build
         # 项目的构建命令
-        run: yarn run build
+        run: npm install && npm run docs:build
 
       # 第四步，部署
       - name: Deploy
