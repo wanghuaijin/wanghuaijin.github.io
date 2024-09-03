@@ -5,7 +5,7 @@ name: GitHub pages deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   # 构建网站并部署到 GitHub Pages
