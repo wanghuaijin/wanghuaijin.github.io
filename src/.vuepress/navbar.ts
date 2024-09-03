@@ -45,9 +45,26 @@ export default navbar([
   //   ],
   // },
   {
-    text: "V2 Docs",
-    icon: "book",
-    link: "https://theme-hope.vuejs.press/",
+    text: "Tools",
+    icon: "fa-solid fa-toolbox",
+    link: "/Tools/",
+    children: [
+      {
+        text: "Hope V2 Docs",
+        icon: "book",
+        link: "https://theme-hope.vuejs.press/",
+      },
+      {
+        text: "More",
+        icon: "fa-solid fa-angles-right",
+        link: "/Tools/README.md",
+      },
+    ],
   },
+  // {
+  //   text: "V2 Docs",
+  //   icon: "book",
+  //   link: "https://theme-hope.vuejs.press/",
+  // },
   
 ]);

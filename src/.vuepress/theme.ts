@@ -5,9 +5,12 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
+  darkmode: "toggle",
 
-  
-  headerDepth: 6,
+  lastUpdated: false,
+  contributors: false,
+
+  headerDepth: 10,
 
   fullscreen: true,
 
@@ -17,12 +20,21 @@ export default hopeTheme({
 
   author: {
     name: "Wang Huaijin",
-    url: "https://www.wanghuaijin.com",
+    url: "https://ciaotomorrow.github.io",
   },
 
   iconAssets: "fontawesome-with-brands",
 
-  logo: "assets/images/logo2.png",
+  // 本地logo
+  // logo: "assets/images/logo2.png",
+
+  // stargaze
+  // logo: "https://files.logomakr.com/8ETtoQ-LogoMakr.png",
+  // logoDark: "https://files.logomakr.com/1bGPQQ-LogoMakr.png",
+
+  // wanghuaijin
+  logo: "https://files.logomakr.com/9RX62W-LogoMakr.png",
+  logoDark:  "https://files.logomakr.com/6H1mWJ-LogoMakr.png",
 
   // repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -34,7 +46,7 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-  footer: "Default footer",
+  footer: '<span class="hover-text"> In Mobile <div class="tooltip"> <div class="caption-top">Scan the QR code below</div> <img src="/assets/images/in_mobile.png" alt="Image"> <div class="caption-bottom">View on mobile devices</div></div></span> | <span class="hover-text">Contact Me <div class="tooltip"> <div class="caption-top">Scan the QR code below</div> <img src="/assets/images/contact_me.jpg" alt="Image"> <div class="caption-bottom">Add me as a friend on WeChat</div></div></span> | <span class="hover-text">Support Me <div class="tooltip"> <div class="caption-top">Scan the QR code with WeChat Pay</div> <img src="/assets/images/support_me.jpg" alt="Image"> <div class="caption-bottom">Thank you for your support</div></div></span> | <a href="/intro.html" title="IntroMe" style="color:inherit">About Me</a>',
 
   displayFooter: true,
 
@@ -80,7 +92,7 @@ export default hopeTheme({
     //   Rss: "https://example.com",
     //   Steam: "https://example.com",
     //   Twitter: "https://example.com",
-      Wechat: "assets/images/contact_me.jpg",
+      Wechat: '/assets/images/contact_me.jpg',
     //   Weibo: "https://example.com",
     //   Whatsapp: "https://example.com",
     //   Youtube: "https://example.com",
@@ -111,7 +123,12 @@ export default hopeTheme({
     // },
 
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["Badge", 
+                   "VPCard", 
+                   "VidStack",
+                   "BiliBili",
+                   "PDF",
+                   "Share"],
     },
 
     // These features are enabled for demo, only preserve features you need here
@@ -184,23 +201,34 @@ export default hopeTheme({
 
       // install sandpack-vue3 before enabling it
       // sandpack: true,
+      
     },
 
+    // shiki: {
+    //   lineNumbers: true,
+    //   themes: {
+    //     light: "one-light",
+    //     dark: "one-dark-pro",
+    //   },
+    // },
+
     // searchPro: true,
-    searchPro:{
-      indexContent: true,
-      // 为分类和标签添加索引
-      customFields: [
-        {
-          getter: (page) => page.frontmatter.category as any,
-          formatter: "分类：$content",
-        },
-        {
-          getter: (page) => page.frontmatter.tag as any,
-          formatter: "标签：$content",
-        },
-      ],
-    },
+    // searchPro:{
+    //   indexContent: true,
+    //   // 为分类和标签添加索引
+    //   customFields: [
+    //     {
+    //       getter: (page) => page.frontmatter.category as any,
+    //       formatter: "分类：$content",
+    //     },
+    //     {
+    //       getter: (page) => page.frontmatter.tag as any,
+    //       formatter: "标签：$content",
+    //     },
+    //   ],
+    // },
+
+
     // install @vuepress/plugin-pwa and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",

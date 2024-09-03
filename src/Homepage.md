@@ -1,7 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
+icon: house
 title: Blog Home
 # heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: Welcome to the blog
@@ -25,8 +25,13 @@ projects:
 
   - icon: article
     name: Articles
-    desc: Occasionally reading articles
+    desc: Published works
     link: /Articles/
+
+  - icon: friend
+    name : Manuscripts
+    desc: Work in progress
+    link: /Manuscripts/
 
   - icon: friend
     name: Photography
@@ -38,17 +43,30 @@ projects:
     desc: Meaningless
     link: /Thoughts/
 
+  - icon: friend
+    name: Snippets
+    desc: Snippets in mathematics
+    link: /Snippets/
+
+
   # - icon: https://theme-hope-assets.vuejs.press/logo.svg
   #   name: custom item
   #   desc: Detailed description of this custom item
   #   link: https://link.to.your.friend
 
-footer: customize your footer text
+# footer: customize your footer text
 ---
 
 
 
-
+<script>
+// import { useDarkmode } from "vuepress-theme-hope/client";
+  export default {
+    mounted() {
+    document.documentElement.setAttribute('data-theme', 'light');
+  },
+}
+</script>
 
 
 This is a blog home page demo.

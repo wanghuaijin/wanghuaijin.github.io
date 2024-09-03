@@ -7,48 +7,25 @@ tags:
     - highlight
 prev: true # Will overwrite 'prevLinks' property from themeConfig
 article: false
-
+headerDepth: 5
 ---
 
 # Test
 
 公式：
 
-<LatexCount @updateCounter="counter = $event" />
-<!-- <LatexRenderer :latexCode="'\\frac{a}{b} \\tag{' + counter + '}' id = 'ref1' " :counterValue="counter"/> -->
-
-
-<!-- <LatexCount @updateCounter="counter = $event" /> -->
-<!-- <LatexRenderer :latexCode="'\\frac{a}{b} \\tag{' + counter1 + '}' id = 'ref2' " :counterValue="counter1"/> -->
 
 ## Integral Formula
 
-<LatexRenderer
-latexCode="\int_{a}^{b} x^2 \mathrm{d} x" id="integral-formula1"
-/>
 
 
-<LatexRenderer2 latexCode="\int_{a}^{b} x^2 \mathrm{d} x"
-id="integral-formula2"
-tag="3"/>
-
-<template>
-  <LatexRenderer3
-    latexCode="\int_{a}^{b} x^2 \mathrm{d} x"
-    id="integral-formula3"
-  >
-    <template v-slot:tag>
-      <LatexCount/>
-    </template>
-  </LatexRenderer3>
-</template>
-
-
-<LatexRefByID2 id="integral-formula2"/>
 
 
 引用这个[<LatexRefByID2 id="integral-formula2"/>](#integral-formula)
 
+### sub section
+#### subsub section
+##### subsubsub section
 
 <!-- Here is an inline formula: <InlineLatex latexCode="\ref{integral-formula}" /> -->
 
@@ -59,9 +36,6 @@ tag="3"/>
 
 ## 2
 
-<LatexCount/>
-
-<LatexCount/>
 zhe
 
 s 
@@ -100,8 +74,7 @@ function b = get(a)
         b=a+1;
     end
 ```
-<code-group>
-<code-block title="Get">
+
 ``` matlab
 function b = get(a)
     for i = 1 : 10
@@ -126,15 +99,10 @@ function b = get(a)
         b=a+1;
     end
 ```
-</code-block>
 
-<code-block title="Set">
 ```matlab
 function b = set(a)
 ```
-</code-block>
-</code-group>
-
 
 # Example Page
 
@@ -170,12 +138,6 @@ console.log('Hello, VuePress!')
 :::
 
 ::: details Click me to view the proof
-<LatexRenderer2 latexCode="\int_0^1 f(x)\mathrm{d} x = 1"
-id="integral-formula2"
-tag="2"/>
-Here is the $f(x)$:
-<LatexRenderer2 latexCode="f(x) = \int_{a}^{b} x^t \mathrm{d} t"
-id="integral-formula2"
-tag="3"/>
+
 :::
 

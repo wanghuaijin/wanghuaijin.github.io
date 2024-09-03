@@ -24,7 +24,7 @@ export default sidebar({
     },
   ],
   "/demo/": [
-    
+    "/Homepage.md",
     {text: "Demo",
       icon: "laptop-code",
       prefix: "",
@@ -33,6 +33,7 @@ export default sidebar({
     },
   ],
   "/Reading/": [
+    "/Homepage.md",
     {text: "Books",
       icon: "book",
       prefix: "",
@@ -41,6 +42,7 @@ export default sidebar({
     },
   ],
   "/Photography/": [
+    "/Homepage.md",
     {text: "Photography",
       icon: "book",
       prefix: "",
@@ -49,11 +51,21 @@ export default sidebar({
     },
   ],
   "/Thoughts/":[
+    "/Homepage.md",
     {text: "Thoughts",
       icon: "book",
       prefix: "",
       link: "/Thoughts/",
       children: ["dimission.md"],
     },
-  ]
+  ],
+  "/Tools/": [
+    "/Homepage.md",
+    {
+      text: "Tools",
+      icon: "fa-solid fa-toolbox",
+      link: "/Tools/",
+      children: ["online.md"],
+    },
+  ],
 });

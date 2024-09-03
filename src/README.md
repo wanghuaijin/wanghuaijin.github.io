@@ -1,34 +1,35 @@
 ---
-containerClass: home
-# layout: BlogHome
+# containerClass: home
+# layout: SolarSystem
 home: true
 title: Home
-icon: home
-bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
-bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
+# icon: home
+# bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
+# bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 # bgImageStyle:
 #   background-attachment: fixed
-heroText: Wang Huaijin's Knowledge Hub
-tagline: Explore cutting-edge technologies, share learning insights, and document growth journey—where the power of thought meets endless possibilities.✨
-navbar: true
-heroFullScreen: true
-actions:
-  - text: Blog
-    link: ./Homepage.md
-    icon: star
-    type: primary
+# heroText: Wang Huaijin's Knowledge Hub
+# tagline: Explore cutting-edge technologies, share learning insights, and document growth journey—where the power of thought meets endless possibilities.
+# navbar: true
+# heroFullScreen: true
 
-  - text: About
-    link: ./About/
-    icon: signs-post
-    
-#   - text: 指南
-#     icon: lightbulb
-#     link: ./guide/
-
-#   - text: 案例
+# actions:
+#   - text: Get Started
+#     link: ./Homepage.md
 #     icon: star
-#     link: ./demo/
+#     type: primary
+
+#   - text: About
+#     link: ./About/
+#     icon: signs-post
+    
+  # - text: 指南
+  #   icon: lightbulb
+  #   link: ./guide/
+
+  # - text: 案例
+  #   icon: star
+  #   link: ./demo/
 
 # highlights:
 #   - header: 易于安装
@@ -326,7 +327,10 @@ actions:
 #         icon: mobile-screen
 #         details: 让你的网站更像一个 APP
 #         link: ./guide/advanced/pwa.html
-
+# darkmode: disable
 copyright: false
-footer: MIT Licensed | Copyright © 2024 Wanghuaijin
+footer: <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p>
 ---
+
+<SolarSystem />
+

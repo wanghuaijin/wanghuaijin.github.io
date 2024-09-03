@@ -12,10 +12,17 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.14",
+    "@vuepress/plugin-shiki": "^2.0.0-rc.39",
     "katex": "^0.16.11",
+    "vidstack": "^1.12.9",
     "vue": "^3.4.31",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-search-pro": "^2.0.0-rc.52",
     "vuepress-theme-hope": "2.0.0-rc.52"
+  },
+  "dependencies": {
+    "@vuepress/plugin-search": "^2.0.0-rc.39",
+    "dashjs": "^4.7.4",
+    "hls.js": "^1.5.15"
   }
 }

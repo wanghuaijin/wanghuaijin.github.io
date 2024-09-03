@@ -2,7 +2,6 @@
 title: 我的第一份工作
 date: 2024-08-24
 star: true
-sticky: true
 ---
 
 这段经历的时间线如下：
