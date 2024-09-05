@@ -52,6 +52,17 @@ projects:
     name: NLA
     desc: Numerical Linear Algebra
     link: /NLA/
+
+  - icon: friend
+    name: Research
+    desc: NaN
+    link: /Research/
+
+  - icon: friend
+    name: FEM
+    desc: NaN
+    link: /FEM/
+    
   # - icon: https://theme-hope-assets.vuejs.press/logo.svg
   #   name: custom item
   #   desc: Detailed description of this custom item

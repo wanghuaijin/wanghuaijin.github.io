@@ -78,5 +78,54 @@ export default sidebar({
         "nla01.md",
       ],
     }
+  ],
+  "/Research/": [
+    "/Homepage.md",
+    {
+      text: "Approximation Theory",
+      icon: "fa-solid fa-folder-open",
+      link: "/Research/",
+      children: [
+        "approx_basic.md", "Stahl_2003.md",
+      ]
+    },
+    {
+      text: "References",
+      icon: "fa-solid fa-folder-open",
+      collapsible: true,
+      link: "/Research/",
+      children: [
+        {
+          text: "Articles",
+          icon: "fa-solid fa-folder-open",
+          collapsible: true,
+          link: "/Research/",
+          children: [
+            "approx_basic.md", "Stahl_2003.md",
+          ]
+        },
+        "approx_basic.md", "Stahl_2003.md",
+      ]
+    }
+  ],
+  "/FEM/": [
+    "/Homepage.md",
+    {
+      text: "FEM Course",
+      icon: "fa-solid fa-folder-open",
+      link: "/FEM/",
+      children: [
+        "Course1.md"
+      ]
+    },
+    {
+      text: "References",
+      icon: "fa-solid fa-folder-open",
+      collapsible: true,
+      link: "/FEM/",
+      children: [
+        "divergence_thm.md", 
+      ]
+    }
   ]
 });
