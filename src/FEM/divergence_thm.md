@@ -33,7 +33,7 @@ $$
 where $u$ and $v_i$ are the functions defined on $\Omega$ and $\eta = [\eta_1,\cdots,\eta_n]^\text{T}$ is the normal vector outside of the boundary $\partial \Omega$. Let $\mathbf{v} = [v_1,\cdots,v_n]^\text{T}$ be the vector-valued functions, thus
 $$
 \tag{1.1}
-\int_{\Omega} \nabla u \cdot \mathbf{v} d \Omega=\int_{\partial \Omega} u(\mathbf{v} \cdot \eta) d S-\int_{\Omega} u \nabla \cdot \mathbf{v} d \Omega.
+\int_{\Omega} \nabla u \cdot \mathbf{v} d \Omega=\int_{\partial \Omega} u(\mathbf{v} \cdot \eta) d S-\int_{\Omega} u \nabla \cdot \mathbf{v} d \Omega. \hspace{3em}
 $$
 
 ## 2. Green's Identities
@@ -64,7 +64,7 @@ We start with the statement of the main result and shall then continue with a ve
 
 $$
 \begin{equation*}
-E_{m n}:=E_{m n}\left(f_{\alpha},[0,1]\right)=\left\|f_{\alpha}-r_{m n}^{*}\right\|_{[0,1]}=\inf _{r \in \mathcal{R}_{m n}}\left\|f_{\alpha}-r\right\|_{[0,1]} \tag{1.1}
+E_{m n}:=E_{m n}\left(f_{\alpha},[0,1]\right)=\left\|f_{\alpha}-r_{m n}^{*}\right\|_{[0,1]}=\inf _{r \in \mathcal{R}_{m n}}\left\|f_{\alpha}-r\right\|_{[0,1]} \hspace{3em} \tag{1.1}
 \end{equation*}
 $$
 
@@ -76,7 +76,7 @@ ThEOREM 1. The limit
 
 $$
 \begin{equation*}
-\lim _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n n}\left(x^{\alpha},[0,1]\right)=4^{1+\alpha}|\sin \pi \alpha| \tag{1.2}
+\lim _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n n}\left(x^{\alpha},[0,1]\right)=4^{1+\alpha}|\sin \pi \alpha| \hspace{3em} \tag{1.2}
 \end{equation*}
 $$
 
@@ -94,7 +94,7 @@ THEOREM 2. The limit
 
 $$
 \begin{equation*}
-\lim _{n \rightarrow \infty} e^{\pi \sqrt{\alpha n}} E_{n n}\left(|x|^{\alpha},[-1,1]\right)=4^{1+\alpha / 2}\left|\sin \frac{1}{2} \pi \alpha\right| \tag{1.4}
+\lim _{n \rightarrow \infty} e^{\pi \sqrt{\alpha n}} E_{n n}\left(|x|^{\alpha},[-1,1]\right)=4^{1+\alpha / 2}\left|\sin \frac{1}{2} \pi \alpha\right| \hspace{3em} \tag{1.4}
 \end{equation*}
 $$
 
@@ -103,7 +103,7 @@ The analogue of (1.4) in polynomial approximation is connected with a conjecture
 
 $$
 \begin{equation*}
-\lim _{m \rightarrow \infty} m^{-\alpha} E_{m, 0}\left(|x|^{\alpha},[-1,1]\right)=: \beta(\alpha) \tag{1.5}
+\lim _{m \rightarrow \infty} m^{-\alpha} E_{m, 0}\left(|x|^{\alpha},[-1,1]\right)=: \beta(\alpha)\hspace{3em} \tag{1.5}
 \end{equation*}
 $$
 
@@ -117,7 +117,7 @@ Bernstein's investigations [2] and [3] have been published in 1914 and 1938. The
 
 $$
 \begin{equation*}
-\frac{1}{2} e^{-9 \sqrt{n}} \leqslant E_{n n}(|x|,[-1,1]) \leqslant 3 e^{-\sqrt{n}} \quad \text { for all } n=4,5, \ldots \tag{1.6}
+\frac{1}{2} e^{-9 \sqrt{n}} \leqslant E_{n n}(|x|,[-1,1]) \leqslant 3 e^{-\sqrt{n}} \quad \text { for all } n=4,5, \ldots \hspace{3em} \tag{1.6}
 \end{equation*}
 $$
 
@@ -146,7 +146,7 @@ The sharpest results about asymptotic error estimates for best rational approxim
 
 $$
 \begin{equation*}
-\liminf _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n n}\left(x^{\alpha},[0,1]\right) \geqslant c_{1}(\alpha) \tag{1.7}
+\liminf _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n n}\left(x^{\alpha},[0,1]\right) \geqslant c_{1}(\alpha) \hspace{3em} \tag{1.7}
 \end{equation*}
 $$
 
@@ -154,7 +154,7 @@ and conversely that for each positive rational number $\alpha \in \mathbf{Q}_{+}
 
 $$
 \begin{equation*}
-\limsup _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n n}\left(x^{\alpha},[0,1]\right) \leqslant c_{2}(\alpha) \tag{1.8}
+\limsup _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n n}\left(x^{\alpha},[0,1]\right) \leqslant c_{2}(\alpha)\hspace{3em} \tag{1.8}
 \end{equation*}
 $$
 
@@ -162,7 +162,7 @@ In both investigations it could not be shown that $c_{2}=c_{2}(\alpha)$ depends 
 
 $$
 \begin{equation*}
-E_{n n}\left(x^{\alpha},[0,1]\right) \leqslant c_{2}(\alpha) e^{-2 \pi \sqrt{\alpha n}+c_{3}(\alpha) \sqrt[4]{n}} \quad \text { for } n \geqslant n_{0}\left(c_{2}(\alpha), c_{3}(\alpha)\right) \tag{1.9}
+E_{n n}\left(x^{\alpha},[0,1]\right) \leqslant c_{2}(\alpha) e^{-2 \pi \sqrt{\alpha n}+c_{3}(\alpha) \sqrt[4]{n}} \quad \text { for } n \geqslant n_{0}\left(c_{2}(\alpha), c_{3}(\alpha)\right) \hspace{3em} \tag{1.9}
 \end{equation*}
 $$
 
@@ -186,7 +186,7 @@ Lemma 1. If the limit
 
 $$
 \begin{equation*}
-\lim _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n+k, n}\left(f_{\alpha},[0,1]\right)=4^{1+\alpha}|\sin \pi \alpha| \tag{2.1}
+\lim _{n \rightarrow \infty} e^{2 \pi \sqrt{\alpha n}} E_{n+k, n}\left(f_{\alpha},[0,1]\right)=4^{1+\alpha}|\sin \pi \alpha| \hspace{3em} \tag{2.1}
 \end{equation*}
 $$
 
@@ -196,7 +196,7 @@ Proof. Set $E_{m n}:=E_{m n}\left(f_{\alpha},[0,1]\right)$. We have $E_{m n} \ge
 $$
 \begin{align*}
 e^{2 \pi \sqrt{\alpha n}} E_{n+k_{2}, n} & \geqslant e^{2 \pi \sqrt{\alpha n}} E_{n+k_{1}, n} \\
-& \geqslant e^{2 \pi \sqrt{\alpha(n+d)}} E_{(n+d)+k_{2}, n+d} e^{2 \pi \sqrt{\alpha}(\sqrt{n}-\sqrt{n+d})} \tag{2.2}
+& \geqslant e^{2 \pi \sqrt{\alpha(n+d)}} E_{(n+d)+k_{2}, n+d} e^{2 \pi \sqrt{\alpha}(\sqrt{n}-\sqrt{n+d})} \hspace{3em} \tag{2.2}
 \end{align*}
 $$
 
@@ -204,7 +204,7 @@ Because of the estimate
 
 $$
 \begin{equation*}
-e^{2 \pi \sqrt{\alpha}(\sqrt{n}-\sqrt{n+d})}=e^{2 \pi \sqrt{\alpha n}(1-\sqrt{1+d / n})}=1+\mathcal{O}(1 / \sqrt{n}) \quad \text { as } n \rightarrow \infty \tag{2.3}
+e^{2 \pi \sqrt{\alpha}(\sqrt{n}-\sqrt{n+d})}=e^{2 \pi \sqrt{\alpha n}(1-\sqrt{1+d / n})}=1+\mathcal{O}(1 / \sqrt{n}) \quad \text { as } n \rightarrow \infty\hspace{3em} \tag{2.3}
 \end{equation*}
 $$
 
@@ -214,7 +214,7 @@ Lemma 1 shows that we can use any paradiagonal sequence $\left\{r_{n+k, n}^{*}\r
 
 $$
 \begin{equation*}
-m_{n}:=n+1+[\alpha], \quad n \in \mathbf{N} \tag{2.4}
+m_{n}:=n+1+[\alpha], \quad n \in \mathbf{N}\hspace{3em} \tag{2.4}
 \end{equation*}
 $$
 
@@ -226,7 +226,7 @@ Theorem 3. For $\alpha>0$ and any sequence $\left\{\left(n_{j}, m_{j}\right) \in
 
 $$
 \begin{equation*}
-n_{j}+m_{j} \rightarrow \infty \quad \text { and } \quad\left|n_{j}-m_{j}\right|=o\left(\sqrt{n_{j}}\right) \quad \text { as } j \rightarrow \infty \tag{2.5}
+n_{j}+m_{j} \rightarrow \infty \quad \text { and } \quad\left|n_{j}-m_{j}\right|=o\left(\sqrt{n_{j}}\right) \quad \text { as } j \rightarrow \infty \hspace{3em} \tag{2.5}
 \end{equation*}
 $$
 
@@ -234,7 +234,7 @@ the limit
 
 $$
 \begin{equation*}
-\lim _{j \rightarrow \infty} e^{2 \pi \sqrt{\alpha n_{j}}} E_{m_{j}, n_{j}}\left(x^{\alpha},[0,1]\right)=4^{1+\alpha}|\sin \pi \alpha| \tag{2.6}
+\lim _{j \rightarrow \infty} e^{2 \pi \sqrt{\alpha n_{j}}} E_{m_{j}, n_{j}}\left(x^{\alpha},[0,1]\right)=4^{1+\alpha}|\sin \pi \alpha| \hspace{3em} \tag{2.6}
 \end{equation*}
 $$
 
@@ -245,7 +245,7 @@ LemmA 2. The approximant $r_{n}^{*}$ has exactly the numerator degree $m_{n}=n+1
 
 $$
 \begin{equation*}
-e_{n}:=f_{\alpha}-r_{n}^{*}, \quad n \in \mathbf{N} \tag{2.7}
+e_{n}:=f_{\alpha}-r_{n}^{*}, \quad n \in \mathbf{N}\hspace{3em} \tag{2.7}
 \end{equation*}
 $$
 
@@ -253,7 +253,7 @@ has exactly $m_{n}+n+2=2 n+3+[\alpha]$ extreme points $\eta_{n j}$ on $[0,1]$. W
 
 $$
 \begin{equation*}
-0=\eta_{n, 0}<\eta_{n, 1}<\ldots<\eta_{n, 2 n+2+[\alpha]}=1 \tag{2.8}
+0=\eta_{n, 0}<\eta_{n, 1}<\ldots<\eta_{n, 2 n+2+[\alpha]}=1 \hspace{3em} \tag{2.8}
 \end{equation*}
 $$
 
@@ -261,7 +261,7 @@ and we have
 
 $$
 \begin{equation*}
-\eta_{n j}^{\alpha}-r_{n}^{*}\left(\eta_{n j}\right)=(-1)^{j+1+[\alpha]} \varepsilon_{n} \quad \text { for } j=0, \ldots, 2 n+2+[\alpha] \tag{2.9}
+\eta_{n j}^{\alpha}-r_{n}^{*}\left(\eta_{n j}\right)=(-1)^{j+1+[\alpha]} \varepsilon_{n} \quad \text { for } j=0, \ldots, 2 n+2+[\alpha]\hspace{3em} \tag{2.9}
 \end{equation*}
 $$
 
@@ -269,7 +269,7 @@ with
 
 $$
 \begin{equation*}
-\varepsilon_{n}:=E_{m_{n}, n}\left(f_{\alpha},[0,1]\right) \tag{2.10}
+\varepsilon_{n}:=E_{m_{n}, n}\left(f_{\alpha},[0,1]\right) \hspace{3em} \tag{2.10}
 \end{equation*}
 $$
 
@@ -277,7 +277,7 @@ Proof. Set $r_{n}^{*}=p_{n} / q_{n}$ with $p_{n}$ and $q_{n}$ coprime polynomial
 
 $$
 \begin{equation*}
-W_{n}:=\operatorname{span}\left\{1, z, \ldots, z^{m^{\prime}}, z^{\alpha}, \ldots, z^{\alpha+n^{\prime}}\right\} \tag{2.11}
+W_{n}:=\operatorname{span}\left\{1, z, \ldots, z^{m^{\prime}}, z^{\alpha}, \ldots, z^{\alpha+n^{\prime}}\right\}\hspace{3em}  \tag{2.11}
 \end{equation*}
 $$
 
@@ -287,7 +287,7 @@ From Chebyshev's theorem about alternation points for rational best approximants
 
 $$
 \begin{equation*}
-d=\min \left(m_{n}-m^{\prime}, n-n^{\prime}\right) \tag{2.12}
+d=\min \left(m_{n}-m^{\prime}, n-n^{\prime}\right)\hspace{3em} \tag{2.12}
 \end{equation*}
 $$
 
@@ -295,7 +295,7 @@ From the earlier upper estimate it then follows that
 
 $$
 \begin{equation*}
-m^{\prime}+n^{\prime}+2 \geqslant m_{n}+n+2-d \tag{2.13}
+m^{\prime}+n^{\prime}+2 \geqslant m_{n}+n+2-d \hspace{3em} \tag{2.13}
 \end{equation*}
 $$
 
@@ -303,7 +303,7 @@ which implies that $d \geqslant 0$, and with (2.12), it further follows that
 
 $$
 \begin{equation*}
-d \geqslant\left(m_{n}-m^{\prime}\right)+\left(n-n^{\prime}\right) \geqslant 2 d \tag{2.14}
+d \geqslant\left(m_{n}-m^{\prime}\right)+\left(n-n^{\prime}\right) \geqslant 2 d \hspace{3em} \tag{2.14}
 \end{equation*}
 $$
 
@@ -312,7 +312,7 @@ It remains only to show that the smallest and the largest extreme points $\eta_{
 
 $$
 \begin{equation*}
-e_{n}-c=f_{\alpha}-\left(r_{n}^{*}+c\right) \tag{2.15}
+e_{n}-c=f_{\alpha}-\left(r_{n}^{*}+c\right)\hspace{3em} \tag{2.15}
 \end{equation*}
 $$
 
@@ -322,7 +322,7 @@ As an immediate consequence of Lemma 2 we know that the error function $e_{n}$ h
 
 $$
 \begin{equation*}
-\eta_{n, j-1}<z_{n j}<\eta_{n j} \quad \text { for } j=1, \ldots, 2 n+2+[\alpha] \tag{2.16}
+\eta_{n, j-1}<z_{n j}<\eta_{n j} \quad \text { for } j=1, \ldots, 2 n+2+[\alpha] \hspace{3em} \tag{2.16}
 \end{equation*}
 $$
 
@@ -330,7 +330,7 @@ and
 
 $$
 \begin{equation*}
-e_{n}\left(z_{n j}\right)=z_{n j}^{\alpha}-r_{n}^{*}\left(z_{n j}\right)=0 \quad \text { for } j=1, \ldots, 2 n+2+[\alpha] \tag{2.17}
+e_{n}\left(z_{n j}\right)=z_{n j}^{\alpha}-r_{n}^{*}\left(z_{n j}\right)=0 \quad \text { for } j=1, \ldots, 2 n+2+[\alpha]\hspace{3em} \tag{2.17}
 \end{equation*}
 $$
 
@@ -344,7 +344,7 @@ We denote by $w_{n}$ the polynomial
 
 $$
 \begin{equation*}
-w_{n}(z):=\prod_{j=1}^{2 n+2+[\alpha]}\left(z-z_{n j}\right) \tag{3.1}
+w_{n}(z):=\prod_{j=1}^{2 n+2+[\alpha]}\left(z-z_{n j}\right)\hspace{3em} \tag{3.1}
 \end{equation*}
 $$
 
@@ -352,7 +352,7 @@ where the $z_{n j}$ are the zeros of $e_{n}$ introduced in (2.16). Since $z_{n j
 
 $$
 \begin{equation*}
-\operatorname{sign} w_{n}(z)=(-1)^{[\alpha]} \quad \text { for } z \in \mathbf{R}_{-}:=\{x \in \mathbf{R} \mid x \leqslant 0\} \tag{3.2}
+\operatorname{sign} w_{n}(z)=(-1)^{[\alpha]} \quad \text { for } z \in \mathbf{R}_{-}:=\{x \in \mathbf{R} \mid x \leqslant 0\} \hspace{3em} \tag{3.2}
 \end{equation*}
 $$
 
@@ -360,7 +360,7 @@ For formula (3.3) we make the temporary assumption that $-1<\alpha<0$. If $C$ is
 
 $$
 \begin{equation*}
-f_{\alpha}(z)=\frac{1}{2 \pi i} \oint_{C} \frac{\zeta^{\alpha} d \zeta}{\zeta-z}=\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{|x|^{\alpha} d x}{x-z} \quad \text { for } z \in \mathbf{C} \backslash \mathbf{R}_{-} \tag{3.3}
+f_{\alpha}(z)=\frac{1}{2 \pi i} \oint_{C} \frac{\zeta^{\alpha} d \zeta}{\zeta-z}=\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{|x|^{\alpha} d x}{x-z} \quad \text { for } z \in \mathbf{C} \backslash \mathbf{R}_{-} \hspace{3em} \tag{3.3}
 \end{equation*}
 $$
 
@@ -372,7 +372,7 @@ Lemma 3. Set $r_{n}^{*}=p_{n} / q_{n}, q_{n}(z)=z^{n}+\ldots \in \mathcal{P}_{n}
 
 $$
 \begin{equation*}
-\int_{-\infty}^{0} x^{j} q_{n}(x) \frac{|x|^{\alpha} d x}{w_{n}(x)}=0 \quad \text { for } j=0, \ldots, n-1 \tag{3.4}
+\int_{-\infty}^{0} x^{j} q_{n}(x) \frac{|x|^{\alpha} d x}{w_{n}(x)}=0 \quad \text { for } j=0, \ldots, n-1 \hspace{3em} \tag{3.4}
 \end{equation*}
 $$
 
@@ -380,7 +380,7 @@ The $n$ zeros $\pi_{n, 1}, \ldots, \pi_{n n}$ of $q_{n}$ are all simple and cont
 
 $$
 \begin{equation*}
--\infty<\pi_{n, 1}<\ldots<\pi_{n n}<0 \tag{3.5}
+-\infty<\pi_{n, 1}<\ldots<\pi_{n n}<0 \hspace{3em} {3.5}
 \end{equation*}
 $$
 
@@ -388,7 +388,7 @@ For the approximation error $e_{n}=f_{\alpha}-r_{n}^{*}$ we have the representat
 
 $$
 \begin{equation*}
-e_{n}(z)=\frac{\sin \pi \alpha}{\pi} \frac{w_{n}(z)}{\left(g_{n} q_{n}\right)(z)} \int_{-\infty}^{0} \frac{\left(g_{n} q_{n}\right)(x)|x|^{\alpha} d x}{w_{n}(x)(x-z)} \quad \text { for } z \in \mathbf{C} \backslash \mathbf{R}_{-} \tag{3.6}
+e_{n}(z)=\frac{\sin \pi \alpha}{\pi} \frac{w_{n}(z)}{\left(g_{n} q_{n}\right)(z)} \int_{-\infty}^{0} \frac{\left(g_{n} q_{n}\right)(x)|x|^{\alpha} d x}{w_{n}(x)(x-z)} \quad \text { for } z \in \mathbf{C} \backslash \mathbf{R}_{-}\hspace{3em} \tag{3.6}
 \end{equation*}
 $$
 
@@ -397,7 +397,7 @@ Remark. Because of (3.2) the measure $\mu_{n}$ defined by
 
 $$
 \begin{equation*}
-\frac{d \mu_{n}}{d x}(x):=\frac{\sin \pi \alpha}{\pi} \frac{|x|^{\alpha}}{w_{n}(x)} d x, \quad x \in \mathbf{R}_{-} \tag{3.7}
+\frac{d \mu_{n}}{d x}(x):=\frac{\sin \pi \alpha}{\pi} \frac{|x|^{\alpha}}{w_{n}(x)} d x, \quad x \in \mathbf{R}_{-}\hspace{3em} \tag{3.7}
 \end{equation*}
 $$
 
@@ -407,7 +407,7 @@ Proof. The interpolation property (2.17) of $r_{n}^{*}$ implies that the express
 
 $$
 \begin{equation*}
-\frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}(z) \quad \text { is analytic in } \mathbf{C} \backslash \mathbf{R}_{-} \tag{3.8}
+\frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}(z) \quad \text { is analytic in } \mathbf{C} \backslash \mathbf{R}_{-} \hspace{3em} \tag{3.8}
 \end{equation*}
 $$
 
@@ -416,7 +416,7 @@ Let $C$ be a positively oriented, closed integration path in $\mathbf{C} \backsl
 $$
 \begin{align*}
 \left(g_{n} \frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}\right)(z) & =\frac{1}{2 \pi i} \oint_{C} g_{n}(\zeta) \frac{q_{n}(\zeta) \zeta^{\alpha}-p_{n}(\zeta)}{w_{n}(\zeta)} \frac{d \zeta}{\zeta-z} \\
-& =\frac{1}{2 \pi i} \oint_{C} \frac{\left(g_{n} q_{n}\right)(\zeta) \zeta^{\alpha} d \zeta}{w_{n}(\zeta)(\zeta-z)}-\frac{1}{2 \pi i} \oint_{C} \frac{\left(g_{n} p_{n}\right)(\zeta) d \zeta}{w_{n}(\zeta)(\zeta-z)} \tag{3.9}
+& =\frac{1}{2 \pi i} \oint_{C} \frac{\left(g_{n} q_{n}\right)(\zeta) \zeta^{\alpha} d \zeta}{w_{n}(\zeta)(\zeta-z)}-\frac{1}{2 \pi i} \oint_{C} \frac{\left(g_{n} p_{n}\right)(\zeta) d \zeta}{w_{n}(\zeta)(\zeta-z)} \hspace{3em} \tag{3.9}
 \end{align*}
 $$
 
@@ -424,7 +424,7 @@ for $z \in \operatorname{Int}(C)$. The last term on the last line of (3.9) is id
 
 $$
 \begin{equation*}
-\left(g_{n} \frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}\right)(z)=\frac{1}{2 \pi i} \oint_{C} \frac{\left(g_{n} q_{n}\right)(\zeta) \zeta^{\alpha} d \zeta}{w_{n}(\zeta)(\zeta-z)} \tag{3.10}
+\left(g_{n} \frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}\right)(z)=\frac{1}{2 \pi i} \oint_{C} \frac{\left(g_{n} q_{n}\right)(\zeta) \zeta^{\alpha} d \zeta}{w_{n}(\zeta)(\zeta-z)}\hspace{3em} \tag{3.10}
 \end{equation*}
 $$
 
@@ -432,7 +432,7 @@ For any $g_{n} \in \mathcal{P}_{n}$ the integrand in (3.10) has a zero of order 
 
 $$
 \begin{equation*}
-\left(g_{n} \frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}\right)(z)=\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{\left(g_{n} q_{n}\right)(x)}{w_{n}(x)} \frac{|x|^{\alpha} d x}{x-z} \quad \text { for } z \in \mathbf{C} \backslash \mathbf{R}_{-} \tag{3.11}
+\left(g_{n} \frac{q_{n} f_{\alpha}-p_{n}}{w_{n}}\right)(z)=\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{\left(g_{n} q_{n}\right)(x)}{w_{n}(x)} \frac{|x|^{\alpha} d x}{x-z} \quad \text { for } z \in \mathbf{C} \backslash \mathbf{R}_{-}\hspace{3em} \tag{3.11}
 \end{equation*}
 $$
 
@@ -441,7 +441,7 @@ Taking $g_{n}(z)=z^{j+1}$ with $j=0, \ldots, n-1$ and considering (3.11) near th
 
 $$
 \begin{equation*}
-\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} x^{j} q_{n}(x) \frac{|x|^{\alpha} d x}{w_{n}(x)}=0 \quad \text { for } j=0, \ldots, n-1 \tag{3.12}
+\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} x^{j} q_{n}(x) \frac{|x|^{\alpha} d x}{w_{n}(x)}=0 \quad \text { for } j=0, \ldots, n-1 \hspace{3em} \tag{3.12}
 \end{equation*}
 $$
 
@@ -452,7 +452,7 @@ Since we know that the best approximant $r_{n}^{*}$ has only simple poles, we ha
 
 $$
 \begin{equation*}
-r_{n}^{*}(z)=h_{n}(z)+\sum_{j=1}^{n} \frac{\lambda_{n j}}{z-\pi_{n j}} \tag{3.13}
+r_{n}^{*}(z)=h_{n}(z)+\sum_{j=1}^{n} \frac{\lambda_{n j}}{z-\pi_{n j}} \hspace{3em} \tag{3.13}
 \end{equation*}
 $$
 
@@ -460,7 +460,7 @@ with $h_{n}$ a polynomial of the form
 
 $$
 \begin{equation*}
-h_{n}(z)=A_{n} z^{[\alpha]+1}+\ldots \in \mathcal{P}_{[\alpha]+1} \tag{3.14}
+h_{n}(z)=A_{n} z^{[\alpha]+1}+\ldots \in \mathcal{P}_{[\alpha]+1}\hspace{3em} \tag{3.14}
 \end{equation*}
 $$
 
@@ -468,8 +468,9 @@ If we multiply the error function $e_{n}=f_{\alpha}-r_{n}^{*}$ by $z-\pi_{n j}, 
 
 $$
 \begin{align*}
--\lambda_{n j} & =\left[\left(z-\pi_{n j}\right) e_{n}(z)\right]_{z=\pi_{n j}}=\frac{\sin \pi \alpha}{\pi} \frac{w_{n}\left(\pi_{n j}\right)}{q_{n}^{\prime}\left(\pi_{n j}\right)^{2}} \int_{-\infty}^{0}\left(\frac{q_{n}(x)}{x-\pi_{n j}}\right)^{2} \frac{|x|^{\alpha} d x}{w_{n}(x)}  \tag{3.15}\\
+-\lambda_{n j} & =\left[\left(z-\pi_{n j}\right) e_{n}(z)\right]_{z=\pi_{n j}}=\frac{\sin \pi \alpha}{\pi} \frac{w_{n}\left(\pi_{n j}\right)}{q_{n}^{\prime}\left(\pi_{n j}\right)^{2}} \int_{-\infty}^{0}\left(\frac{q_{n}(x)}{x-\pi_{n j}}\right)^{2} \frac{|x|^{\alpha} d x}{w_{n}(x)} \hspace{3em}  \\
 & =\frac{\sin \pi \alpha}{\pi} w_{n}\left(\pi_{n j}\right) \int_{-\infty}^{0} l_{n j}(x)^{2} \frac{|x|^{\alpha}}{w_{n}(x)} d x, \quad j=1, \ldots, n
+\tag{3.15}
 \end{align*}
 $$
 
@@ -477,7 +478,7 @@ where $l_{n j} \in \mathcal{P}_{n-1}$ is the Lagrangian basis polynomial satisfy
 
 $$
 \begin{equation*}
-(-1)^{[\kappa]+1} \lambda_{n j}>0 \quad \text { for } j=1, \ldots, n \tag{3.16}
+(-1)^{[\kappa]+1} \lambda_{n j}>0 \quad \text { for } j=1, \ldots, n \hspace{3em}\tag{3.16}
 \end{equation*}
 $$
 
@@ -485,7 +486,7 @@ From the error formula (3.6) we can deduce also an expression for the leading co
 
 $$
 % \begin{equation*}
-e_{n}(z)=\left(f_{\alpha}-r_{n}^{*}\right)(z)=z^{\alpha}-A_{n} z^{[\alpha]+1}+\mathcal{O}\left(z^{[\alpha]}\right) \quad \text { as } z \rightarrow \infty \tag{3.17}
+e_{n}(z)=\left(f_{\alpha}-r_{n}^{*}\right)(z)=z^{\alpha}-A_{n} z^{[\alpha]+1}+\mathcal{O}\left(z^{[\alpha]}\right) \quad \text { as } z \rightarrow \infty \hspace{3em} \tag{3.17}
 % \end{equation*}
 $$
 
@@ -493,8 +494,8 @@ Inserting $g_{n}:=q_{n}$ into formula (3.6) and multiplying by $z^{-[\alpha]-1}$
 
 $$
 \begin{align}
-A_{n} & =-\left[z^{-[\alpha]-1} e_{n}(z)\right]_{z=\infty}=\frac{\sin \pi \alpha}{\pi} \lim _{z \rightarrow \infty} \frac{w_{n}(z)}{z^{[\alpha]+2} q_{n}(z)^{2}} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}|x|^{\alpha} d x}{w_{n}(x)(1-x / z)} \\
-& =\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}}{w_{n}(x)}|x|^{\alpha} d x \qquad \tag{3.18}
+A_{n} & =-\left[z^{-[\alpha]-1} e_{n}(z)\right]_{z=\infty}=\frac{\sin \pi \alpha}{\pi} \lim _{z \rightarrow \infty} \frac{w_{n}(z)}{z^{[\alpha]+2} q_{n}(z)^{2}} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}|x|^{\alpha} d x}{w_{n}(x)(1-x / z)} \hspace{3em} \\
+& =\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}}{w_{n}(x)}|x|^{\alpha} d x \tag{3.18}
 \end{align}
 $$
 

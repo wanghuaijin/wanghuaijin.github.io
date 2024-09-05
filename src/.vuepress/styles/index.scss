@@ -57,15 +57,16 @@
   display: flex;
   align-items: center; /* 垂直居中对齐 */
   justify-content: space-between; /* 使公式区域和 \tag 分布在容器两端 */
-  position: relative;
+  // position: static;
   max-width: 100%; /* 让容器最大宽度为父元素宽度 */
-  // overflow: scroll; /* 隐藏溢出的内容 */
-  white-space: nowrap; /* 避免换行 */
+//   // overflow: scroll; /* 隐藏溢出的内容 */
+  // white-space: nowrap; /* 避免换行 */
 }
 
 .katex-display .katex {
   flex: 1; /* 公式区域占据剩余空间 */
 }
+
 
 
 
