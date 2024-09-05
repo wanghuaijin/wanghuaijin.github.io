@@ -42,3 +42,38 @@
   border: 1px solid #ccc;
   background-color: #fff;
 }
+
+
+// Katex 配置
+.katex {
+  font-size: 1.0em;
+  text-indent: 0;
+  text-rendering: auto;
+}
+
+// latex代码块的\tag始终在右端
+/* 确保 LaTeX 公式块中的 \tag 在公式的最右端 */
+.katex-display {
+  display: flex;
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: space-between; /* 使公式区域和 \tag 分布在容器两端 */
+  position: relative;
+  max-width: 100%; /* 让容器最大宽度为父元素宽度 */
+  // overflow: scroll; /* 隐藏溢出的内容 */
+  white-space: nowrap; /* 避免换行 */
+}
+
+.katex-display .katex {
+  flex: 1; /* 公式区域占据剩余空间 */
+}
+
+
+
+// .katex-display .katex .tag {
+//   flex: 1;
+//   margin-left: 100px; /* 公式和 \tag 之间的间距 */
+//   white-space: nowrap; /* 防止 \tag 换行 */
+// }
+
+
+

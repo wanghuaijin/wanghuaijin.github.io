@@ -494,7 +494,7 @@ Inserting $g_{n}:=q_{n}$ into formula (3.6) and multiplying by $z^{-[\alpha]-1}$
 $$
 \begin{align}
 A_{n} & =-\left[z^{-[\alpha]-1} e_{n}(z)\right]_{z=\infty}=\frac{\sin \pi \alpha}{\pi} \lim _{z \rightarrow \infty} \frac{w_{n}(z)}{z^{[\alpha]+2} q_{n}(z)^{2}} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}|x|^{\alpha} d x}{w_{n}(x)(1-x / z)} \\
-& =\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}}{w_{n}(x)}|x|^{\alpha} d x \tag{3.18}
+& =\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}}{w_{n}(x)}|x|^{\alpha} d x \qquad \tag{3.18}
 \end{align}
 $$
 
