@@ -1,3 +1,4 @@
+import { Tooltip } from "vidstack";
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
@@ -49,6 +50,16 @@ export default navbar([
     icon: "fa-solid fa-toolbox",
     link: "/Tools/",
     children: [
+      {
+        text: "Convert PDF to Latex",
+        icon: "fa-solid fa-file-pdf",
+        link: "https://snip.mathpix.com/home",
+      },
+      {
+        text: "Chebfun Package",
+        icon: "fa-solid fa-box",
+        link: "http://www.chebfun.org/",
+      },
       {
         text: "Hope V2 Docs",
         icon: "book",

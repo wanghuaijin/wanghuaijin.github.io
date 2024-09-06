@@ -85,7 +85,7 @@ Since $|x|^{\alpha}$ is an even function, $x \in \mathbf{R}$, it is not difficul
 
 $$
 \begin{equation*}
-E_{2 m, 2 n}\left(|x|^{2 \alpha},[-1,1]\right)=E_{m n}\left(x^{\alpha},[0,1]\right) \quad \text { for all } m, n \in \mathbf{N} \tag{1.3}
+E_{2 m, 2 n}\left(|x|^{2 \alpha},[-1,1]\right)=E_{m n}\left(x^{\alpha},[0,1]\right) \quad \text { for all } m, n \in \mathbf{N} \hspace{3em}\tag{1.3}
 \end{equation*}
 $$
 
@@ -380,7 +380,7 @@ The $n$ zeros $\pi_{n, 1}, \ldots, \pi_{n n}$ of $q_{n}$ are all simple and cont
 
 $$
 \begin{equation*}
--\infty<\pi_{n, 1}<\ldots<\pi_{n n}<0 \hspace{3em} {3.5}
+-\infty<\pi_{n, 1}<\ldots<\pi_{n n}<0 \hspace{3em} \tag{3.5}
 \end{equation*}
 $$
 
@@ -495,8 +495,8 @@ Inserting $g_{n}:=q_{n}$ into formula (3.6) and multiplying by $z^{-[\alpha]-1}$
 $$
 \begin{align}
 A_{n} & =-\left[z^{-[\alpha]-1} e_{n}(z)\right]_{z=\infty}=\frac{\sin \pi \alpha}{\pi} \lim _{z \rightarrow \infty} \frac{w_{n}(z)}{z^{[\alpha]+2} q_{n}(z)^{2}} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}|x|^{\alpha} d x}{w_{n}(x)(1-x / z)} \hspace{3em} \\
-& =\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}}{w_{n}(x)}|x|^{\alpha} d x \tag{3.18}
-\end{align}
+& =\frac{\sin \pi \alpha}{\pi} \int_{-\infty}^{0} \frac{q_{n}(x)^{2}}{w_{n}(x)}|x|^{\alpha} d x 
+\end{align}\tag{3.18}
 $$
 
 which implies together with (3.7) that $A_{n}>0$. From (3.13), (3.16) and (3.18) we deduce the next lemma.
