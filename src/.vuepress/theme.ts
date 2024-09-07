@@ -7,7 +7,7 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
   darkmode: "toggle",
 
-  lastUpdated: false,
+  lastUpdated: true,
   contributors: false,
 
   headerDepth: 10,
