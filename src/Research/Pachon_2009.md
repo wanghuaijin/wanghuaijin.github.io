@@ -8,7 +8,7 @@ timeline: true
 ---
 # Barycentric-Remez algorithms for best polynomial approximation in the chebfun system 
 
-[Pachón_2009.pdf](/assets/ref/Pachón_2009.pdf)
+[Pachón_2009.pdf](/assets/ref/Pachon_2009.pdf)
 
 Ricardo Pachón $\cdot$ Lloyd N. Trefethen
 
