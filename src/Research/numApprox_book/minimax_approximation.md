@@ -7,15 +7,19 @@ star: true
 timeline: true
 ---
 
+[Powell 1981](/assets/ref/books/Approximation_Theory_and_Methods.pdf)
+
+<!-- more -->
+
 ## 1. Introduction to minimax approximation
 
 &nbsp; &nbsp; The <b>best minimax approximation</b> from a set $\mathscr{A}$ to a function $f$ in $C[a,b]$ is the element of $\mathscr{A}$ that minimizes the expression
 $$
-\|f-p\|_{\infty}=\max _{a \leqslant x \leqslant b}|f(x)-p(x)|, \quad p \in \mathscr{A}. \tag{1.1}
+\|f-p\|_{\infty}=\max _{a \leqslant x \leqslant b}|f(x)-p(x)|, \quad p \in \mathscr{A}. \hspace{3em} \tag{1.1}
 $$
 In this text, we study <b>the conditions</b> that are satisfied by a best approximation, when $\mathscr{A}$ is a linear space.
 
-> &nbsp; &nbsp; If $\mathscr{A}$ is the space $\mathbb{P}_n$ of algebraic polynomials of degree at most $n$, it reduces to a particularly simple form. In this text, we consider a more general case when $\mathscr{A}$ satisfies the *'Haar condition'*. ßIn this case, we consider:
+> &nbsp; &nbsp; If $\mathscr{A}$ is the space $\mathbb{P}_n$ of algebraic polynomials of degree at most $n$, it reduces to a particularly simple form. In this text, we consider a more general case when $\mathscr{A}$ satisfies the *'Haar condition'*. In this case, we consider:
 > 1. properties of best minimax approximation, including that the best approximation is unique;
 > 2. an excellent method for calculating best approximations, which is called the *exchange algorithm*. 
 
@@ -26,13 +30,13 @@ In this text, we study <b>the conditions</b> that are satisfied by a best approx
 
 &nbsp; &nbsp; In other words, we seek an element $p\in\mathscr{A}$ such that the inequality
 $$
-\left\|f-\left(p^*+\theta p\right)\right\|_{\infty}<\left\|f-p^*\right\|_{\infty} \tag{1.2}
+\left\|f-\left(p^*+\theta p\right)\right\|_{\infty}<\left\|f-p^*\right\|_{\infty} \hspace{3em} \tag{1.2}
 $$
 is satisfied for some value of the scalar parameter $\theta$.
 
 ### A simple example
 &nbsp; &nbsp;
-An exmaple is given in Figure 7.1 Page 73 of the book [Powell 1981](/assets/ref/books/Approximation_Theory_and_Methods.pdf). It suggests that, to discover if a trial approximation is optimal, one only need consider the extreme values of the error function $\{f(x) - p^*(x): a\leqslant x\leqslant b \}.$
+An exmaple is given in Figure 7.1 on Page 73 of the book [Powell 1981](/assets/ref/books/Approximation_Theory_and_Methods.pdf). It suggests that, to discover if a trial approximation is optimal, one only need consider the extreme values of the error function $\{f(x) - p^*(x): a\leqslant x\leqslant b \}.$
 
 <b>In general a best minimax operator from $C[a,b]$ to $\mathscr{A}$ is not a linear operator.</b> <span style="color:red">Why?</span>
 
@@ -42,18 +46,18 @@ An exmaple is given in Figure 7.1 Page 73 of the book [Powell 1981](/assets/ref/
 
 **The set of points at which the error function** 
 $$
-e^*(x) = f(x) - p^*(x), \quad a\leqslant x \leqslant b, \tag{1.3}
+e^*(x) = f(x) - p^*(x), \quad a\leqslant x \leqslant b, \hspace{3em} \tag{1.3}
 $$
 **takes its extreme values is important, and we call it $\mathscr{Z}_M$.**
 
 It is obvious that this set $\mathscr{Z}_M$ is characterized by the condition 
 $$
-|e^*(x)| = \|e^*\|_\infty,\quad x\in \mathscr{Z}_M.\tag{1.4}
+|e^*(x)| = \|e^*\|_\infty,\quad x\in \mathscr{Z}_M.\hspace{3em} \tag{1.4}
 $$
 
 &nbsp;&nbsp; We suppose first that $p^*$ is not optimal. We let $p^*+\theta p$ be a best approxiamtion. Hence the reduction (1.2) is obtained, and the points in $\mathscr{Z}_M$ satisfy the inequality
 $$
-|e^*(x) -\theta p(x)| < |e^*(x)|,\quad x\in \mathscr{Z}_M. \tag{1.5}
+|e^*(x) -\theta p(x)| < |e^*(x)|,\quad x\in \mathscr{Z}_M. \hspace{3em} \tag{1.5}
 $$
 
 <span style="color: Dodgerblue;">Inequality (1.5) holds obviously since our goal is to seek $p$ and $\theta$, started with initial guess $p^*$, to reduce the error $\|e^*(x)\|_\infty$.</span>
@@ -69,7 +73,7 @@ implies that $a$ is the same as the sign of $b$.
 
 It follows that $p^*$ is a best minimax approximation from $\mathscr{A}$ to $f$ if there is no function $p$ in $\mathscr{A}$ that satisfies the condition
 $$
-\left[f(x)-p^*(x)\right] p(x)>0, \quad x \in \mathscr{Z}_{\mathbf{M}}. \tag{1.6}
+\left[f(x)-p^*(x)\right] p(x)>0, \quad x \in \mathscr{Z}_{\mathbf{M}}. \hspace{3em} \tag{1.6}
 $$
 <span style="color: Dodgerblue;">The conclusion of no function $p$ such that (1.6) holds is obtained straightway from $e^*(x)$ is the same as the sign of $p(x)$.</span>
 
@@ -77,7 +81,7 @@ In the remainder of this section the converse result is proved, namely that, if 
 
 &nbsp;&nbsp; Because of the way in which the exchange algorithm works, we generalize the problem of minimizing $\|f-p\|_\infty$, to the problem of minimizing the expression
 $$
-\max_{x\in\mathscr{Z}} |f(x)-p(x)|, \quad p\in \mathscr{A}, \tag{1.7}
+\max_{x\in\mathscr{Z}} |f(x)-p(x)|, \quad p\in \mathscr{A}, \hspace{3em} \tag{1.7}
 $$
 where $\mathscr{Z}$ is any closed subset of $[a.b]$, which may be $[a,b]$ itself, but in the exchange algorithm the set $\mathscr{Z}$ is composed of a finite number of points. The next theorem allows $\mathscr{Z}$ to be general.
 
@@ -121,14 +125,14 @@ Thus, <b>$\mathscr{A}$ satisfies the Haar condition if and only if, for every no
 
 **Theorem 2** (Characterization Theorem) *Let $\mathscr{A}$ be an $(n+1)-$dimensional linear subspace of $C[a,b]$ that satisfies the Haar condition, and let $f$ be any function in $C[a,b]$. Then $p^*$ is the best minimax approximation from $\mathscr{A}$ to $f$, if and only if there exist $(n+2)$ points $\left\{\xi_i^* ; i=0,1, \ldots, n+1\right\}$, such that the conditions*
 $$
-a \leqslant \xi_0^*<\xi_1^*<\ldots<\xi_{n+1}^* \leqslant b, \tag{1.17}
+a \leqslant \xi_0^*<\xi_1^*<\ldots<\xi_{n+1}^* \leqslant b, \hspace{3em} \tag{1.17}
 $$
 $$
-\left|f\left(\xi_i^*\right)-p^*\left(\xi_i^*\right)\right|=\left\|f-p^*\right\|_{\infty}, \quad i=0,1, \ldots, n+1, \tag{1.18}
+\left|f\left(\xi_i^*\right)-p^*\left(\xi_i^*\right)\right|=\left\|f-p^*\right\|_{\infty}, \quad i=0,1, \ldots, n+1, \hspace{3em} \tag{1.18}
 $$
 *and* 
 $$
-f\left(\xi_{i+1}^*\right)-p^*\left(\xi_{i+1}^*\right)=-\left[f\left(\xi_i^*\right)-p^*\left(\xi_i^*\right)\right], \quad i=0,1, \ldots, n, \tag{1.19}
+f\left(\xi_{i+1}^*\right)-p^*\left(\xi_{i+1}^*\right)=-\left[f\left(\xi_i^*\right)-p^*\left(\xi_i^*\right)\right], \quad i=0,1, \ldots, n, \hspace{3em} \tag{1.19}
 $$
 *are obtained.*
 
@@ -147,11 +151,11 @@ The following corollary of Theorem 7.1 is used on every iteration of the exchang
 
 **Theorem** *Let $\mathscr{A}$ be an $(n+1)-$dimensional linear subspace of $C[a,b]$ that satisfies the Haar condition, let $\left\{\xi_i ; i=0,1, \ldots, n+1\right\}$ be a reference, and let $f$ be any function in $C[a,b]$. Then $p^*$ is the function in $\mathscr{A}$ that minimizes the expression*
 $$
-\max _{i=0,1, \ldots, n+1}\left|f\left(\xi_i\right)-p\left(\xi_i\right)\right|, \quad p \in \mathscr{A}, \tag{1.24}
+\max _{i=0,1, \ldots, n+1}\left|f\left(\xi_i\right)-p\left(\xi_i\right)\right|, \quad p \in \mathscr{A}, \hspace{3em} \tag{1.24}
 $$
 *if and only if the equations*
 $$
-f\left(\xi_{i+1}\right)-p^*\left(\xi_{i+1}\right)=-\left[f\left(\xi_i\right)-p^*\left(\xi_i\right)\right], \quad i=0,1, \ldots, n, \tag{1.25}
+f\left(\xi_{i+1}\right)-p^*\left(\xi_{i+1}\right)=-\left[f\left(\xi_i\right)-p^*\left(\xi_i\right)\right], \quad i=0,1, \ldots, n, \hspace{3em} \tag{1.25}
 $$
 *are satisfied.*
 
@@ -206,7 +210,7 @@ $$
 & \leqslant \min _{p \in \mathscr{A}}\|f-p\|_{\infty} \\
 & \leqslant\left\|f-p^*\right\|_{\infty}
 \end{aligned}
-\tag{1.32}
+\hspace{3em} \tag{1.32}
 $$
 *are obtained. Moreover, the first inequality is strict unless all the numbers $\{|f(\xi_i) - p^*(\xi_i)|: i = 0,1,\cdots,n+1 \}$ are equal.*
 
