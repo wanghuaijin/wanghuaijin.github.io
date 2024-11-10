@@ -3,6 +3,9 @@ title: "Course 1: Variational Principle"
 ---
 Cite [note.pdf](/assets/FEM/note.pdf)
 
+See Course: [x.pdf](/assets/CV/ms_course_zh.pdf)
+
+<a href="/assets/CV/ms_course_zh.pdf" target="_blank">Course</a>
 
 [点击这里查看 PDF 文件](/assets/FEM/note.pdf)
 
