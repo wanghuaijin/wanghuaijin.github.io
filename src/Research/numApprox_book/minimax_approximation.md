@@ -6,9 +6,11 @@ article: true
 star: true
 timeline: true
 ---
-
+The notes when I read the book 
 [Powell 1981](/assets/ref/books/Approximation_Theory_and_Methods.pdf)
+in Chapter 7.
 
+You can see the source PDF file at [here](/assets/ref/texfiles/minimax_approximation/minimax.pdf), or the source [Tex](/assets/ref/texfiles/minimax_approximation/minimax.tex) file.
 <!-- more -->
 
 ## 1. Introduction to minimax approximation
@@ -85,9 +87,84 @@ $$
 $$
 where $\mathscr{Z}$ is any closed subset of $[a.b]$, which may be $[a,b]$ itself, but in the exchange algorithm the set $\mathscr{Z}$ is composed of a finite number of points. The next theorem allows $\mathscr{Z}$ to be general.
 
-**Theorem 1.1** Let $\mathscr{A}$ be a linear subspace of $C[a,b]$, let $f$ be any function in $C[a,b]$, let $\mathscr{Z}$ be any closed subset of $[a,b]$, let $p^*$ be any element of $\mathscr{A}$, and let $\mathscr{Z}_M$ be the set of points of $\mathscr{Z}$ at which the error $\{|f(x)-p^*(x)|: x\in \mathscr{Z}\}$ takes the maximum value. Then $p^*$ is an element of $\mathscr{A}$ that minimizes express (1.7) if and only if there is no function $p$ in $\mathscr{A}$ that satisfies condition (1.6).
+**Theorem 1** Let $\mathscr{A}$ be a linear subspace of $C[a,b]$, let $f$ be any function in $C[a,b]$, let $\mathscr{Z}$ be any closed subset of $[a,b]$, let $p^*$ be any element of $\mathscr{A}$, and let $\mathscr{Z}_M$ be the set of points of $\mathscr{Z}$ at which the error $\{|f(x)-p^*(x)|: x\in \mathscr{Z}\}$ takes the maximum value. Then $p^*$ is an element of $\mathscr{A}$ that minimizes express (1.7) if and only if there is no function $p$ in $\mathscr{A}$ that satisfies condition (1.6).
 
 <span style="color: red;">What if $\mathscr{Z}$ being a very local interval on $[a,b]$?</span>
+
+::: details Proof
+&nbsp;&nbsp; The remarks made in the first paragraphy of this section prove the 'if' part ot the theorem, when $\mathscr{Z}$ is the whole interval $[a,b]$. It is straightforward to extend these remarks to the case when $\mathscr{Z}$ is a subset of $[a,b]$. 
+
+<span style="color:Dodgerblue;">To be more specific, we prove it again.</span> If there is no function $p$ in $\mathscr{A}$ that satisfies condition (1.6), namely that $\forall p \in \mathscr{A}$ there holds
+$$
+\text{sign} (e^*(x)) = -\text{sign} (p(x)),\quad \forall x\in \mathscr{Z}_M.
+$$
+It leads to $\forall p\in\mathscr{A}$ and $\forall \theta>0$, 
+$$
+|e^*(x) - \theta p(x)| \geqslant |e^*(x)|, \quad x\in \mathscr{Z}_M.
+$$
+Then 
+$$
+\max_{x\in\mathscr{Z}_M} |f(x) - p^*(x)|
+\leqslant \max_{x\in\mathscr{Z}_M} |f(x) - p(x)|,\quad \forall p\in\mathscr{A}. 
+$$
+Hence $p^*$ minimizes (1.7), i.e., $\forall p\in\mathscr{A}$,
+$$
+\begin{aligned}
+& \max_{x\in\mathscr{Z}} |f(x) - p^*(x)| = \max_{x\in\mathscr{Z}_M} |f(x) - p^*(x)| \\
+ &\leqslant \max_{x\in\mathscr{Z}_M} |f(x) - p(x)| 
+  \leqslant \max_{x\in\mathscr{Z}} |f(x) - p(x)|.
+\end{aligned}
+$$
+
+&nbsp;&nbsp; It remains to show that if $p^*\in \mathscr{A}$ minimizes (1.7), then there is no function $p\in\mathscr{A}$ satisfying (1.6). We prove it by contradiction.
+<b>Show that, if $p\in\mathscr{A}$ such that condition (1.6) is obtained, then the inequality holds</b>
+$$
+\max_{x\in\mathscr{Z}} |e^*(x)-\theta p(x)| < \max_{x\in \mathscr{Z}} |e^*(x)|,\quad \text{for some } \theta>0. \hspace{3em} \tag{1.8}
+$$
+&nbsp;&nbsp; In order to avoid detailed consideration of the size of $p$ when we find a suitable value of $\theta$, we assume without loss of generality that the condition holds
+$$
+|p(x)| \leqslant 1,\quad a\leqslant x \leqslant b. \hspace{3em}\tag{1.9}
+$$
+
+
+&nbsp;&nbsp; We have to give particular care to any values of $x$ for which the signs of $e^*(x)$ and $p(x)$ are opposite. Therefore the set $\mathscr{Z}_0$ is defined to contain the elements $x$ that satisfy the condition
+$$
+p(x) e^*(x)\leqslant 0,\quad x\in \mathscr{Z}.
+$$
+Because this set is closed (<span style="color:red;">Why?</span>), and because $\mathscr{Z}_0$ and $\mathscr{Z}_M$ have no points in common, the number
+$$
+d = \max_{x\in \mathscr{Z}_0} |e^*(x)| \hspace{3em}\tag{1.11}
+$$
+satisfies the bound
+$$
+d < \max_{x\in \mathscr{Z}} |e^*(x)|. \hspace{3em}\tag{1.12}
+$$
+If $\mathscr{Z}_0$ is empty, we define $d$ to be zero. We prove that inequality (1.8) is obtained when $\theta$ has the positive value
+$$
+\theta = \frac{1}{2} \left[ \max_{x\in \mathscr{Z}} |e^*(x)| - d\right ]. \hspace{3em}\tag{1.13}
+$$
+&nbsp;&nbsp; Because the set $\mathscr{Z}$ is closed, we may let $\xi$ be an element of $\mathscr{Z}$ that satisfies the equation
+$$
+|e^*(\xi) - \theta p(\xi)| = \max_{x\in\mathscr{Z}} |e^*(x) - \theta p(x) |.
+$$
+If $\xi$ is in $\mathscr{Z}_0$, the bound 
+$$
+\max _{x \in \mathscr{X}}\left|e^*(x)-\theta p(x)\right|=\left|e^*(\xi)\right|+|\theta p(\xi)| \leqslant d+\theta
+$$
+is obtained, where the last term depends on expressions (1.11) and (1.9). Hence condition (1.8) follows from inequality (1.12) and equation (1.13). Alternatively, when $\xi$ is not in $\mathscr{Z}_0$, the signs of the terms $e^*(\xi)$ and $p(\xi)$ are the same, which gives the strict inequality
+$$
+\left|e^*(\xi)-\theta p(\xi)\right|<\max \left[\left|e^*(\xi)\right|,|\theta p(\xi)|\right].
+$$
+By the facts that
+$$
+|e^*(\xi)| \leqslant \max_{x\in\mathscr{Z}}|e^*(x)|,
+$$
+$$
+|\theta p(\xi)| \leqslant \theta = \frac{1}{2} \left[ \max_{x\in \mathscr{Z}} |e^*(x)| - \max_{x\in \mathscr{Z}_0} |e^*(x)| \right]
+\leqslant \max_{x\in \mathscr{Z}} |e^*(x)|,
+$$
+again it follows that condition (1.8) is satisfied. The proof of the theorem is completed.
+:::
 
 This theorem justisfies the remark in Sec. 1: to find out if a trial approximation is optimal, one only need consider the extreme values of the error function. Specifically, one should ask if condition (1.6) holds for some function $p$ in $\mathscr{A}$.
 
@@ -135,21 +212,89 @@ $$
 f\left(\xi_{i+1}^*\right)-p^*\left(\xi_{i+1}^*\right)=-\left[f\left(\xi_i^*\right)-p^*\left(\xi_i^*\right)\right], \quad i=0,1, \ldots, n, \hspace{3em} \tag{1.19}
 $$
 *are obtained.*
-
-> One important application of this theorem is to prove the minimum property of Chebyshev polynomials. 
-> We recall that the Chebyshev polynomial $T_n$ is the polynomial of degree $n$ that is defined on the interval $[-1,1]$ by the equation
-> $$T_n(x) = \cos(n\theta), x=\cos\theta, 0\leqslant \theta \leqslant \pi.$$
-> The minimum property is sufficiently useful to be stated as a theorem.
-
-> **Theorem** *Let the range of $x$ be $[-1,1]$, and let $n$ be any positive integer. The polynomial $2^{1-n}T_n$ is the member of $\mathbb{P}_n$, whose $\infty-$norm is least, subject to the condition that the coefficient of $x^n$ is equal to one.*
-
-&nbsp;&nbsp; The main reason for letting $\mathscr{Z}$ be any closed subset of $C[a,b]$ in the statement of Theorem 7.1, is that the exchange algorithm requires the case when $\mathscr{Z}$ contains just $(n+2)$ points. In descriptions of the exchange algorithm it is usual to call such a set of points a 'reference'. We use this term also, and we let $\left\{\xi_i ; i=0,1, \ldots, n+1\right\}$ be the points of the reference. We assume that always these points are in ascending order 
+:::: details <b>Proof</b>
+$(\Rightarrow)$ Suppose that $p^*$ is the best minimax approximation from $\mathscr{A}$ to $f$. Let $\mathscr{Z}_M$ be the set for which $|f(x)-p^*(x)|$ attains its maximum, i.e.,
 $$
-a \leqslant \xi_0<\xi_1<\ldots<\xi_{n+1} \leqslant b.
+\mathscr{Z}_M = \{x^* \in [a,b]: |f(x^*) - p^*(x^*)| = \max_{a\leqslant x \leqslant b} |f(x) - p^*(x)| \}.
 $$
-The following corollary of Theorem 7.1 is used on every iteration of the exchange algorithm.
+We claim that the number of elements in $\mathscr{Z}_M$, denoted as $n(\mathscr{Z}_M)$, is at least $n+2$. Otherwise, if $n(\mathscr{Z}_M) \leqslant n+1$, we can show that there exists a function $p\in\mathscr{A}$ s.t.
+$$
+[f(x)-p^*(x)] p(x) >0,\quad \forall x\in\mathscr{Z}_M,
+$$
+which contradicts our assumption by the conclusion in Theorem 1.
+::: details <b>Why</b>
+Suppose that $\mathscr{Z}_M = \{\xi_1,\xi_2,\cdots,\xi_{n+1}\}$, where $\xi_i\neq\xi_j$ for $i\neq j$. Let $\{\phi_i(x)\}_{i=1}^{n+1}$ be a basis of $\mathscr{A}$, and we assume that $p$ could be expanded as the form
+$$
+p(x) = \sum_{j=1}^{n+1} \alpha_j \phi_j(x),\quad \text{for some } \alpha_j, \ j=1,2,\cdots,n+1.
+$$
+Let $p$ satisfy $p(\xi_i) = \mathrm{sign}[f(\xi_i)-p^*(\xi_i)]$, which leads to
+$$
+p(\xi_i) = \sum_{j=1}^{n+1} \alpha_j \phi_j(\xi_i) = \mathrm{sign}[f(\xi_i)-p^*(\xi_i)], \quad i=1,2,\cdots,n+1.
+$$
+The linear system has an unique non-zero solution for $\alpha_j$. Thus such a $p(x)$ does exist.
+:::
+We claim again that $f(x)-p^*(x)$ changes sign at least $n+1$ times as $x$ ranges over $\mathscr{Z}_M$. Otherwise, if $f(x)-p^*(x)$ changes sign at most $n$ times, we suppose that its value at $\xi_1,\xi_2,\cdots,\xi_{n+1} \in \mathscr{Z}_M$ has different signs, i.e., 
+$$
+f(\xi_i) - p^*(\xi_i) = (-1)^i \lambda \|f-p^*\|_\infty,\quad i=1,2,\cdots,n+1,
+$$
+where $\lambda = 1\text{ or } -1$. Then we can find $p\in\mathscr{A}$ such that 
+$$
+[f(\xi_i) - p^*(\xi_i)] p(\xi_i) > 0,\quad i=1,\cdots,n+1,
+$$
+since any basis of $\mathscr{A}$ constitutes a Chebyshev set.
 
-**Theorem** *Let $\mathscr{A}$ be an $(n+1)-$dimensional linear subspace of $C[a,b]$ that satisfies the Haar condition, let $\left\{\xi_i ; i=0,1, \ldots, n+1\right\}$ be a reference, and let $f$ be any function in $C[a,b]$. Then $p^*$ is the function in $\mathscr{A}$ that minimizes the expression*
+Hence we have shown that $f(x)-p^*(x)$ changes sign at least $n+1$ times as $x$ ranges over $\mathscr{Z}_M$, which is the sufficient condition of this theorem.
+
+$(\Leftarrow)$ Suppose that $p^*\in\mathscr{A}$ such that $f(x) - p^*(x)$ cahnges sign at least $n+1$ times as $x$ ranges over $\mathscr{Z}_M$. We claim that there is no function $p\in\mathscr{A}$ such that 
+$$
+[f(\xi_i^*) - p^*(\xi^*_i)] p(\xi_i^*) > 0, \quad i=0,1,\cdots,n+1.
+$$
+Otherwise, if such $p$ does exist, then the sign of $p(\xi^*_i)$ is as same as the sign of $f(\xi^*_i)-p^*(\xi^*_i)$, i.e.,
+$$
+\mathrm{sign}(p(\xi^*_i)) = \mathrm{sign}[f(\xi^*_i)-p^*(\xi^*_i)],\quad i=0,1,\cdots,n+1.
+$$
+By the condition (1.19), we have 
+$$
+\mathrm{sign}(p(\xi^*_{i+1})) = - \mathrm{sign}(p(\xi^*_i)),\quad i=0,1,\cdots,n.
+$$
+Then $p(x)$ has at least $n+1$ zeros. By Haar conditions, we obtain $p\equiv 0$, which leads to a contradiction. Hence this claim is proved which implies $p^*$ is the best minimax approximation by virtue of Theorem 1.
+::::
+
+### Chebyshev polynomials
+One important application of this theorem is to prove the minimum property of Chebyshev polynomials. 
+We recall that the Chebyshev polynomial $T_n$ is the polynomial of degree $n$ that is defined on the interval $[-1,1]$ by the equation
+$$T_n(x) = \cos(n\theta), x=\cos\theta, 0\leqslant \theta \leqslant \pi.$$
+The minimum property is sufficiently useful to be stated as a theorem.
+
+**Theorem 3** *Let the range of $x$ be $[-1,1]$, and let $n$ be any positive integer. The polynomial $2^{1-n}T_n$ is the member of $\mathbb{P}_n$, whose $\infty-$norm is least, subject to the condition that the coefficient of $x^n$ is equal to one.*
+::: details <b>Proof</b>
+One way of identifying the required polynomial is to solve the problem
+$$
+\left \{
+    \begin{aligned}
+        &\text{Find } \{c^*_i: i=0,1,\cdots,n-1\} \text{ s.t.} \\
+        &\max_{-1\leqslant x \leqslant 1} \left |x^n + \sum_{i=0}^{n-1} c^*_i x^i \right | \leqslant 
+        \max_{-1\leqslant x \leqslant 1} \left |x^n + \sum_{i=0}^{n-1} c_i x^i \right |,\quad \forall c_i.
+    \end{aligned}
+\right .
+$$
+We see that this approach is equivalent to finding the best minimax approximation from $\mathbb{P}_{n-1}$ to the function $x^n$ in the interval $[-1,1]$.
+
+It follows from Theorem 7.2 that $(\frac{1}{2})^{n-1} T_n$ is the required polynomial, if the coefficient of $x^n$ is one, and if there exist points $\{\xi_i: i=0,1\cdots,n\}$ in $[-1,1]$ arranged in ascending order, such that the equations
+$$
+T_n(\xi_i) = (-1)^{n-i} \|T_n\|_\infty,\quad i=0,1,\cdots,n,
+$$
+hold. The recurrence relation of Tchebyshev polynomials implies that the coefficient of $x^n$ is correct. Moreover, the definition (1.20) shows that equation (1.22) is satisfied if we let each $\xi_i$ have the value $\cos[(n-i)\pi/n]$. The theorem is proved.
+:::
+### Corollary of Themorem 1
+
+&nbsp;&nbsp; The main reason for letting $\mathscr{Z}$ be any closed subset of $C[a,b]$ in the statement of Theorem 1, is that the exchange algorithm requires the case when $\mathscr{Z}$ contains just $(n+2)$ points. In descriptions of the exchange algorithm it is usual to call such a set of points a 'reference'. We use this term also, and we let $\left\{\xi_i ; i=0,1, \ldots, n+1\right\}$ be the points of the reference. We assume that always these points are in ascending order 
+$$
+a \leqslant \xi_0<\xi_1<\ldots<\xi_{n+1} \leqslant b. \hspace{3em}
+$$
+The following corollary of Theorem 1 is used on every iteration of the exchange algorithm.
+
+**Theorem 4** *Let $\mathscr{A}$ be an $(n+1)-$dimensional linear subspace of $C[a,b]$ that satisfies the Haar condition, let $\left\{\xi_i ; i=0,1, \ldots, n+1\right\}$ be a reference, and let $f$ be any function in $C[a,b]$. Then $p^*$ is the function in $\mathscr{A}$ that minimizes the expression*
 $$
 \max _{i=0,1, \ldots, n+1}\left|f\left(\xi_i\right)-p\left(\xi_i\right)\right|, \quad p \in \mathscr{A}, \hspace{3em} \tag{1.24}
 $$
@@ -158,6 +303,33 @@ $$
 f\left(\xi_{i+1}\right)-p^*\left(\xi_{i+1}\right)=-\left[f\left(\xi_i\right)-p^*\left(\xi_i\right)\right], \quad i=0,1, \ldots, n, \hspace{3em} \tag{1.25}
 $$
 *are satisfied.*
+
+::: details <b> Proof</b>
+Let $\mathscr{Z} = \{\xi_0,\xi_1,\cdots,\xi_{n+1} \}$, and $\mathscr{Z}_M \subset \mathscr{Z}$ be the set for which $|f(x)-p^*(x)|$ attains its maximum, i.e.,
+$$
+\mathscr{Z}_M = \{x^*\in \mathscr{Z}: |f(x^*) - p^*(x^*)| = \max_{0\leqslant i\leqslant n+1} |f(\xi_i) - p^*(\xi_i)| \}.
+$$
+By Theorem 1, $p^*$ is the best minimax approximation over the set $\mathscr{Z}$, i.e.,
+$$
+\max_{0\leqslant i\leqslant n+1} |f(\xi_i) - p^*(\xi_i) | \leqslant \max_{0\leqslant i \leqslant n+1} |f(\xi_i) - p(\xi_i)|,\quad \forall p\in\mathscr{A},
+$$
+if and only if there is no function $p\in \mathscr{A}$ such that 
+$$
+[f(x) - p^*(x)] p(x) >0,\quad \forall x\in\mathscr{Z}_M.
+$$
+$(\Rightarrow)$ We claim that $\mathscr{Z}_M = \mathscr{Z}$. In fact, if it is not true, then the number of elements in $\mathscr{Z}_M$ is at most $n+1$, and then we can show there exists a function $p\in\mathscr{A}$ such that
+$$
+[f(x) - p^*(x)] p(x) >0,\quad \forall x\in\mathscr{Z}_M,
+$$
+which leads to a contradiction. (See the proof of Theorem 2).
+Then we proved that $\mathscr{Z}_M = \mathscr{Z}$. Hence, we can show that $f(x)-p^*(x)$ changes sign at least $n+1$ times as $x$ ranges over $\mathscr{Z}_M$. (See the proof of Theorem 2)
+
+$(\Leftarrow)$ We assume that (1.25) holds. Then it is obvious that $\mathscr{Z}_M=\mathscr{Z}$. We can show a proof by contradiction that there is no function $p\in\mathscr{A}$ such that 
+$$
+[f(x) - p^*(x)] p(x) >0,\quad \forall x\in\mathscr{Z}_M,
+$$
+holds.
+:::
 
 &nbsp;&nbsp; The function $p^*$ that minimizes express (1.24) may be calculated from the equations (1.25). It is usual to let $h$ be the value of $[f(\xi_0)-p^*(\xi_0)]$, and to choose a basis of $\mathscr{A}$, $\{\phi_j: j=0,1,\cdots,n\}$ say. It follows that the coefficients of the function
 $$
@@ -168,6 +340,8 @@ $$
 f\left(\xi_i\right)-\sum_{j=0}^n \lambda_j \phi_j\left(\xi_i\right)=(-1)^i h, \quad i=0,1, \ldots, n+1,
 $$
 which is a linear system in the unknows $\left\{\lambda_j ; j=0,1, \ldots, n\right\}$ and $h$.
+
+
 
 &nbsp;&nbsp; Because Theorem 7.4 shows that these equations have a solution for all functions $f$ in $C[a,b]$, the matrix of the system is non-singular. Hence only one element of $\mathscr{A}$ minimizes expression (1.24). A more general and more useful method of proving uniqueness is given in the next section.
 

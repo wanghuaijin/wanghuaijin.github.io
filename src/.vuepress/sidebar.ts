@@ -82,12 +82,20 @@ export default sidebar({
   "/Research/": [
     "/Homepage.md",
     {
-      text: "Approximation Theory",
+      text: "Numerical Approximation",
       icon: "fa-solid fa-folder-open",
-      link: "/Research/",
       children: [
         "approx_basic.md", "Stahl_2003.md",
       ]
+    },
+    {
+      text: "Books of Approximating Theory",
+      icon: "fa-solid fa-folder-open",
+      prefix: "numApprox_book/",
+      collapsible: true,
+      children:[
+        "numApprox_Weierstrass-Theorem.md", "minimax_approximation.md", "numApprox_uniform-approx.md"
+      ],
     },
     {
       text: "References",
