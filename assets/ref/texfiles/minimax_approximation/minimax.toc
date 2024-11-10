@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Introduction to minimax approximation}{2}{section.1}%
+\contentsline {section}{\numberline {2}The reduction of the error of a trial approximation}{3}{section.2}%
+\contentsline {section}{\numberline {3}The characterization theorem and the Haar condition}{7}{section.3}%
+\contentsline {section}{\numberline {4}Uniqueness and bounds on the minimax error}{13}{section.4}%
+\contentsline {section}{\numberline {5}Appendix}{16}{section.5}%
