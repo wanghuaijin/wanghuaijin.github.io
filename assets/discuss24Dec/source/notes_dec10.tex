@@ -1,0 +1,388 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+
+\maketitle
+
+\begingroup
+\hypersetup{
+    linkcolor=black,  % 将目录链接颜色设置为黑色
+}
+%\tableofcontents
+\endgroup
+
+
+\newpage
+
+\section{Introduction}
+We study Chapter 11 of \cite{lorentz1996}. First, let us take a look at  Section 1, where we introduce key concepts and explain some notation.
+\subsection{From algebraic to M\"untz polynomials: denseness}
+\textbf{Algebraic polynomials}, which are frequently employed in approximation theory, take the form:
+\[
+u(x) = \sum_{k=0}^n a_k x^k,\quad a_k\in\mathbb{R},
+\]
+and possess the property of density as characterized by the Weierstrass' Theorem.
+\begin{theorem}[Weierstrass]
+Let $f\in C[a,b]$, then for any $\varepsilon > 0$, there exists a algebraic polynomial $u(x)\in \mathbb{P}$ such that
+\[
+\max_{a\leqslant x \leqslant b} |u(x) - f(x)| < \varepsilon.
+\]
+\end{theorem}
+
+{
+\begin{remark}
+Why is Weierstrass' Theorem so important?\\
+- It enables us to utilize algebraic polynomials, which are inherently simple functions, to approximate more intricate functions with arbitrary precision. \\
+- It facilitates the construction of numerical quadrature formulas, which are essential for approximating definite integrals, and it simplifies the process of solving PDEs by allowing us to approximate solutions that may be difficult to obtain analytically.
+\end{remark}
+Several applications of algebraic polynomials in numerical analysis include: 
+\begin{itemize}
+\item Projection, 
+\item Interpolation, 
+\item Quadratures, 
+\item Numerical Solution to PDEs (FEM \& Spectral Methods, etc.),
+\item $\cdots$.
+\end{itemize}
+}
+
+%However, algebraic polynomials may not always be the most efficient choice for approximating certain functions, particularly those with \textbf{weak singularities}.
+
+\textbf{Drawbacks of algebraic polynomials}: When approximating problems with singularities (where derivatives may become unbounded or non-integrable) or low regularity (such as discontinuities), algebraic polynomials may struggle to provide accurate representations. To address these challenges, two strategies are commonly used:
+\begin{itemize}
+\item Local approximation (piecewise), \textcolor[gray]{0.6}{which is general but \textbf{expensive} in computational cost,}
+\item \textbf{Global} approximation.
+\end{itemize}
+
+To address the limitations \textbf{while retaining the benefits} of polynomials for \textbf{global approximation}, a natural approach is to extend the concept of algebraic polynomials. Three common generalizations are encountered in practice: 
+\begin{itemize}
+\item \text{Rational polynomials}, \[\frac{u(x)}{v(x)},\ \forall u,v\in\mathbb{P}\text{ and } v\neq 0,\]
+\item \textbf{M\"untz polynomials}, 
+\[x^\lambda,\ \lambda\in \mathbb{C},\]
+\item \text{Mapped algebraic polynomials},
+\[
+x^k,\quad x=T(y).
+\]
+\end{itemize}
+Among these, M\"untz polynomials are of particular interest and will be the focus of our investigation.
+
+\textcolor{red}{Our goal is to use \textbf{M\"untz} polynomials as a \textbf{global} approximation for certain numerical analysis problems that may exhibit \textbf{singularities}, offering superior performance compared to algebraic polynomials.}
+
+
+
+
+Let $\Lambda_\infty = \{0=\lambda_0 < \lambda_1 < \cdots < \lambda_n<\cdots \}$  be a sequence of real numbers. The functions in the form
+\begin{equation}
+M(x) = \sum_{k=0}^n a_k x^{\lambda_k},\quad a_k\in \mathbb{R},
+\tag{1.1}
+\label{eq:1:1}
+\end{equation}
+are called \textbf{M\"untz polynomials} due to the M\"untz's Theorem that characterizes the denseness:
+
+\noindent \textcolor{red}{We only consider the real coefficients $a_k$ and sequences $\lambda_k$.}
+\begin{theorem}[M\"untz (1914), part of \textcolor{blue}{Theorem 1.1} in \cite{lorentz1996}] \label{thm-muntz}
+$\mathcal{M} (\Lambda_\infty) = \mathrm{span}\{ x^{\lambda_k}: k=0,1,\cdots\}$, the associated \textbf{M\"untz space} to $\Lambda_\infty$, is a dense subset of $C[0,1]$ if and only if
+\begin{equation}
+\sum_{k=1}^{\infty} \frac{1}{\lambda_k} = \infty.
+\tag{1.2}
+\label{eq:1:2}
+\end{equation}
+\end{theorem}
+
+\noindent \textcolor[gray]{0.6}{We split the Theorem 1.1 in Lorentz (1996) into two parts: one is on Theorem \ref{thm-muntz}, the other is the first item in following Remark.}
+
+\begin{remark} \textnormal{
+Theorem \ref{thm-muntz} can be indeed extended in several ways:
+\begin{itemize}
+\item $L_p$ space. Let $p\in (0,\infty)$, $\mathcal{M}(\Lambda_\infty)$ is dense in $L_p(0,1)$ if and only if $\sum_{k=\textcolor{red}{1}}^\infty \lambda_k^{-1} = \infty$. (see \cite[Theorem 1.2]{erdelyi2001}) \textcolor[gray]{0.6}{Sometimes we write $L_p(0,1)$ as $L_p[0,1]$. Note $L_\infty$ will never be considered in studying the denseness property since it is not separable. For the completeness of the spaces, we often consider $p\in[1,\infty)$. Then the convention we will use sometimes
+\[
+L_p[0,1] = \left \{
+\begin{aligned}
+&L_p[0,1],&  1\leqslant p <\infty,\\
+&C[0,1],& p=\infty.
+\end{aligned}
+\right.
+\]
+}
+\item $L_p$ space (M\"untz-Sz\'asz). Let $p\in (0,\infty)$, $\Lambda_\infty = (\lambda_k)_{k=0}^\infty$ is a sequence of distinct real numbers greater than $-1/p$. Then $\mathcal{M}(\Lambda_\infty)$ is dense in $L_p(0,1)$ if and only if 
+\[
+\sum_{k=\textcolor{red}{0}}^{\infty} \frac{\lambda_k+1 / p}{\left(\lambda_k+1 / p\right)^2+1}=\infty.
+\]
+(see \cite[Theorem 13]{almira2007})
+\item Complex sequence, known as M\"untz-Sz\'asz Theorem (see \cite[Example 1.6]{agler2022}). Let $\Lambda_\infty = \{\lambda_0, \lambda_1, \lambda_2, \cdots\}$ be a sequence of distinct numbers satisfying the real part $\operatorname{Re}(\lambda_k) > -1/2$ for $k = 0, 1, 2, \cdots$. The space
+$\mathrm{span}\{x^{\lambda_k} : k = 0, 1, 2, \cdots\}$ taken over $\mathbb{C}$, associated with $\Lambda_\infty$, is a dense subset of $L_2[0,1]$ if and only if
+\[
+\sum_{k=\textcolor{red}{0}}^\infty \frac{2 \operatorname{Re}(\lambda_k)+1}{|\lambda_k+1|^2} = \infty.
+\]
+\item Away from the origin. Let $\Lambda_\infty = \{\lambda_k\}_{k=0}^\infty \subset \mathbb{R}$ be a sequence of distinct real numbers, and let $0<a<b$. Then $\mathcal{M}(\Lambda_\infty)$ is dense in $C[a,b]$ if and only if $\sum_{\lambda_k\neq 0} |\lambda_k|^{-1} = \infty$. (see \cite[Theorem 29]{almira2007})
+\end{itemize}
+}
+\end{remark}
+
+%\begin{notation}
+%\end{notation}
+
+%\subsection{Convergence performance for special sequences}
+
+%% introduce the existed results and indicate the difficulties in future research
+
+% performance of algebraic polynomials
+
+% performance of Müntz polynomials for special sequences
+
+% Müntz polynomials in general sequences? 
+% - No results now, and that is what we want to study
+
+\begin{remark}
+With the dense properties, it is anticipated that functions $f$ in $L_p(0,1)$ or $C[0,1]$ can be approximated, which drives the development of numerical techniques for high-efficiency applications, surpassing the capabilities of algebraic polynomials.
+\end{remark}
+
+\begin{remark}
+However, the dense properties cannot be applied directly. Our interest lies in examining, for a fixed $n$, the convergence performance of $\inf_{p\in \mathcal{M}(\Lambda_n)}\|f-p\|$ in certain metrics. \textbf{This is the main topic of this chapter and will be discussed later.}
+\end{remark}
+
+\subsection{Jackson-type Theorem}
+\noindent \textcolor{red}{We will use the notation convention: $n\geqslant 1$ will be fixed and we write $\Lambda:=\Lambda_n = \{\lambda_0,\lambda_1,\cdots,\lambda_n\}$.}
+
+
+
+\noindent \textbf{Jackson Theorem for algebraic polynomials}. When $\lambda_k = k$ the M\"untz polynomials reduce to algebraic polynomials. We consider in the interval $[a,b]$, then $\forall f\in C[a,b]$, (see \cite[p.54]{wang1999})
+\[
+E(f,\Lambda)_\infty := \inf_{v\in\mathbb{P}_n} \|f-v\|_\infty \leqslant K \omega(f,1/n)_\infty,
+\]
+where $K$ is a constant and only depends on $a$ and $b$.
+\[
+\omega(f,\delta)_\infty = \sup _{\substack{|x-y|\leqslant \delta \\ x, y \in [a,b] }}  \{ |f(x)-f(y)| \},\quad \delta>0.
+\]
+If $f\in C^1[a,b]$, then $|f(x)-f(y)| \leqslant |x-y|\|f^\prime\|_\infty$ and we have 
+\[
+E(f,\Lambda)_\infty \leqslant \frac{K}{n} \|f^\prime \|_\infty.
+\]
+Moreover, if $f\in C^m[a,b]$, then when $n>m$ we have (see \cite[p.54]{wang1999})
+\[
+E(f,\Lambda)_\infty \leqslant A_m \left( \frac{1}{n}\right)^m \omega \left (f^{(m)}, \frac{b-a}{2(n-m)} \right),
+\]
+where $A_m$ is a constant and only depends on $a$, $b$ and $m$.
+
+\vspace{2em}
+
+\noindent \textcolor[gray]{0.6}{Now we consider the general $L_p$ best approximation.}
+
+\noindent \textbf{$L_p$-Best Approximation by M\"untz Polynomials.} Let $f\in L_p (0,1)$ if $1\leqslant p < \infty$ (or $C[0,1]$ if $p=\infty$). The error of approximation from $\mathcal{M}(\Lambda)$ to $f$ is
+\begin{equation}
+E(f,\Lambda)_p := \inf_{M\in\mathcal{M}(\Lambda)} \|f-M\|_{L_p}.
+\tag{1.3}
+\label{eq:1:3}
+\end{equation}
+
+\vspace{2em}
+\noindent\textbf{M\"untz-Jackson Theorem}: An \textbf{estimation of convergent performance} of $E(f,\Lambda)_p$ in terms of the smoothness or the differentiability properties of $f$.
+
+\vspace{2em}
+
+\noindent \textbf{Moduli of Continulity}. Measuring the smoothness of a function by differentiability is too crude for many purpose in approximation. More subtle measurements are provided by the moduli of continuity. For interval $[a,b]$ and $f\in L_p[a,b]$ if $1\leqslant p <\infty$ (or $f\in C[a,b]$ if $p=\infty$), (see \cite[pp. 40-44]{lorentz1993})
+\[
+\omega(f,\delta)_p := \sup_{0\leqslant h\leqslant \delta} \|f(\cdot+h) -f (\cdot)\|_{L_p[a,b-h]}.
+\]
+It is clear that 
+\begin{itemize}
+\item if $f\in C^1[a,b]$ then $\omega(f,\delta)_p\leqslant \delta \|f^\prime\|_\infty$. 
+\item If $f$ is $\alpha-$Lipschitz continuous for $0<\alpha\leqslant 1$, i.e., $|f(x)-f(y)| \leqslant L |x-y|^\alpha$ for some constant $L$, we have $\omega(f,\delta)_p \leqslant L \delta^\alpha$. The function $f(x) = x^\alpha$ is the simplest case. 
+\textcolor[gray]{0.6}{
+\begin{proof}[Proof of $|x^\alpha-y^\alpha| \leqslant |x-y|^\alpha$ for $x,y\in \lbrack a,b\rbrack$]
+In the cases $x=0$, $x=y$ or $y=0$, the conclusion holds obviously. Otherwise, suppose that $x>y$,
+\[
+\frac{|x^\alpha-y^\alpha|}{|x-y|^\alpha} = \frac{\left|1-\left( \frac{y}{x}\right)^\alpha \right|}{\left|1-\left(\frac{y}{x}\right) \right |^\alpha}.
+\]
+Since $0<1-{y}/{x} < 1$ and $0<\alpha\leqslant 1$, we get
+\[
+\left|1-\left(\frac{y}{x}\right) \right |^\alpha \geqslant \left|1-\left(\frac{y}{x}\right) \right | \quad \text{and}\quad
+\left|1-\left( \frac{y}{x}\right)^\alpha \right| \leqslant \left|1-\left(\frac{y}{x}\right) \right |.
+\]
+Hence 
+\[
+\frac{|x^\alpha-y^\alpha|}{|x-y|^\alpha} \leqslant 1.
+\]
+\end{proof}
+}
+\end{itemize}
+
+
+\vspace{2em}
+
+
+To facilitate the characterization of the M\"untz-Jackson bounds, we introduce the \textbf{Blaschke product}
+\begin{equation}
+B_p(z) := B_p(z,\Lambda) := \prod_{k=1}^n \frac{z-\lambda_k-1/p}{z+\lambda_k+1/p},\quad 1\leqslant p \leqslant \infty,
+\tag{1.4}
+\label{eq:1:4}
+\end{equation}
+and the expression
+\begin{equation}
+\varepsilon_p := \varepsilon_p(\Lambda) := \max_{y\geqslant 0} \left | \frac{B_p(1+i y)}{1+ i y}\right |.
+\tag{1.5}
+\label{eq:1:5}
+\end{equation}
+$\varepsilon_p$ is called \textbf{the index of approximation of $\Lambda$} in $C[0,1]$ or $L_p[0,1]$. \\
+\textcolor[gray]{0.6}{$\varepsilon_p$ is well-defined due to 
+\[
+f(y) = \left | \frac{B_p(1+i y)}{1+ i y}\right |,\quad \text{and}\ \lim_{y\to\infty} f(y) = 0.
+\]
+In fact, there exist $Y>0$ such that 
+\[
+f(y)<f(0),\quad \forall y>Y,
+\]
+then $f(y)$ achieves its maximum on $[0,Y]$ since the interval is compact.
+}
+
+\vspace{2em}
+
+\noindent \textcolor{red}{Now we aim to consider the following theorem.}
+\begin{theorem}[\textcolor{blue}{Theorem 1.2} in \cite{lorentz1996}] \label{thm:1:2}
+Let $\Lambda = \{0=\lambda_0 < \lambda_1< \cdots < \lambda_n \}$. Then
+\begin{enumerate}[label=(\roman*).]
+\item for $1\leqslant p \leqslant \infty$ and $f\in W_p^1[0,1]$,
+\begin{equation}
+E(f,\Lambda)_p \leqslant A_p \varepsilon_p \|f^\prime \|_{\textcolor{red}{p}},
+\tag{1.6}
+\label{eq:1:6}
+\end{equation}
+where $A_p <2^{29}$.
+\item The inequality \eqref{eq:1:6} is false for each $p\geqslant 1$ and each $\Lambda$ if $\Lambda_p$ is replaced by $1/600$.
+\end{enumerate}
+\end{theorem}
+
+\vspace{2em}
+
+\noindent \textcolor[gray]{0.6}{Theorem 1.2 in Lorentz (1996) is the general case for $1\leqslant p\leqslant\infty$. However, in this chapter, we only consider the special case $2\leqslant p \leqslant \infty$.}
+
+\noindent \textcolor{red}{From Theorem 1.2 (i) in Lorentz (1996), we further obtain the error estimations bounded by modulus of continuity $C\omega(f,\varepsilon_p)_p$, as indicated in Theorem 2.7 in Lorentz (1996).}
+
+\vspace{2em}
+
+\textcolor{cyan}{
+\begin{question}
+What if we consider the approximation under $0<p<1$? For example, the space $L_0(\Omega)$ with the norm
+\[
+\|f\|_{L_0} = \exp \left[ \int_\Omega \log|f(x)| \mathrm{d} x\right ].
+\]
+\end{question}
+}
+
+\noindent \textcolor[gray]{0.6}{Where the $W_p^1[0,1]$ space needs to be specified.}
+
+\noindent \textbf{$W_p^1[0,1]$ space} is defined as 
+\[
+W_p^1[0,1] = \{f(x) \text{ is absolutely continuous on } [0,1]: f^\prime \in L_p [0,1] \}.
+\]
+\textcolor[gray]{0.6}{
+\textbf{Definition of absolutely continuity.} Let $I\subset \mathbb{R}$ be an interval. $f:I\to \mathbb{R}$ is absolutely continuous, if $\forall \varepsilon >0$, there exists $\delta>0$, such that whenever a finite (or infinite) sequence of pairwise disjoint sub-intervals $(x_k,y_k)$ of $I$ satisfies
+\[
+\sum_{k=1}^N\left(y_k-x_k\right)<\delta,
+\]
+then
+\[
+\sum_{k=1}^N\left|f\left(y_k\right)-f\left(x_k\right)\right|<\varepsilon.
+\]
+}
+Recall the Sobolev space $W^{k,p}(\Omega)$ for a domain $\Omega\subset \mathbb{R}^m$,
+\[
+W^{k, p}(\Omega)=\left\{v \in L^p(\Omega): D^\alpha v \in L^p(\Omega) ,|\alpha| \leqslant k\right\} ,
+\]
+where the weak derivatives are defined in the distribution sense
+\[
+\left\langle D^\alpha f, v\right\rangle=(-1)^{|\alpha|}\left(f, v^{(\alpha)}\right), \forall v \in \mathscr{D}(\Omega) .
+\]
+Particularly, $W^{1,p}(0,1) = \{f\in L_p(0,1): f^\prime \in L_p(0,1) \}$. \textcolor{red}{Question: What is the relationship between $W^{1,p}(0,1)$ and $W_p^1[0,1]$ ?}
+Then $W_p^1[0,1] = W^{1,p}(0,1)$ if $p>1$ and $W_1^1[0,1] \subset W^{1,1}(0,1)$.
+\textcolor[gray]{0.6}{
+\begin{proof}
+It is obvious that $W_p^1[0,1] \subset W^{1,p}(0,1)$. If $p>1$, by the embedding theorem $W^{1,p}(0,1) \hookrightarrow C[0,1]$, see \cite[Chapter 5, 5.8]{adams2003}, then
+\[
+f(x) = f(0) + \int_0^x f^\prime (t) \mathrm{d} t,\quad \forall x\in[0,1].
+\]
+It is obvious that $f$ is absolutely continuous on $[0,1]$.
+\end{proof}
+}
+
+
+\vspace{2em}
+
+\noindent \textbf{The plan of the Chapter}:
+\begin{itemize}
+\item Sec. 2 proves \eqref{eq:1:6} for $p\geqslant 2$ and $A_p<20$, and some corollaries.
+\item Sec. 3 proves an inverse of M\"untz-Jackson Theorem for $p\geqslant 2$ (i.e., Theorem \ref{thm:1:2} (ii)).
+\item Sec. 4 proves that for special sequences, $\varepsilon_p$ can be replaced by a much simpler expression.
+\item Sec. 5 proves Markov-type inequality for M\"untz polynomials.
+\end{itemize}
+
+
+
+
+
+
+
+\begin{thebibliography}{99}
+\bibitem[Lorentz (1996)]{lorentz1996} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Lorentz1996.pdf}{Lorentz G G, von Golitschek M, Makovoz Y. Constructive approximation: advanced problems[M]. Berlin: Springer, 1996.}
+\bibitem[Erd\'elyi (2001)]{erdelyi2001} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Erdelyi2001.pdf}{Erdélyi T, Johnson W B. The “Full Müntz Theorem” in $L_p [0, 1]$ for $0< p<\infty$ [J]. Journal D’Analyse Mathématique, 2001, 84(1): 145-172.}
+\bibitem[Almira (2007)]{almira2007} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Almira2007.pdf}{Almira J M. Muntz type theorems I[J]. arXiv preprint arXiv:0710.3570, 2007.}
+\bibitem[Agler (2022)]{agler2022} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Agler2022.pdf}{Agler J, McCarthy J. Asymptotic M\"untz-Sz\'asz Theorems[J]. arXiv preprint arXiv:2206.12487, 2022.}
+\bibitem[Wang Renhong (1999)]{wang1999} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Wang1999.pdf}{Wang Renhong. Numerical Approximation (in Chinese)[M]. Higher Education Press, 1999.}
+\bibitem[Lorentz (1993)]{lorentz1993} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Lorentz1993.pdf}{DeVore R A, Lorentz G G. Constructive Approximation[M]. Springer-Verlag, 1993.}
+\bibitem[Bahouri (2011)]{bahouri2011} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Bahouri2011.pdf}{Bahouri H. Fourier Analysis and Nonlinear Partial Differential Equations[M]. Grundlehren der Mathematischen Wissenschaften, 2011, 343.}
+\bibitem[Adams (2003)]{adams2003} \href{https://wanghuaijin.github.io/assets/discuss24Dec/Adams2003}{Adams R A, Fournier J J F. Sobolev spaces[M]. Elsevier, 2003.}
+\end{thebibliography}
+
+\end{document}
+
