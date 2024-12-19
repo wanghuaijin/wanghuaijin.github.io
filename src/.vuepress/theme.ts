@@ -5,7 +5,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  darkmode: "toggle",
+  darkmode: "enable",
 
   lastUpdated: true,
   contributors: false,
@@ -52,7 +52,9 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["12345"],
+      "/demo/": ["12345"],
+      "/timeline/": ["12345"],
+      "/folders.md": ["12345"],
       // "/Thoughts/dimission.html": ["xxx"],
     },
   },
@@ -71,18 +73,18 @@ export default hopeTheme({
     //   Dingding: "https://example.com",
     //   Discord: "https://example.com",
       // Dribbble: "https://example.com",
-      Email: "mailto:hjwang@163.com",
+      // Email: "mailto:hjwang@163.com", *******
     //   Evernote: "https://example.com",
     //   Facebook: "https://example.com",
     //   Flipboard: "https://example.com",
     //   Gitee: "https://example.com",
     //   GitHub: "https://example.com",
     //   Gitlab: "https://example.com",
-      Gmail: "mailto:hjwang@gmail.com",
+      // Gmail: "mailto:hjwang@gmail.com", *******
       // Phone: "123",
     //   Instagram: "https://example.com",
       // Lark: "https://example.com",
-      Lines: "tel:+8617791842334",
+      // Lines: "tel:+8617791842334",     ********
     //   Linkedin: "https://example.com",
     //   Pinterest: "https://example.com",
       // Pocket: "tel:+8617791842334",
@@ -92,7 +94,7 @@ export default hopeTheme({
     //   Rss: "https://example.com",
     //   Steam: "https://example.com",
     //   Twitter: "https://example.com",
-      Wechat: '/assets/images/contact_me.jpg',
+      // Wechat: '/assets/images/contact_me.jpg', ********
     //   Weibo: "https://example.com",
     //   Whatsapp: "https://example.com",
     //   Youtube: "https://example.com",

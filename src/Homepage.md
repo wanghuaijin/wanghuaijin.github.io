@@ -1,77 +1,63 @@
 ---
+# containerClass: home
+title: Home
 home: true
-layout: BlogHome
-icon: house
-title: Blog Home
-# heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-heroText: Welcome to the blog
-# tagline: You can put your slogan here
+copyright: false
+footer: false
+# navbar: false
+heroImage: 
 heroFullScreen: false
-projects:
-  - icon: project
-    name: Mathematics
-    desc: Content of my major
-    link: /Mathematics/
+bgImage: /assets/images/bg6.jpeg
+tagline: "<p>&nbsp</p>
+<br>
+<br>
+<br>
+<br> <!-- Two <br> tags to add empty lines -->
+<p>&nbsp</p>"
+heroText: 
 
-  - icon: link
-    name: Demo
-    desc: This is a demo
+# highlights:
+#   - header: About us
+#     # image: /assets/image/box.svg
+#     description: NOTHING TO THE TITLE
+#     # bgImage: /assets/photos/photo1.jpg
+#     bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
+#     highlights:
+#       - title: 运行 <code>pnpm create vuepress-theme-hope hope-project</code> 以创建一个新的主题项目。
+#       - title: 在已有项目根目录下运行 <code>pnpm create vuepress-theme-hope add .</code> 以在项目中添加主题。
+
+#   - header: Nothing to the header
+#     description: DESCRIPTION
+
+
+features: 
+  - title: Discussion
+    details: "<b>Topic: Approximation Properties of Müntz Polynomials</b>. December 7, 2024."
+    icon: sort-up
+    link: https://wanghuaijin.github.io/assets/discuss24Dec/intro.pdf
+    bgImage: /assets/photos/photo1.jpg
+  - title: Title2
+    details: this is the title 1, you can click on the title name to see details
+    icon: highlighter
+    link: /demo/
+  - title: Title3
+    details: this is the title 1, you can click on the title name to see details
+    icon: highlighter
+    link: /demo/
+  - title: Title4
+    details: this is the title 1, you can click on the title name to see details
+    icon: highlighter
+    link: /demo/
+  - title: Title5
+    details: this is the title 1, you can click on the title name to see details
+    icon: highlighter
+    link: /demo/
+  - title: Title6 TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE Title6 TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE
+    details: 
+    icon: 
     link: /demo/
 
-  - icon: book
-    name: Books
-    desc: Occasionally reading books
-    link: /Reading/
-
-  - icon: article
-    name: Articles
-    desc: Published works
-    link: /Articles/
-
-  - icon: friend
-    name : Manuscripts
-    desc: Work in progress
-    link: /Manuscripts/
-
-  - icon: friend
-    name: Photography
-    desc: Content of photography
-    link: /Photography/
-
-  - icon: friend
-    name: Thoughts
-    desc: Meaningless
-    link: /Thoughts/
-
-  - icon: friend
-    name: Snippets
-    desc: Snippets in mathematics
-    link: /Snippets/
-
-  - icon: friend
-    name: NLA
-    desc: Numerical Linear Algebra
-    link: /NLA/
-
-  - icon: friend
-    name: Research
-    desc: NaN
-    link: /Research/
-
-  - icon: friend
-    name: FEM
-    desc: NaN
-    link: /FEM/
-    
-  # - icon: https://theme-hope-assets.vuejs.press/logo.svg
-  #   name: custom item
-  #   desc: Detailed description of this custom item
-  #   link: https://link.to.your.friend
-
-# footer: customize your footer text
 ---
-
-
 
 <script>
 // import { useDarkmode } from "vuepress-theme-hope/client";
@@ -82,9 +68,8 @@ projects:
 }
 </script>
 
+## Discussion
+### December
+## Codes
 
-This is a blog home page demo.
-
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
-
-For related configuration docs, please see [blog homepage](https://theme-hope.vuejs.press/guide/blog/home.html).
+## Books

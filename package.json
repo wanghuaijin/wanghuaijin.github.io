@@ -24,6 +24,7 @@
     "@vuepress/plugin-search": "^2.0.0-rc.39",
     "dashjs": "^4.7.4",
     "hls.js": "^1.5.15",
+    "jquery": "^3.7.1",
     "markdown-it": "^14.1.0",
     "markdown-it-container": "^4.0.0",
     "markdown-it-katex": "^2.0.3"

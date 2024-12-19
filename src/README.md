@@ -2,7 +2,8 @@
 # containerClass: home
 # layout: SolarSystem
 home: true
-title: Home
+title: Origin
+# layout: SolarSystem
 # icon: home
 # bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 # bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
@@ -10,7 +11,7 @@ title: Home
 #   background-attachment: fixed
 # heroText: Wang Huaijin's Knowledge Hub
 # tagline: Explore cutting-edge technologies, share learning insights, and document growth journey—where the power of thought meets endless possibilities.
-# navbar: true
+navbar: false
 # heroFullScreen: true
 
 # actions:
@@ -328,9 +329,11 @@ title: Home
 #         details: 让你的网站更像一个 APP
 #         link: ./guide/advanced/pwa.html
 # darkmode: disable
-copyright: false
-footer: <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p>
+copyright: <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p>
+footer: <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p> <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p>
 ---
 
-<SolarSystem />
 
+
+<SolarSystem />
+Hello! I am Huaijin Wang, Welcome to my website.

@@ -2,6 +2,7 @@ import { Tooltip } from "vidstack";
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
+  // "/Solarsystem.md",
   "/Homepage.md",
   // "/demo/",
   // {
@@ -72,6 +73,10 @@ export default navbar([
       },
     ],
   },
+  {
+    text: "Time Line",
+    link: "/timeline/",
+  }
   // {
   //   text: "V2 Docs",
   //   icon: "book",

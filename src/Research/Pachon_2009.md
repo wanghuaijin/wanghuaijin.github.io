@@ -1,4 +1,6 @@
 ---
+sidebar: false
+toc: false
 title: Pachón 2009
 date: 2024-09-06
 icon: file
