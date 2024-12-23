@@ -9,11 +9,11 @@ plot(x1, x1+1, 'k-','linewidth',1.2);
 plot(x1, -x1-1, 'k-','linewidth',1.2);
 plot(x2, -x2+1, 'k-','linewidth',1.2);
 plot(x2, x2-1, 'k-','linewidth',1.2);
-% 绘制 X 轴
+% x1 axis
 line([-1.25, 1.25], [0, 0], 'Color', 'k', 'LineWidth', 2);
-% 绘制 Y 轴
+% x2 axis
 line([0, 0], [-1.25, 1.25], 'Color', 'k', 'LineWidth', 2);
-% 添加箭头
+% add arrows
 quiver(1.25, 0, 0.25, 0, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2,'AutoScale', 'off');
 quiver(0, 1.25, 0, 0.25, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2, 'AutoScale', 'off');
 text(1.55, 0, {'$x_1$'},'interpreter','LaTex' , 'FontSize', 16, 'Color', 'k', 'VerticalAlignment', 'baseline', 'HorizontalAlignment', 'left');
@@ -34,11 +34,11 @@ plot(x1, sqrt(1-x1.^2), 'k-','linewidth',1.2);
 plot(x1, -sqrt(1-x1.^2), 'k-','linewidth',1.2);
 plot(x2, sqrt(1-x2.^2), 'k-','linewidth',1.2);
 plot(x2, -sqrt(1-x2.^2), 'k-','linewidth',1.2);
-% 绘制 X 轴
+% x1 axis
 line([-1.25, 1.25], [0, 0], 'Color', 'k', 'LineWidth', 2);
-% 绘制 Y 轴
+% x2 axis
 line([0, 0], [-1.25, 1.25], 'Color', 'k', 'LineWidth', 2);
-% 添加箭头
+% add arrows
 quiver(1.25, 0, 0.25, 0, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2,'AutoScale', 'off');
 quiver(0, 1.25, 0, 0.25, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2, 'AutoScale', 'off');
 text(1.55, 0, {'$x_1$'},'interpreter','LaTex' , 'FontSize', 16, 'Color', 'k', 'VerticalAlignment', 'baseline', 'HorizontalAlignment', 'left');
@@ -56,17 +56,17 @@ hold off;
 
 
 subplot(2,2,3);
-p = 1/2;
+p = 3;
 hold on;
 plot(x1, (1-abs(x1).^p).^(1/p), 'k-','linewidth',1.2);
 plot(x1, -(1-abs(x1).^p).^(1/p), 'k-','linewidth',1.2);
 plot(x2, (1-abs(x2).^p).^(1/p), 'k-','linewidth',1.2);
 plot(x2, -(1-abs(x2).^p).^(1/p), 'k-','linewidth',1.2);
-% 绘制 X 轴
+% x1 axis
 line([-1.25, 1.25], [0, 0], 'Color', 'k', 'LineWidth', 2);
-% 绘制 Y 轴
+% x2 axis
 line([0, 0], [-1.25, 1.25], 'Color', 'k', 'LineWidth', 2);
-% 添加箭头
+% add arrows
 quiver(1.25, 0, 0.25, 0, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2,'AutoScale', 'off');
 quiver(0, 1.25, 0, 0.25, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2, 'AutoScale', 'off');
 text(1.55, 0, {'$x_1$'},'interpreter','LaTex' , 'FontSize', 16, 'Color', 'k', 'VerticalAlignment', 'baseline', 'HorizontalAlignment', 'left');
@@ -92,12 +92,11 @@ plot(-ones(size(x1)),x1, 'k-','linewidth',1.2);
 plot(-ones(size(x1)),-x1, 'k-','linewidth',1.2);
 plot(ones(size(x2)),x2, 'k-','linewidth',1.2);
 plot(ones(size(x2)),-x2, 'k-','linewidth',1.2);
-
-% 绘制 X 轴
+% x1 axis
 line([-1.25, 1.25], [0, 0], 'Color', 'k', 'LineWidth', 2);
-% 绘制 Y 轴
+% x2 axis
 line([0, 0], [-1.25, 1.25], 'Color', 'k', 'LineWidth', 2);
-% 添加箭头
+% add labels
 quiver(1.25, 0, 0.25, 0, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2,'AutoScale', 'off');
 quiver(0, 1.25, 0, 0.25, 'Color', 'k', 'MaxHeadSize', 2, 'LineWidth', 2, 'AutoScale', 'off');
 text(1.55, 0, {'$x_1$'},'interpreter','LaTex' , 'FontSize', 16, 'Color', 'k', 'VerticalAlignment', 'baseline', 'HorizontalAlignment', 'left');
