@@ -81,6 +81,17 @@
 \end{cust-thm}
 The density property can be indeed extended in several ways: unsorted sequences (which may result in distinct cluster points), complex sequences, and intervals away from the origin.
 
+Under this iff condition, the sequence $\Lambda_\infty$ can be generalized as
+\[
+\left \{
+\begin{aligned}
+&\lambda_0\geqslant 0 \text{ and }  \{\lambda_k\}_{k=1}^{\infty} \text{ with } \inf_{k\geqslant 1}\{\lambda_k\}>0, & \text{ for } L_p[0,1] & \text{ with } 1\leqslant p < \infty;  \\
+& \lambda_0 \textcolor{red}{ = } 0 \text{ and }  \{\lambda_k\}_{k=1}^{\infty} \text{ with } \inf_{k\geqslant 1}\{\lambda_k\}>0, & \text{ for } C[0,1] & \text{ with } p=\infty.
+\end{aligned}
+\right .
+\]
+But its proof requires some techniques and discussions in the cases of distinct  cluster points (see \cite[Sec. 4.2]{borwein1995} or \cite[Sec. 3.1]{almira2007}).
+
 \vspace{1em}
 \noindent $\bullet$ \textbf{$L_p$-Best Approximation by M\"untz Polynomials.}
 Let $f\in L_p [0,1]$ if $1\leqslant p < \infty$ (or $C[0,1]$ if $p=\infty$). The error of approximation from $\mathcal{M}(\Lambda_n)$ to $f$ is
@@ -88,13 +99,13 @@ Let $f\in L_p [0,1]$ if $1\leqslant p < \infty$ (or $C[0,1]$ if $p=\infty$). The
 E(f,\Lambda_n)_p := \inf_{M\in\mathcal{M}(\Lambda_n)} \|f-M\|_{L_p[0,1]}.
 \]
 
-It is well-defined when the $L_\infty$ norm is applied on functions in $C[0,1]$. In fact, when $p=\infty$, for $f\in C[0,1]$ we have 
+Note that $C[0,1]$ with $L_\infty$-norm is completed since it reduces to \textbf{maximum norm}. In fact, when $p=\infty$, for $f\in C[0,1]$ we have 
 \[
 \|f\|_\infty := \inf \{C: |f(x)|\leqslant C \text{ a.e. on } [0,1]\} = \inf _{\substack{m F_0 = 0 \\F_0\subset [0,1] }} \left\{\sup_{x\in [0,1] \backslash F_0} |f(x)| \right\} = \max_{0\leqslant x\leqslant 1}\{ |f(x)|\},
 \]
 where $m F_0 = 0$ denotes that the Lebesgue measure of $F_0$ is $0$.
 
-\subsection*{Plan:}
+\subsection*{Schedule:}
 We consider the $L_p$ best approximation (or Jackson Theorems in Sec. 2) in several subsections:
 \begin{enumerate}
 \item Existence and uniqueness of $L_p$ best approximation.
@@ -122,6 +133,15 @@ E(f) := \inf_{p\in X_n} \|f-p\|.
 \begin{aux-thm}[Theorem 1.1, p.59, \cite{lorentz1993}]
 For each $f\in X$, there exists a best approximation to $f$ from $X_n$.
 \end{aux-thm}
+\begin{proof}
+Let $F(p) = \|f-p\|,\ \forall p\in X_n$. Let the \textbf{closed and bounded} set $
+C = \{p\in X_n: F(p)\leqslant \|f\| \}$. 
+Then that $F(p)$ attains its minimum over $X_n$ is equivalent to attain the minimum over $C$, that is
+\[
+\inf_{p\in X_n} \|f - p\| = \inf_{p\in C} \|f-p \|.
+\]
+Thus the existence is obvious since $C$ is \textbf{compact} and $F(p)$ is \textbf{continuous}. 
+\end{proof}
 
 \begin{aux-thm}
 If $X$ is strictly convex, which is characterized by
@@ -133,10 +153,23 @@ If $X$ is strictly convex, which is characterized by
 \]
 Then the best approximation to $f\in X$ from $X_n$ is \textbf{unique}.
 \end{aux-thm}
+\begin{proof}
+Suppose that there are $p_1,p_2\in X_n$ such that $\|f-p_1\| = \|f-p_2\| = E(f)$. If $E(f) = 0$, then $\|p_1-p_2\| \leqslant \|f-p_1\|+\|f-p_2\| = 2 E(f) = 0$, which implies $p_1=p_2$. If $E(f)>0$, we prove it by supposing that $p_1\neq p_2$, which leads to a contradiction:
+\[
+E(f) \leqslant \left \|f-\frac{1}{2}(p_1+p_2) \right \| = \left \| \frac{1}{2} (f-p_1) + \frac{1}{2} (f-p_2)\right \| < E(f).
+\]
+\end{proof}
 
 \begin{aux-lem}
 $L_p[a,b]$ is strictly convex for $1<p<\infty$.
 \end{aux-lem}
+\begin{proof}
+For any $f_1\neq f_2$, $\|f_1\|_p = \|f_2\|_p=1$, $\alpha_1, \alpha_2>0$, $\alpha_1+\alpha_2=1$, then by Minkowski's inequality (or triangle inequality):
+\[
+\|\alpha_1 f_1 + \alpha_2 f_2\|_p \textcolor{red}{<} \alpha_1 \| f_1 \|_p + \alpha_2 \|f_2\|_p = 1. 
+\]
+The equality for $1<p<\infty$ if and only if $f_1$ and $f_2$ are \textbf{positively linearly dependent}, that is, $f_1=\lambda f_2$ for some $\lambda\geqslant 0$ or $f_2=0$. This is impossible since $f_1\neq f_2$ and $\|f_1\|=\|f_2\|=1$.
+\end{proof}
 
 \begin{remark}
 Both $L_1[a,b]$ and $L_\infty[a,b]$ are \textbf{not} strictly convex. 
@@ -150,14 +183,14 @@ When we consider vectors in $\mathbb{R}^2$, the strictly convex property for $L_
  
 \begin{figure}[H]
 \centering
-    \includegraphics[width=1\textwidth]{eps1.eps}  
+    \includegraphics[scale=0.6]{eps1.eps}  
     \caption{Unit circles in $\mathbb{R}^2$ with different $L_p$-norms. Download the \href{https://wanghuaijin.github.io/assets/discuss24Dec/images/eps1.eps}{Figure} and  \href{https://wanghuaijin.github.io/assets/discuss24Dec/codes/eps1.eps}{Code}.}
 \end{figure}
 
 \begin{aux-thm}
-Let $X=C[a,b]$. If $X_n \subset X$ satisfies the \textbf{Haar condition}:
+Let $X=C[a,b]$ and $X_n \subset X$ satisfy the \textbf{Haar condition}:
 \[
-\text{ Let $\{\phi_i(x)\}_{i=1}^n$ be any basis of $X_n$. Then for any set of distinct points $\{\xi_i\}_{i=1}^n \subset [a,b]$, } 
+\text{ For any basis $\{\phi_i(x)\}_{i=1}^n$ of $X_n$ and any set of distinct points $\{\xi_i\}_{i=1}^n \subset [a,b]$, it follows that} 
 \]
 \[
 \begin{bmatrix}
@@ -169,9 +202,12 @@ Let $X=C[a,b]$. If $X_n \subset X$ satisfies the \textbf{Haar condition}:
 \]
 Then for any $f\in X$, there is just one $L_1$ (or $L_\infty$) best approximation to $f$ from $X_n$.
 \end{aux-thm}
+\begin{proof}
+The $L_1$-best approximation, see \cite[Theorem 14.3, p.170]{powell1981}, while $L_\infty$-best approximation, see \cite[Theorem 7.6, p.80]{powell1981}.
+\end{proof}
 
 \subsection{Error of approximation for monomial $x^r$.}
-\noindent \textbf{Plan of this Subsection}:
+\noindent \textbf{Schedule of this Subsection}:
 \begin{itemize}
 \item Prove that $E(x^r,\Lambda)_2$ (\textcolor{blue}{Eq. (2.1)}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $L_2[0,1]$;
 \item Prove that $E(x^r,\Lambda)_\infty$ (\textcolor{blue}{Eq. (2.2)}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $C[0,1]$;
@@ -197,16 +233,31 @@ For $g\in H$, there is a \textbf{unique} $f \in X_n$ such that
 \|g-f \| = \inf_{p\in X_n} \|g-p \| .
 \]
 \end{aux-thm}
-
+\begin{proof}
+Existence is obvious and uniqueness follows from that Hilbert space is strictly convex, see \href{https://math.stackexchange.com/questions/3207301/a-hilbert-space-is-strictly-convex}{details}.
+\end{proof}
 
 We call $f$ \textit{the best approximation} of $g$ from $X_n$ in $H$. 
 
 \begin{aux-cor}\label{aux-cor-1}
-Let $f$ be the best approximation of $g$, then it is equivalent to the orthogonal projection:
-\[
-(g-f, p) = 0,\quad \forall p\in X_n.
-\]
+Let $f$ be the best approximation of $g$, then it is equivalent to the orthogonal projection: $(g-f, p) = 0,\ \forall p\in X_n$.
 \end{aux-cor}
+\begin{proof}
+$(\Leftarrow)$ Let $f$ be the orthogonal projection of $g$ onto $X_n$, i.e., $(g-f,p)=0$, $\forall p\in X_n$. Then
+\[
+\|g-p\|^2 = \|g-f+f-p\|^2 = \|g-f\|^2 + \|f-p\|^2 \geqslant \|g-f\|^2.
+\]
+Thus $f$ is the best approximation.
+
+\vspace{1em}
+
+\noindent $(\Rightarrow)$ Let $f$ satisfy $\|g-f\| = \inf_{p\in X_n} \|g-p\|$. 
+For any $p\in X_n$, let 
+\[
+h(t) = \|g-(f+tp)\|^2 = \|g-f\|^2 - 2t (g-f,p) + t^2 \|p\|^2.
+\]
+Since $h(t)$ achieves its minimum at $t=0$, then $h^\prime(0)=0$, which leads to $(g-f, p)=0$.
+\end{proof}
 
 
 \begin{aux-lem}\label{aux-lem-1}
@@ -226,6 +277,46 @@ G(f_1,\cdots,f_n) =
 \right |.
 \]
 \end{aux-lem}
+\begin{proof}
+The best approximation $f\in X_n$ to $g$ satisfies $(g-f, p) = 0,\ \forall p\in X_n$. Now we suppose that $f = \sum_{i=1}^n a_i f_i$, then 
+\begin{equation}
+\sum_{i=1}^n a_i (f_i,f_k) = (g,f_k),\quad k=1,2,\cdots,n.
+\label{eq-2-1}
+\end{equation}
+On the other hand, since $(g-f, f)=0$, $d^2 = (g-f, g-f) = (g, g-f) = (g,g) - (g,f)$, we have 
+\begin{equation}
+\sum_{i=0}^n a_i (g, f_i) = (g,g) - d^2.
+\label{eq-2-2}
+\end{equation}
+Hence combining \eqref{eq-2-1} with \eqref{eq-2-2} we have
+\[
+\begin{bmatrix}
+1 & (g,f_1) & \cdots & (g,f_n) \\
+0 & (f_1,f_1) & \cdots & (f_n,f_1) \\
+\vdots & \vdots & & \vdots \\
+0 & (f_1,f_n) & \cdots & (f_n,f_n) \\
+\end{bmatrix}
+\begin{bmatrix}
+d^2 \\
+a_1 \\
+\vdots \\
+a_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+(g,g) \\
+(g,f_1) \\
+\vdots \\
+(g,f_n)\\
+\end{bmatrix},
+\]
+and by Cramer's rule, 
+\[
+d^2 = \frac{G(g,f_1,\cdots,f_n)}{G(f_1,\cdots,f_n)}.
+\]
+\end{proof}
+
+
 
 
 \begin{remark}
@@ -250,6 +341,41 @@ For real numbers $a_i$ and $b_k$ that satisfy $a_i+b_k\neq 0$, $1\leqslant i,k \
 \frac{\prod_{n \geqslant i>k\geqslant 1} (a_i-a_k)(b_i-b_k)}{\prod_{1\leqslant i,k \leqslant n} (a_i+b_k)}.
 \]
 \end{aux-lem}
+\begin{proof}
+We denote $D(n) = \det [1/(a_i+b_k)]_{1\leqslant i,k\leqslant n}$. We \textbf{subtract the last row of $D(n)$ from each of the other rows}, and then we can factor out from $D(n)$ by $1,\dots,n-1$ rows and $1,\dots,n$ columns
+\[
+D(n) = 
+\left |
+\begin{array}{ccc}
+\frac{1}{a_1+b_1} & \cdots & \frac{1}{a_1+b_n} \\
+\vdots & & \vdots \\
+\frac{1}{a_{n-1}+b_1} & \cdots & \frac{1}{a_{n-1}+b_n} \\
+1 & \cdots & 1\\
+\end{array}
+\right | \cdot
+\frac{\prod_{i=1}^{n-1}(a_n-a_i)}{\prod_{i=1}^n(a_n+b_k)}.
+\]
+Next we \textbf{subtract the last column from each of the other columns}, and extract the factors by $1,\dots,n-1$ rows and $1,\dots,n-1$ columns
+\[
+D(n) = 
+\left |
+\begin{array}{cccc}
+\frac{1}{a_1+b_1} & \cdots & \frac{1}{a_1+b_{n-1}}  & \frac{1}{a_1+b_n} \\
+\vdots & & \vdots \\
+\frac{1}{a_{n-1}+b_1} & \cdots &  \frac{1}{a_{n-1}+b_{n-1}}  &\frac{1}{a_{n-1}+b_n} \\
+0 & \cdots & 0& 1\\
+\end{array}
+\right | \cdot
+\frac{\prod_{i=1}^{n-1}(a_n-a_i)}{\prod_{i=1}^n(a_n+b_k)}\cdot 
+\frac{\prod_{k=1}^{n-1} (b_n-b_k)}{\prod_{i=1}^{n-1} (a_i+b_n)}.
+\]
+Therefore
+\[
+D(n) = D(n-1) \cdot \frac{\prod_{k=1}^{n-1} (a_n-a_k)(b_n-b_k)}{(a_n+b_n)\prod_{k=1}^{n-1}(a_k+b_n)(a_n+b_k)},
+\]
+by the induction we complete the proof.
+\end{proof}
+
 
 \begin{proof}[Proof of AuxThm \ref{aux-thm-1}]
 Note that for $\lambda, \mu > -1/2$, we have 
@@ -446,7 +572,7 @@ To achieve this goal, we employ Hölder type inequalities.
 \vspace{1em}
 
 \noindent \textcolor[gray]{0.6}{Hölder inequality: 
-For any $1\leqslant p, q\leqslant$ that satisfy $\frac{1}{p}+\frac{1}{q}=1$. Suppose that $f\in L_p(\Omega)$, $g\in L_q(\Omega)$ and $fg\in L_1(\Omega)$, then
+For any $1\leqslant p, q\leqslant \infty$ that satisfy $\frac{1}{p}+\frac{1}{q}=1$. Suppose that $f\in L_p(\Omega)$, $g\in L_q(\Omega)$ and $fg\in L_1(\Omega)$, then
 \[
 \|fg\|_{L_1(\Omega)} \leqslant \|f\|_{L_p(\Omega)} \|g\|_{L_q(\Omega)}.
 \]
@@ -456,9 +582,9 @@ For any $1\leqslant p, q\leqslant$ that satisfy $\frac{1}{p}+\frac{1}{q}=1$. Sup
 \[
 \begin{aligned}
 & |g(x)| \leqslant K x^{\frac{1}{q}-1-\frac{2}{p}} \int_0^x |h(t)|\mathrm{d} t 
-\leqslant K x^{\frac{1}{q}-1-\frac{2}{p}} \left( \int_0^x 1 \mathrm{d} t\right )^{1-\frac{1}{q}} \left( \int_0^x |h(t)|^q\right)^{\frac{1}{q}} \\
-& = K x^{-\frac{2}{p}} \left ( \int_0^x |h(t)|^q \right )^{\frac{1}{q}}
-=: K \left ( \int_0^1 F(x,t) \mathrm{d} t \right )^{\frac{1}{q}}
+\leqslant K x^{\frac{1}{q}-1-\frac{2}{p}} \left( \int_0^x 1 \mathrm{d} t\right )^{1-\frac{1}{q}} \left( \int_0^x |h(t)|^q \mathrm{d} t\right)^{\frac{1}{q}} \\
+& = K x^{-\frac{2}{p}} \left ( \int_0^x |h(t)|^q \mathrm{d} t\right )^{\frac{1}{q}}
+=: K \left ( \int_0^1 F(x,t) \mathrm{d} t \right )^{\frac{1}{q}},
 \end{aligned}
 \]
 where
@@ -511,7 +637,6 @@ where the inequality holds since $0<\frac{q}{p}<1$ and $0<\frac{1}{t}-1 <\infty$
 Note that $q<p$, then Lemma \ref{lem:2:1} is some kind of Inverse Inequality: Higher regularity norm bounded by lower regularity norm.
 \end{remark}
 
-\vspace{2em}
 
 \begin{proof}[Proof of Theorem \ref{thm:2:2}]
 To prove \eqref{eq:2:4}, our goal is to employ Lemma \ref{lem:2:1} and construct the formula
@@ -608,6 +733,13 @@ E(x^r,\Lambda)_p \leqslant \frac{1+{1}/{p}}{(2r+2/p)^{1/p}} \prod_{k=0}^{n} \fra
 \sum_{k=0}^n a_k e^{-\lambda_k t}
 \]
 approximate arbitrarily closely each function $f\in C[0,+\infty]$ if and only if $\lambda_0=0$, $\lambda_k>0$ for $k\geqslant 1$ and $\sum_{k=1}^\infty \lambda_k^{-1} = \infty$.
+
+
+
+
+
+
+
 \newpage
 
 \begin{thebibliography}{99}
