@@ -336,4 +336,4 @@ footer: <p style="font-weight:bold; text-align:left;">  <a href="/README.md"> Ab
 
 
 <SolarSystem />
-Hello! I am Huaijin Wang, Welcome to my website.
+Hello! I am Huaijin Wang, Welcome to the website.

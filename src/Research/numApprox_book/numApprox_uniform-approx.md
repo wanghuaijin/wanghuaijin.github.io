@@ -2,6 +2,7 @@
 title: Uniform Approximation
 date: 2024-09-08
 icon: file
+timeline: false
 ---
 
 [数值逼近 (王仁宏)](/assets/ref/books/numApprox.pdf)

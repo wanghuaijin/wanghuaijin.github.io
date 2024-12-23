@@ -1,10 +1,10 @@
 ---
-title: 基本结论
+title: Basic Approximation
 date: 2024-09-04
 icon: file
 article: true
 star: true
-timeline: true
+timeline: false
 ---
 
 定义在区间$[a,b]$上的连续函数全体构成一个集合$C[a,b]$.

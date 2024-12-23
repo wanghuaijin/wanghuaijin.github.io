@@ -4,7 +4,7 @@
       <h1> &nbsp;  Solar System</h1>
       &nbsp; &nbsp; <hr />
       <p>
-        &nbsp; &nbsp; Accurate time-scaled solar system model 
+        &nbsp; &nbsp; Accurate time-scaled solar system model, 
       </p>
       <p>
        &nbsp; &nbsp; where 1 Earth year equals 15 seconds.

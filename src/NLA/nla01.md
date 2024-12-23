@@ -5,7 +5,7 @@ date: 2024-09-03
 order: 1
 star: true     # 是否加入 /Homepage.html 侧边栏的文章列表
 article: true  # 是否加入 /Homepage.html 中间的文章列表
-timeline: true # 是否加入 /Homepage.html 侧边栏的时间线
+timeline: false # 是否加入 /Homepage.html 侧边栏的时间线
 ---
 本文主要涉及内积，正交性，以及矩阵范数。
 <!-- more -->

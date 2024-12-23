@@ -389,3 +389,13 @@ $$
 *are obtained. Moreover, the first inequality is strict unless all the numbers $\{|f(\xi_i) - p^*(\xi_i)|: i = 0,1,\cdots,n+1 \}$ are equal.*
 
 It is useful to note that, if $p^*$ is the best minimax approximation from $\mathscr{A}$ to $f$, and if the reference in the statement of the last theorem is the set of points $\{\xi_i^*: i=0,1,\cdots,n+1\}$ that occurs in conditions (1.17), (1.18) and (1.19), then all the inequalities of expression (1.32) are satisfied as equations.
+
+
+<p>
+Coming Soon ... 
+</p>
+<p>
+<br><br><br>
+</p>
+
+<DeadLine />

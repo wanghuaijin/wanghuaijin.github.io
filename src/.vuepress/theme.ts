@@ -52,10 +52,12 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      "/demo/": ["12345"],
-      "/timeline/": ["12345"],
-      "/folders.md": ["12345"],
-      "/Thoughts/dimission.html": ["xxx"],
+      "/demo/": ["code?"],
+      "/timeline/": ["code?"],
+      "/Photography/": ["code?"],
+      "/posts/": ["code?"],
+      "/folders.md": ["code?"],
+      "/Thoughts/dimission.html": ["code?"],
     },
   },
 

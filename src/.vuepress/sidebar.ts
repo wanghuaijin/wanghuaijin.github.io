@@ -16,7 +16,6 @@ export default sidebar({
       prefix: "posts/",
       children: "structure",
     },
-    "intro",
     {
       text: "Slides",
       icon: "person-chalkboard",
@@ -38,7 +37,7 @@ export default sidebar({
       icon: "book",
       prefix: "",
       link: "/Reading/",
-      children: ["高效能人士的七个习惯.md", "GTD.md", "test.md"],
+      children: ["sevenHabits.md", "GTD.md", "test.md"],
     },
   ],
   "/Photography/": [
@@ -85,35 +84,35 @@ export default sidebar({
       text: "Numerical Approximation",
       icon: "fa-solid fa-folder-open",
       children: [
-        "approx_basic.md", "Stahl_2003.md",
+        "Stahl_2003.md",
       ]
     },
-    {
-      text: "Books of Approximating Theory",
-      icon: "fa-solid fa-folder-open",
-      prefix: "numApprox_book/",
-      collapsible: true,
-      children:[
-        "numApprox_Weierstrass-Theorem.md", "minimax_approximation.md", "numApprox_uniform-approx.md"
-      ],
-    },
+    // {
+    //   text: "Books of Approximating Theory",
+    //   icon: "fa-solid fa-folder-open",
+    //   prefix: "numApprox_book/",
+    //   collapsible: true,
+    //   children:[
+    //     "numApprox_Weierstrass-Theorem.md", "minimax_approximation.md", "numApprox_uniform-approx.md"
+    //   ],
+    // },
     {
       text: "References",
       icon: "fa-solid fa-folder-open",
       collapsible: true,
       link: "/Research/",
-      children: [
-        {
-          text: "Articles",
-          icon: "fa-solid fa-folder-open",
-          collapsible: true,
-          link: "/Research/",
-          children: [
-            "approx_basic.md", "Stahl_2003.md",
-          ]
-        },
-        "approx_basic.md", "Stahl_2003.md",
-      ]
+      // children: [
+      //   {
+      //     text: "Articles",
+      //     icon: "fa-solid fa-folder-open",
+      //     collapsible: true,
+      //     link: "/Research/",
+      //     children: [
+      //       "approx_basic.md", "Stahl_2003.md",
+      //     ]
+      //   },
+      //   "approx_basic.md", "Stahl_2003.md",
+      // ]
     }
   ],
   "/FEM/": [

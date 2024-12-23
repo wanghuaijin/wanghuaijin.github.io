@@ -32,31 +32,31 @@ heroText:
 
 
 features: 
-  - title: Discussion
+  - title: Discussion Group
     details: "<b>Topic: Approximation Properties of Müntz Polynomials</b>. December 7, 2024."
     icon: sort-up
     link: https://wanghuaijin.github.io/assets/discuss24Dec/intro.pdf
     bgImage: /assets/photos/photo1.jpg
-  - title: Title2
-    details: this is the title 1, you can click on the title name to see details
-    icon: highlighter
-    link: /demo/
-  - title: Title3
-    details: this is the title 1, you can click on the title name to see details
-    icon: highlighter
-    link: /demo/
-  - title: Title4
-    details: this is the title 1, you can click on the title name to see details
-    icon: highlighter
-    link: /demo/
-  - title: Title5
-    details: this is the title 1, you can click on the title name to see details
-    icon: highlighter
-    link: /demo/
-  - title: Title6 TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE Title6 TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE
-    details: 
-    icon: 
-    link: /demo/
+  # - title: Title2
+  #   details: this is the title 1, you can click on the title name to see details
+  #   icon: highlighter
+  #   link: /demo/
+  # - title: Title3
+  #   details: this is the title 1, you can click on the title name to see details
+  #   icon: highlighter
+  #   link: /demo/
+  # - title: Title4
+  #   details: this is the title 1, you can click on the title name to see details
+  #   icon: highlighter
+  #   link: /demo/
+  # - title: Title5
+  #   details: this is the title 1, you can click on the title name to see details
+  #   icon: highlighter
+  #   link: /demo/
+  # - title: Title6 TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE Title6 TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE
+  #   details: 
+  #   icon: 
+  #   link: /demo/
 
 ---
 
@@ -70,8 +70,3 @@ features:
 </script>
 
 
-## Discussion
-### December
-## Codes
-
-## Books

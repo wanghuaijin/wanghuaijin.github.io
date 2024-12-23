@@ -1,6 +1,7 @@
 ---
-title: 张量求导
+title: Derivatives of Tensors
 date: 2024-08-29
+timeline: false
 ---
 
 <!-- more -->

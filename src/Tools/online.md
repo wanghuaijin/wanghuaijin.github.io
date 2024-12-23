@@ -1,5 +1,5 @@
 ---
-title: 在线工具
+title: Online Tools
 lang: "en-US"
 date: 2024-08-31
 icon: "fa-brands fa-internet-explorer"
@@ -7,17 +7,17 @@ order: 3
 ---
 ### VuePress-Hope
 
-- 官网文档：[https://theme-hope.vuejs.press/zh/](https://theme-hope.vuejs.press/zh/)
-- 组件库：[https://plugin-components.vuejs.press/zh/](https://plugin-components.vuejs.press/zh/)
-- Github介绍：[https://mister-hope.com/code/github/deploy.html](https://mister-hope.com/code/github/deploy.html)
+- Official website: [https://theme-hope.vuejs.press/zh/](https://theme-hope.vuejs.press/zh/)
+- Component library: [https://plugin-components.vuejs.press/zh/](https://plugin-components.vuejs.press/zh/)
+- Introduce to Github: [https://mister-hope.com/code/github/deploy.html](https://mister-hope.com/code/github/deploy.html)
 
-### icon查询
+### icon Query
 [https://fontawesome.com/search?o=r&m=free](https://fontawesome.com/search?o=r&m=free)
 
 ### Codepen
 [https://codepen.io/](https://codepen.io/)
 
-以下是一些有趣的图片和动画收藏，可以将它们作为组件嵌入到 HTML 中：
+Here are some interesting collections of images and animations that you can embed as components in your HTML:
 
 - Deadline: [https://codepen.io/jtrancozo/pen/mEoEVw](https://codepen.io/jtrancozo/pen/mEoEVw)
 - Pure CSS Landscape: [https://codepen.io/ivorjetski/pen/xxGYWQG](https://codepen.io/ivorjetski/pen/xxGYWQG)

@@ -1,27 +1,27 @@
 ---
-title: 基本配置
+title: Basic Settings
 icon: file
 order: 1
 ---
 
-## Markdown文件的frontmatter配置
+## Frontmatter settings for Markdown files
 
 ``` md
 ---
 title: 
 icon: 
 date: 2024-01-01
-star: false     # 是否加入 /Homepage.html 侧边栏的文章列表
-article: false  # 是否加入 /Homepage.html 中间的文章列表
-timeline: false # 是否加入 /Homepage.html 侧边栏的时间线
-order: 1        # 当前 markdown 文档在当前目录的顺序
+star: false     # whether to add into the list of articles of the /Homepage.html sidebar
+article: false  # whether to add into the list of articles of /Homepage.html
+timeline: false # whether to add into the list of timeline of the /Homepage.html sidebar
+order: 1        # order of the current markdown documents in the current directory
 category:
   - Guide
 tag:
   - disable
 ---
 
-摘要部分，这部分内容将显示在 /Homepage.html 中的文章列表进行预览
+The summary section, which displays as a preview of the article list in /Homepage.html
 
 <!-- more -->
 ```

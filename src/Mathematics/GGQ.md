@@ -1,5 +1,5 @@
 ---
-title: 广义Gauss积分
+title: Generalized Gauss Quadratures
 date: 2024-08-29
 ---
 ## 简介

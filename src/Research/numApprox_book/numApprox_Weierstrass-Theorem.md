@@ -2,6 +2,7 @@
 title: Weierstrass Theorem
 date: 2024-09-08
 icon: file
+timeline: false
 ---
 
 ## 第一章 Weierstrass 定理与线性算子逼近
