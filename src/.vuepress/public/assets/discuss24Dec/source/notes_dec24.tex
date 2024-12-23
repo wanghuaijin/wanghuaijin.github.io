@@ -79,7 +79,7 @@
 \sum_{k=1}^\infty \frac{1}{\lambda_k} = \infty.
 \]
 \end{cust-thm}
-The density properties can be indeed extended in several ways: unsorted sequences (which may occur different cluster points), complex sequences, and intervals away from the origin.
+The density property can be indeed extended in several ways: unsorted sequences (which may result in distinct cluster points), complex sequences, and intervals away from the origin.
 
 \vspace{1em}
 \noindent $\bullet$ \textbf{$L_p$-Best Approximation by M\"untz Polynomials.}
@@ -151,7 +151,7 @@ When we consider vectors in $\mathbb{R}^2$, the strictly convex property for $L_
 \begin{figure}[H]
 \centering
     \includegraphics[width=1\textwidth]{eps1.eps}  
-    \caption{Unit circles in $\mathbb{R}^2$ with different $L_p$-norm. Download the \href{https://wanghuaijin.github.io/assets/discuss24Dec/images/eps1.eps}{Figure} and  \href{https://wanghuaijin.github.io/assets/discuss24Dec/codes/eps1.eps}{Code}.}
+    \caption{Unit circles in $\mathbb{R}^2$ with different $L_p$-norms. Download the \href{https://wanghuaijin.github.io/assets/discuss24Dec/images/eps1.eps}{Figure} and  \href{https://wanghuaijin.github.io/assets/discuss24Dec/codes/eps1.eps}{Code}.}
 \end{figure}
 
 \begin{aux-thm}
@@ -171,11 +171,11 @@ Then for any $f\in X$, there is just one $L_1$ (or $L_\infty$) best approximatio
 \end{aux-thm}
 
 \subsection{Error of approximation for monomial $x^r$.}
-\noindent \textbf{Plan of this subsection}:
+\noindent \textbf{Plan of this Subsection}:
 \begin{itemize}
-\item Proves $E(x^r,\Lambda)_2$ (\textcolor{blue}{Eq. (2.1)}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $L_2[0,1]$;
-\item Proves $E(x^r,\Lambda)_\infty$ (\textcolor{blue}{Eq. (2.2)}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $C[0,1]$;
-\item Proves $E(x^r,\Lambda)_p$ ($2<p<\infty$) (\textcolor{blue}{Theorem 2.2}), and $\mathcal{M}(\Lambda_\infty)$ is dense in $L_p[0,1]$.
+\item Prove that $E(x^r,\Lambda)_2$ (\textcolor{blue}{Eq. (2.1)}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $L_2[0,1]$;
+\item Prove that $E(x^r,\Lambda)_\infty$ (\textcolor{blue}{Eq. (2.2)}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $C[0,1]$;
+\item Prove that $E(x^r,\Lambda)_p$ ($2<p<\infty$) (\textcolor{blue}{Theorem 2.2}) and $\mathcal{M}(\Lambda_\infty)$ is dense in $L_p[0,1]$.
 \end{itemize}
 
 \subsubsection{Case 1: $p=2$.}
@@ -202,7 +202,7 @@ For $g\in H$, there is a \textbf{unique} $f \in X_n$ such that
 We call $f$ \textit{the best approximation} of $g$ from $X_n$ in $H$. 
 
 \begin{aux-cor}\label{aux-cor-1}
-Let $f$ be the best approximation of $g$, then it is equivalent to orthogonal projection:
+Let $f$ be the best approximation of $g$, then it is equivalent to the orthogonal projection:
 \[
 (g-f, p) = 0,\quad \forall p\in X_n.
 \]
@@ -274,7 +274,7 @@ Let $\Lambda_\infty = \{0=\lambda_0<\lambda_1<\cdots<\lambda_n<\cdots \}$ and $\
 Let $a_k>-1$, the convergence or divergence of infinity product can be related to infinity sum:
 \begin{itemize}
 \item $\prod_k (1+a_k)$ converges if and only if $\sum_k \log (1+a_k)$ converges.
-\item $\prod_k (1+a_k)$ diverges to $0$ (or $+\infty$) if and only if $\sum_k \log (1+a_k)$ diverges to $-\infty$ (or $+\infty$). 
+\item $\prod_k (1+a_k)$ diverges to $0$ $($or $+\infty$$)$ if and only if $\sum_k \log (1+a_k)$ diverges to $-\infty$ $($or $+\infty$$)$. 
 \end{itemize}
 \end{remark}
 
@@ -405,6 +405,7 @@ Then $\forall r\in \mathbb{N}$, $\lim_{n\to\infty} E(x^r,\Lambda_n)_\infty = 0$ 
 
 \subsubsection{Case 3: $2<p<\infty$.}
 \noindent Our goal is to prove the \textcolor{blue}{Theorem 2.2} in \cite{lorentz1996}:
+\setcounter{theorem}{1}
 \begin{theorem}[\textcolor{blue}{Theorem 2.2} in \cite{lorentz1996}] \label{thm:2:2}
 Let $2<p<\infty$ and $\Lambda = \{\lambda_0,\lambda_1, \cdots, \lambda_n \}$ with distinct elements and $\lambda_k>-1/p$. For any $r>-\frac{1}{p}$, we have 
 \begin{equation}
@@ -413,7 +414,7 @@ E(x^r, \Lambda)_p \leqslant \frac{1 + {1}/{p}}{\left (2r+{2}/{p} \right )^{{1}/{
 \label{eq:2:4}
 \end{equation}
 \end{theorem}
-
+\setcounter{theorem}{0}
 \begin{lemma}[\textcolor{blue}{Lemma 2.1} in \cite{lorentz1996}] \label{lem:2:1}
 Let $1\leqslant q<p<\infty$ and let $-\frac{1}{q} < \ell_0 < \ell_1 < \cdots < \ell_n$. For arbitrary real numbers $a_0,a_1,\cdots,a_n$ and 
 \[
@@ -426,6 +427,7 @@ we have
 \label{eq:2:3}
 \end{equation}
 \end{lemma}
+\setcounter{theorem}{2}
 
 \begin{proof}
 Let us denote $K:=1+\frac{1}{p}$ and for $0<x\leqslant 1$
@@ -605,7 +607,7 @@ E(x^r,\Lambda)_p \leqslant \frac{1+{1}/{p}}{(2r+2/p)^{1/p}} \prod_{k=0}^{n} \fra
 \[
 \sum_{k=0}^n a_k e^{-\lambda_k t}
 \]
-approximate arbitrarily closely each function $f\in C[0,+\infty]$ if and only if $\lambda_0=0$ and $\sum_{k=1}^\infty \lambda_k^{-1} = \infty$.
+approximate arbitrarily closely each function $f\in C[0,+\infty]$ if and only if $\lambda_0=0$, $\lambda_k>0$ for $k\geqslant 1$ and $\sum_{k=1}^\infty \lambda_k^{-1} = \infty$.
 \newpage
 
 \begin{thebibliography}{99}
