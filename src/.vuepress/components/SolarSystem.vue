@@ -1,13 +1,13 @@
 
 <template>
     <div class="description" @click="navigateToPage">
-      <h1>Solar System</h1>
-      <hr />
+      <h1> &nbsp;  Solar System</h1>
+      &nbsp; &nbsp; <hr />
       <p>
-        Accurate time-scaled solar system model 
+        &nbsp; &nbsp; Accurate time-scaled solar system model 
       </p>
       <p>
-        where 1 Earth year equals 15 seconds.
+       &nbsp; &nbsp; where 1 Earth year equals 15 seconds.
       </p>
 
       <p class="hide">
@@ -15,7 +15,7 @@
       </p>
       <hr />
       <p class="blink-cursor">
-        Click anywhere to continue...
+        &nbsp; Click anywhere to continue...
       </p>
       <!-- <p class="author">
         Made with <i class="fa fa-heart"></i> by Malik Dellidj
@@ -41,7 +41,6 @@
       <div class="pluto"></div>
       <div class="asteroids-belt"></div>
     </div>
-
   </template>
 
  
@@ -87,6 +86,8 @@
   }
 }
   </script>
+
+
 
 
   <style lang="scss" scoped>
@@ -478,7 +479,7 @@ code{
 //   color: rgb(215, 177, 177);
   font-family: 'Courier New', Courier, monospace;
   /* 添加闪烁动画 */
-  animation: blink 1.5s steps(2, start) infinite;
+  animation: blink 1.8s steps(2, start) infinite;
 }
 
 /* 定义闪烁动画 */

@@ -2,7 +2,7 @@
 # containerClass: home
 # layout: SolarSystem
 home: true
-title: Origin
+title: Homeworld
 # layout: SolarSystem
 # icon: home
 # bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
@@ -329,8 +329,8 @@ navbar: false
 #         details: 让你的网站更像一个 APP
 #         link: ./guide/advanced/pwa.html
 # darkmode: disable
-copyright: <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p>
-footer: <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p> <p style="font-weight:bold; text-align:left;">  <a href="/intro.html"> About </a> </p> <hr> <p  style="text-align:left;"> This personal website is dedicated <br> to exploring cutting-edge technologies, <br> sharing learning insights, and documenting <br> the growth journey—where the power of <br> thought meets endless possibilities.</p>
+copyright: <p style="font-weight:bold; text-align:left;">  <a href="/README.md"> Contact </a> </p> <hr> <p  style="text-align:left;"> Feel free to contact me at <a href="mailto:wanghuaijin@stu.xmu.edu.cn">wanghuaijin@stu.xmu.edu.cn</a> for any questions. </p>
+footer: <p style="font-weight:bold; text-align:left;">  <a href="/README.md"> About </a> </p> <hr> <p  style="text-align:left;"> This is a space where I gather and share knowledge, notes, and experiences. <br> Each post is a result of my thoughts and growth, aiming not only to organize <br> my own knowledge but also to offer value and inspiration to others. </p>
 ---
 
 

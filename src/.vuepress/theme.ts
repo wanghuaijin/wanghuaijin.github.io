@@ -16,11 +16,11 @@ export default hopeTheme({
 
   pure: true,
 
-  hostname: "https://ciaotomorrow.github.io",
+  hostname: "https://wanghuaijin.github.io",
 
   author: {
     name: "Wang Huaijin",
-    url: "https://ciaotomorrow.github.io",
+    url: "https://wanghuaijin.github.io",
   },
 
   iconAssets: "fontawesome-with-brands",
@@ -46,7 +46,7 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-  footer: '<span class="hover-text"> In Mobile <div class="tooltip"> <div class="caption-top">Scan the QR code below</div> <img src="/assets/images/in_mobile.png" alt="Image"> <div class="caption-bottom">View on mobile devices</div></div></span> | <span class="hover-text">Contact Me <div class="tooltip"> <div class="caption-top">Scan the QR code below</div> <img src="/assets/images/contact_me.jpg" alt="Image"> <div class="caption-bottom">Add me as a friend on WeChat</div></div></span> | <span class="hover-text">Support Me <div class="tooltip"> <div class="caption-top">Scan the QR code with WeChat Pay</div> <img src="/assets/images/support_me.jpg" alt="Image"> <div class="caption-bottom">Thank you for your support</div></div></span> | <a href="/intro.html" title="IntroMe" style="color:inherit">About Me</a>',
+  footer: '<span class="hover-text"> In Mobile <div class="tooltip"> <div class="caption-top">Scan the QR code below</div> <img src="/assets/images/in_mobile.png" alt="Image"> <div class="caption-bottom">View on mobile devices</div></div></span> | <span class="hover-text">Contact Me <div class="tooltip"> <div class="caption-top">Scan the QR code below</div> <img src="/assets/images/contact_me.jpg" alt="Image"> <div class="caption-bottom">Add me as a friend on WeChat</div></div></span>  | <a href="/intro.html" title="IntroMe" style="color:inherit">About Me</a>',
 
   displayFooter: true,
 
@@ -55,7 +55,7 @@ export default hopeTheme({
       "/demo/": ["12345"],
       "/timeline/": ["12345"],
       "/folders.md": ["12345"],
-      // "/Thoughts/dimission.html": ["xxx"],
+      "/Thoughts/dimission.html": ["xxx"],
     },
   },
 

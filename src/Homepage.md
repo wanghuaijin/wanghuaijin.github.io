@@ -8,12 +8,13 @@ footer: false
 heroImage: 
 heroFullScreen: false
 bgImage: /assets/images/bg6.jpeg
-tagline: "<p>&nbsp</p>
+bgImageDark: /assets/images/bg6_dark.jpeg
+tagline: '<p>&nbsp</p>
 <br>
 <br>
 <br>
 <br> <!-- Two <br> tags to add empty lines -->
-<p>&nbsp</p>"
+<p >&nbsp</p>'
 heroText: 
 
 # highlights:
@@ -67,6 +68,7 @@ features:
   },
 }
 </script>
+
 
 ## Discussion
 ### December
