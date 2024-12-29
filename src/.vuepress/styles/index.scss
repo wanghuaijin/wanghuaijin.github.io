@@ -99,6 +99,7 @@ body {
 
 
 
+
 // 文本悬停
 .tooltip {
   position: relative;
@@ -126,4 +127,39 @@ body {
 .tooltip:hover .tooltip-content {
   visibility: visible;
   opacity: 1;
+}
+
+
+
+.space {
+  display: inline-block;  /* 确保它作为内联块元素显示 */
+  width: 5px; /* 控制空格的宽度 */
+}
+
+/* hover-text容器样式 */
+/* hover-text容器样式 */
+.hover-note {
+  position: relative; /* 确保子元素能够绝对定位 */
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+  display: inline-block; /* 保证容器在一行内 */
+  white-space: nowrap; /* 防止文本换行 */
+  color: dodgerblue;
+}
+
+/* 默认情况下隐藏悬停内容 */
+.hover-note .hover-content {
+  display: none; /* 隐藏悬停内容 */
+  position: absolute;
+  bottom: 100%; /* 调整悬停内容的显示位置 */
+  left: 0;
+  background-color: #fff; /* 背景颜色 */
+  color: #555; /* 文字颜色 */
+  padding: 5px 10px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+  white-space: nowrap; /* 防止内容换行 */
+}
+
+/* 当鼠标悬停在容器上时，显示悬停内容 */
+.hover-note:hover .hover-content {
+  display: block; /* 显示悬停内容 */
 }

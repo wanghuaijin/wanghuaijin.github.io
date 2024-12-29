@@ -170,6 +170,8 @@ export default hopeTheme({
 
       // install chart.js before enabling it
       // chart: true,
+      
+      footnote: true,
 
       // insert component easily
 

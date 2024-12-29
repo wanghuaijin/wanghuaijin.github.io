@@ -2,6 +2,7 @@
 title: Generalized Gauss Quadratures
 date: 2024-08-29
 ---
+
 ## 简介
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 设$\omega(x)$为一个在有限区间$[a,b]$上几乎处处大于零的连续函数，$\varphi(x)$为$[a,b]$上的可积函数。如果$\varphi(x) \omega(x)$在$[a,b]$上可积，那么我们将其称为$\varphi(x)$关于权函数$\omega(x)$的积分，记为
 $$
@@ -20,6 +21,37 @@ $$
 ## Thoughts
 Gauss-Radau or Gauss-Lobatto?
 
+<span class="hover-text"> 
+In Mobile 
+<div class="tooltip"> 
+    <div class="caption-bottom">View on mobile devices</div>
+</div>
+</span>
+
+脚注 1 链接[^first]。
+
+脚注 2 链接[^second]。
+
+行内的脚注^[行内脚注文本] 定义。
+
+重复的页脚定义[^second]。
+
+[^first]: 脚注 **可以包含特殊标记**
+
+    也可以由多个段落组成
+
+[^second]: 脚注文字。
+
+<div class="hover-note">
+  悬停我看看
+  <div class="hover-content">
+    这是悬停显示的内容 <br>
+    这是悬停显示的内容 <br>
+    这是悬停显示的内容 <br>
+    这是悬停显示的内容 <br>
+    这是悬停显示的内容 <br>
+  </div>
+</div>
 
 ##  
 待更新 ...

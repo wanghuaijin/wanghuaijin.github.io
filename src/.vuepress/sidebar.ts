@@ -134,5 +134,17 @@ export default sidebar({
         "divergence_thm.md", 
       ]
     }
+  ],
+  "/EngLearn/": [
+    "/Homepage.md",
+    {
+      text: "Dec. 2024",
+      icon: "fa-solid fa-folder-open",
+      collapsible: true,
+      link: "/EngLearn/",
+      children: [
+        "241225.md"
+      ]
+    }
   ]
 });

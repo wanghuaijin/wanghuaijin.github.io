@@ -68,6 +68,11 @@ projects:
     name: FEM
     desc: NaN
     link: /FEM/
+  
+  - icon: friend
+    name: EngLearn
+    desc: Records of English Learning
+    link: /EngLearn/
     
   # - icon: https://theme-hope-assets.vuejs.press/logo.svg
   #   name: custom item
