@@ -143,7 +143,7 @@ export default sidebar({
       collapsible: true,
       link: "/EngLearn/",
       children: [
-        "241225.md"
+        "241225.md","241230.md"
       ]
     }
   ]
