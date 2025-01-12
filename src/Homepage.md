@@ -32,7 +32,7 @@ heroText:
 
 
 features: 
-  - title: Discussion Group
+  - title: Weekly Seminar
     details: "<b>Topic: Approximation Properties of Müntz Polynomials</b>. December 7, 2024."
     icon: sort-up
     link: https://wanghuaijin.github.io/assets/discuss24Dec/intro.pdf
