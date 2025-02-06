@@ -2,13 +2,13 @@
 <template>
   <div class="all-background">
     <div class="description" @click="navigateToPage">
-      <h1> <br>&nbsp;  Solar System</h1>
-      &nbsp; &nbsp; <hr />
+      <h1> <br>  Solar System</h1>
+       <hr />
       <p>
-        &nbsp; &nbsp; Accurate time-scaled solar system model, 
+       Accurate time-scaled solar system model, 
       </p>
       <p>
-       &nbsp; &nbsp; where 1 Earth year equals 15 seconds.
+       where 1 Earth year equals 15 seconds.
       </p>
 
       <p class="hide">

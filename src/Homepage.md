@@ -78,6 +78,3 @@ features:
 </script>
 
 
-## Publications
-
-- See [sss](sss)
