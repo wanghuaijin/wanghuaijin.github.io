@@ -14,9 +14,9 @@
       <p class="hide">
         Note the CSS tricks for the Saturn rings (box-shadow) and reverse animation to compensate the orbit.
       </p>
-      <hr />
+      <hr/>
       <p class="blink-cursor">
-        &nbsp; Click anywhere to continue...
+        <br> <br> <br>  <b>Click anywhere to continue...</b>
       </p>
       <!-- <p class="author">
         Made with <i class="fa fa-heart"></i> by Malik Dellidj
@@ -491,10 +491,10 @@ code{
 
 .blink-cursor {
   font-size: 16px;
-//   color: rgb(215, 177, 177);
+  color: rgb(255, 255, 255);
   font-family: 'Courier New', Courier, monospace;
   /* 添加闪烁动画 */
-  animation: blink 1.8s steps(2, start) infinite;
+  animation: blink 1.5s steps(2, start) infinite;
 }
 
 /* 定义闪烁动画 */
@@ -502,9 +502,9 @@ code{
   0% {
     opacity: 1;
   }
-//   50% {
-//     opacity: 0;
-//   }
+  // 50% {
+  //   opacity: 1;
+  // }
   100% {
     opacity: 0;
   }
