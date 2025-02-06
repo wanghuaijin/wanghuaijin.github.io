@@ -23,7 +23,7 @@ export default defineUserConfig({
   description: "",
   head: [
     // 站点图标
-    ["link", { rel: "icon", href: "/assets/images/favicon2.ico" }],
+    ["link", { rel: "icon", href: "/favicon.ico" }],
   ],
 
   theme,
