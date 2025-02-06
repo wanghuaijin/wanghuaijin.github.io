@@ -1,7 +1,8 @@
 
 <template>
+  <div class="all-background">
     <div class="description" @click="navigateToPage">
-      <h1> &nbsp;  Solar System</h1>
+      <h1> <br>&nbsp;  Solar System</h1>
       &nbsp; &nbsp; <hr />
       <p>
         &nbsp; &nbsp; Accurate time-scaled solar system model, 
@@ -41,23 +42,18 @@
       <div class="pluto"></div>
       <div class="asteroids-belt"></div>
     </div>
+  </div>
   </template>
 
  
 <script>
 // import { useDarkmode } from "vuepress-theme-hope/client";
   export default {
-    mounted() {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  },
+  //   mounted() {
+  //   document.documentElement.setAttribute('data-theme', 'dark');
+  // },
 
-//     mounted() {
-//     // 启用深色模式
-//     this.$themeConfig.darkmode = 'enable';
 
-//     // 或者禁用深色模式
-//     // this.$themeConfig.darkmode = 'disable';
-//   },
   
     // setup() {
     //     // 获取 darkmode 状态
@@ -146,9 +142,12 @@ $asteroids-belt-orb : 300px; $asteroids-belt-pl: 210px;
 }
 
 html, body{
+  margin: 0;
+  padding: 0;
   height:100%;
   width:100%;
 }
+
 
 
 body{
@@ -158,6 +157,8 @@ body{
   background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
   background-attachment:fixed;
 }
+
+
 
 h1{
   font-weight:300;
@@ -215,6 +216,20 @@ code{
   color: #ae94c0;
   font-family:Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size:.9em;
+}
+
+.all-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #010101;
+  color:#c0bebe;
 }
 
 .solar-syst{

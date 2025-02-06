@@ -1,6 +1,6 @@
 ---
 # containerClass: home
-# layout: SolarSystem
+layout: SolarSystem
 home: true
 title: Homeworld
 # layout: SolarSystem

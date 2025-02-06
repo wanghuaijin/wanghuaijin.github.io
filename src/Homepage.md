@@ -33,6 +33,11 @@ heroText:
 #   - header: Nothing to the header
 #     description: DESCRIPTION
 
+projects:
+  - icon: project
+    name: Mathematics
+    desc: Content of my major
+    link: /Mathematics/
 
 features: 
   - title: Weekly Seminar
@@ -73,3 +78,6 @@ features:
 </script>
 
 
+## Publications
+
+- See [sss](sss)

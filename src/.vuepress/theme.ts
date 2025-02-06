@@ -5,7 +5,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  darkmode: "enable",
+  darkmode: "disable",
 
   lastUpdated: true,
   contributors: false,
