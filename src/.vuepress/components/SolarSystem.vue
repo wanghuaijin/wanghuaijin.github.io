@@ -2,22 +2,25 @@
 <template>
   <div class="all-background">
     <div class="description" @click="navigateToPage">
-      <h1> <br>  Solar System</h1>
-       <hr />
+      <h1> <br>  Hello And <br> Wekcome!</h1>
+      <p class="blink-cursor">
+        <br> <br> <br>  <b>Click anywhere to continue...</b>
+      </p>
+    </div>
+    <div class="description2" @click="navigateToPage">
+      <hr/>
       <p>
-       Accurate time-scaled solar system model, 
+       Time-scaled solar system model, 
       </p>
       <p>
-       where 1 Earth year equals 15 seconds.
+       where 1 Earth year equals 15 sec.
       </p>
 
       <p class="hide">
         Note the CSS tricks for the Saturn rings (box-shadow) and reverse animation to compensate the orbit.
       </p>
       <hr/>
-      <p class="blink-cursor">
-        <br> <br> <br>  <b>Click anywhere to continue...</b>
-      </p>
+
       <!-- <p class="author">
         Made with <i class="fa fa-heart"></i> by Malik Dellidj
       </p>
@@ -199,6 +202,22 @@ a, a:visited{
       .fa-heart{
         color:#860014;
       }
+    }
+  }
+}
+
+
+.description2{
+  padding:30px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  min-width:25%;
+  z-index:999;
+  p{
+    font-size:.7em;
+    & + p{
+      margin-top:20px;
     }
   }
 }
