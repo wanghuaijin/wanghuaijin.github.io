@@ -45,6 +45,12 @@ features:
     icon: sort-up
     link: https://wanghuaijin.github.io/assets/discuss24Dec/intro.pdf
     bgImage: /assets/photos/photo1.jpg
+
+  - title: NDE
+    details: "ss"
+    icon: 
+    link: /Mathematics/NDE.md
+    bgImage: /assets/photos/photo1.jpg
   # - title: Title2
   #   details: this is the title 1, you can click on the title name to see details
   #   icon: highlighter
@@ -78,3 +84,5 @@ features:
 </script> -->
 
 
+## Basic Computations
+- <a href="/coding/jacobi.md"> Jacobi </a>

@@ -146,5 +146,15 @@ export default sidebar({
         "241225.md","241230.md"
       ]
     }
-  ]
+  ],
+  "/coding/": [
+    "/Homepage.md",
+    {text: "Orthogonal Algebraic Polynomials",
+      icon: "",
+      prefix: "",
+      collapsible: true,
+      link: "/coding/",
+      children: ["jacobi.md"],
+    },
+  ],
 });
