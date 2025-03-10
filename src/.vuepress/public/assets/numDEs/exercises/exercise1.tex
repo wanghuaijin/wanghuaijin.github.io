@@ -1,0 +1,170 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\noindent Consider the initial value plroblem (IVP):
+\begin{equation}
+\left\{
+\begin{aligned}
+u^{\prime}(t) & =f(t, u(t)), t \in(0, T], \\
+u(0) & =u_0.
+\end{aligned}
+\right .
+\label{eq:ivp}
+\end{equation}
+Discretize the interval $[0,T]$ into $M+1$ equally spaced nodes, forming a grid defined by $t^n =  n h$ for $n=0,1,\cdots,M$, where $h = T/M$.We assume that $f$ is Lipschitz continuous in its second variable uniformly with respect to its first variable and that $u$ is at least three times differentiable.
+
+\setcounter{section}{2}
+
+\setcounter{exercise}{0}
+
+
+\begin{exercise}
+Carry out an error analysis for Backward Euler schema.
+\end{exercise}
+\begin{proof}[Solution]
+Backward Euler schema:
+\begin{equation}
+\frac{u^{n} - u^{n-1}}{h} = f(t^n, u^n),\quad n = 1,2,\cdots,M.
+\label{eq:1-1}
+\end{equation}
+Its truncation error $R_b^n$:
+\begin{equation}
+R_b^n = \frac{u(t^n) - u(t^{n-1})}{h} - f(t^n, u(t^n)), \ n=1,\cdots,M.
+\label{eq:1-2}
+\end{equation}
+By the Tylor development:
+\[
+u(t^{n-1}) = u(t^n) - h u^\prime (t^n) + \frac{h^2}{2} u^{\prime\prime} (\xi^n), \ \text{for some} \ \xi^n\in [t^{n-1}, t^n].
+\]
+We have $R_b^n = O(h)$ as $h\to 0$.
+Let $e^n = u(t^n) - u^n$.
+Since \eqref{eq:1-1} and \eqref{eq:1-2}, we have
+\[
+\frac{e^n - e^{n-1}}{h} - R^n_b = f(t^n, u(t^n))-f(t^n, u^n).
+\]
+Let $R = \max_{1\leqslant n \leqslant M} |R_b^n|$, and by $|f(t^n, u(t^n))-f(t^n, u^n)|\leqslant L |e^n|$, we have
+\[
+|e^n| \leqslant |e^{n-1}| + hL |e^n| + h R.
+\]
+Thus if $h<L^{-1}$,
+\[
+|e^n| \leqslant \frac{|e^{n-1}|}{1-hL} + \frac{hR}{1-hL} \leqslant \cdots \leqslant 
+\frac{|e^{0}|}{(1-hL)^n} + hR \sum_{k=1}^n \frac{1}{(1-hL)^k}
+= \frac{|e^{0}|}{(1-hL)^n} + \frac{hR}{hL} [(1-hL)^{-n}-1].
+\]
+Note that $|e^0|=0$, $(1-hL)^{-n} \leqslant (1-hL)^{-M} = (1-hL)^{-T/h}$, $(1-hL)^{-T/h}$ is non-decreasing over $h\in(0,L^{-1})$, and
+\[
+\lim_{h\to 0}   (1-hL)^{-T/h} = e^{LT}.
+\]
+Thus $|e^n| = O(h)$ as $h \to 0$.
+\end{proof}
+
+
+
+\begin{exercise}
+Carry out an error analysis for Crank-Nicolson (Trapezoidal) schema.
+\end{exercise}
+\begin{proof}[Solution]
+Crank-Nicolson schema:
+\begin{equation}
+\frac{u^{n+1}-u^n}{h}=\frac{f\left(t^{n+1}, u^{n+1}\right)+f\left(t^n, u^n\right)}{2},\ n=0,1,\cdots,M-1.
+\label{eq:1-3}
+\end{equation}
+Its truncation error $R_c^n$:
+\begin{equation}
+R_c^n = \frac{u(t^{n+1}) - u(t^n)}{h} - \frac{f(t^{n+1},u(t^{n+1})) + f(t^n,u(t^n))}{2}.
+\label{eq:1-4}
+\end{equation}
+By Tylor development:
+\[
+u(t^{n+1}) = u(t^n) + hu^\prime(t^n) + \frac{h^2}{2} u^{\prime\prime}(t^n) + \frac{h^3}{6} u^{\prime\prime\prime}(\xi^n),\quad \ \text{for some}\ \xi^n \in [t^n, t^{n+1}],
+\]
+and
+\[
+u^\prime(t^{n+1}) = u^\prime (t^n) + hu^{\prime\prime}(t^n) + \frac{h^2}{2} u^{\prime\prime\prime}(\eta^n) ,\quad \ \text{for some}\ \eta^n \in [t^n, t^{n+1}],
+\]
+we have $R_c^n = O(h^2)$ as $h\to 0$.
+Let $e^n = u(t^n) - u^n$. Since \eqref{eq:1-3} and \eqref{eq:1-4}, we have
+\[
+\frac{e^{n+1} - e^n}{h} = \frac{f(t^{n+1}, u(t^{n+1}))-f(t^{n+1}, u^{n+1}) +  f(t^n, u(t^n)) - f(t^n, u^n)}{2} +R^n_c.
+\]
+Let $R = \max_{0\leqslant n \leqslant M-1} |R_c^n|$, and by $|f(t^n, u(t^n))-f(t^n, u^n)|\leqslant L |e^n|$, we have
+\[
+|e^{n+1}| \leqslant |e^n| + h R + h \frac{L |e^{n+1}| + L |e^{n}|}{2} .
+\]
+Hence
+\[
+|e^{n+1}|  \leqslant \frac{2+hL}{2-hL} |e^n| + h R\leqslant \cdots \leqslant 
+\left(\frac{2+hL}{2-hL} \right)^{n+1} |e^0| + h R \frac{1-\left( \frac{2+hL}{2-hL} \right)^{n+1}}{1-\frac{2+hL}{2-hL}}.
+\]
+Note that $|e^0| = 0$ and
+\[
+\lim_{h\to 0} \frac{1-\left( \frac{2+hL}{2-hL} \right)^{n+1}}{1-\frac{2+hL}{2-hL}} \leqslant M = T/h.
+\]
+Thus $|e^n| = O(h^2)$ as $h\to 0$.
+\end{proof}
+
+
+\end{document}
+
