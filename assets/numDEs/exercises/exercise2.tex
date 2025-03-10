@@ -1,0 +1,112 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\setcounter{section}{2}
+
+\setcounter{exercise}{2}
+\begin{exercise}
+Determine the absolute stability region of the Crank-Nicolson schema and Leapfrog schema.
+\end{exercise}
+\begin{proof}[Solution]
+Model problem:
+\[
+\frac{\mathrm{d} u}{\mathrm{d} t} = \lambda u,\quad \text{where } \lambda \ \text{is a constant.}
+\]
+~\\
+\noindent $\bullet$ Crank-Nicolson schema:
+\[
+u^{n+1} = u^n + \frac{\lambda h( u^{n+1} + u^n)}{2} \Rightarrow u^{n+1} = \frac{2+h\lambda}{2-h\lambda} u^n.
+\]
+Let $z=\lambda h$. The absolute stability region of this schema is
+\[
+\left \{z: \Big | \frac{2+z}{2-z} \Big | \leqslant 1  \right \} = \left \{z:  \mathrm{Re}(z) \leqslant 0 \right \} .
+\]
+In fact, if we suppose that $z=a+b \mathrm{i}$, then $|2+z| \leqslant |2-z|$ is equivalent to
+\[
+(a+2)^2 + b^2 \leqslant (a-2)^2+b^2 \Leftrightarrow a\leqslant 0.
+\]
+~\\
+\noindent $\bullet$ Leapfrog schema:
+\[
+u^{n+1} = 2h\lambda u^n + u^{n-1}.
+\]
+Let $z=\lambda h$, then its characteristic polynomial is $\rho(\xi) = \xi^2-2z\xi-1$. Hence roots of $\rho(\xi)$ are $\xi_{1,2} = z\pm \sqrt{z^2+1}$. The schema is absolute stable if and only if the roots satisfy the condition (see \cite[Definition 7.1, p. 153]{leveque2007}):
+\[
+\begin{aligned}
+& |\xi_j | \leqslant 1,\quad j=1,2.\\
+& \text{If } \xi_1 = \xi_2, \text{ then } |\xi_1|<1.
+\end{aligned}
+\]
+We note that $|\xi_1| |\xi_2| = 1$, then the only possibility to satisfy the root condition is $|\xi_1| = |\xi_2|=1$, which leads to $z$ is the pure imaginary number. By setting $z = b\mathrm{i}$, we obtain $b\in (-1,1)$. Hence the absolute stability region is $\{z = b\mathrm{i}: b\in (-1,1)\}$.
+\end{proof}
+
+
+
+\begin{thebibliography}{99}
+\bibitem[LeVeque (2007)]{leveque2007} \href{https://wanghuaijin.github.io/assets/numDEs/Leveque2007.pdf}{LeVeque R J. Finite difference methods for ordinary and partial differential equations: steady-state and time-dependent problems[M]. Society for Industrial and Applied Mathematics, 2007.}
+\end{thebibliography}
+
+
+\end{document}
+
