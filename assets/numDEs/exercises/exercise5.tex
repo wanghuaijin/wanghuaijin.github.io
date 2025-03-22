@@ -1,0 +1,168 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+
+%\maketitle
+
+
+
+
+\newpage
+
+
+
+\setcounter{section}{2}
+\setcounter{exercise}{14}
+\begin{exercise}
+Consider the elliptic problem
+\[
+\begin{aligned}
+-u&_{xx}  =f, \quad \forall x\in (a,b),\\
+& u(a) = 0, \ u^\prime(b) = \beta,
+\end{aligned}
+\]
+and its finite difference schema
+\[
+\begin{aligned}
+ - \frac{u_{i+1} - 2u_i + u_{i-1}}{h^2} = f_i,& \quad \forall i=1,\cdots,N-1,\\
+ u_0 = 0,& \\
+ \frac{u_{N}- u_{N-1}}{h} = \beta, & \\
+\end{aligned}
+\]
+in an uniform mesh $\{x_i\}_{i=0}^{N}$, $x_i = a+ih$, $h = (b-a)/N$. \\
+1) Derive an estimate for the truncation errors:
+\[
+R_i^{(1)} = L_h [u(x_i)] - [L u] (x_i) \text{  for  } i=1,\cdots,N-1, \ R^{(2)} = \frac{u(x_{N}) - u(x_{N-1})}{h} - u^\prime(x_{N}).
+\]
+2) Rewrite the discrete problem under matrix form. \\
+3) Establish an a priori estimate for $\|u_h\|_1$. \\
+4) Derive an error estimate for $\|e_h\|_1$, where $e_i = u(x_i) - u_i$.
+\end{exercise}
+
+
+\newpage
+\section*{Appendix: Notations for Discrete Representation}
+ Let $I = [a,b]$. We define the discrete grid points as
+\[
+a=x_0<x_1<\cdots<x_N = b.
+\]
+We introduce the following sets:
+\[
+I_h = \{x_1,\cdots,x_{N-1}\}, \ \bar{I}_h = \{x_0,x_1,\cdots, x_N\}, \ I_h^+ = \{x_1,\cdots,x_N\}.
+\]
+The grid spacing is defined as
+\[
+h_i = x_{i}- x_{i-1}, \quad i=1,\cdots,N.
+\]
+Additionally, we define the averaged grid spacing:
+\[
+\begin{aligned}
+& \bar{h}_i = \frac{1}{2} (h_i+h_{i+1}), \ i=1,\cdots,N-1,\\
+& \bar{h}_0  = \frac{1}{2} h_1, \quad \bar{h}_N = \frac{1}{2} h_N.
+\end{aligned}
+\]
+A discrete function defined on $\bar{I}_h$ is denoted as 
+\[
+v_h = \{v_0,v_1,\cdots, v_N \}.
+\]
+We define the following difference operators:
+\[
+\begin{aligned}
+& (v_i)_{\bar{x}} := v_{i,\bar{x}} : = \frac{v_i-v_{i-1}}{h_i}, \ i =1,\cdots,N, \\
+& (v_i)_x := v_{i, x} := \frac{v_{i+1} - v_i}{h_{i+1}},\ i=0,\cdots,N-1, \\
+&  (v_i)_{\hat{x}} := v_{i, \hat{x}} := \frac{v_{i+1} - v_i}{\bar{h}_{i}},\ i=0,\cdots,N-1.
+\end{aligned}
+\]
+The discrete inner products are given by
+\begin{equation}
+(u_h, v_h)_{I_h} = \sum_{i=1}^{N-1} u_i v_i \bar{h}_i, \
+(u_h, v_h)_{\bar{I}_h} = \sum_{i=0}^{N} u_i v_i \bar{h}_i, \
+(u_h, v_h)_{I^+_h} = \sum_{i=1}^{N} u_i v_i h_i.
+\label{eq:d-ip}
+\end{equation}
+We define the discrete norms as follows:
+\begin{equation}
+\begin{aligned}
+& \|v_h\|_c := \max_{\bar{I}_h} |v_i|,\ \|v_h\|_0 := (v_h,v_h)_{\bar{I}_h}^{1/2}, \\
+& |v_h|_1 := ((v_h)_{\bar{x}}, (v_h)_{\bar{x}})_{I_h^+}^{1/2}, \ \|v_h\|_1^2 = \|v_h\|_0^2 + |v_h|_1^2.
+\end{aligned}
+\label{eq:d-in}
+\end{equation}
+The discrete integral by parts:
+\begin{equation}
+\sum_{i=m+1}^n v_i (w_i)_{\bar{x}} h_i = - \sum_{i=m}^{n-1} (v_i)_x w_i h_{i+1} + v_n w_n - v_m w_m,\ \text{for some} \ 0\leqslant m < n \leqslant N.
+\label{eq:d-ibp}
+\end{equation}
+The discrete Green formula:
+\begin{equation}
+\sum_{i=m+1}^{n-1} \left( (u_i)_{\bar{x}} \right )_{\hat{x}} v_i \bar{h}_i = - \sum_{i=m+1}^n (u_i)_{\bar{x}} (v_i)_{\bar{x}} h_i + (u_n)_{\bar{x}} v_n - (u_m)_x v_m,\ \text{for some} \ 0\leqslant m < n \leqslant N.
+\label{eq:d-gf}
+\end{equation}
+The discrete Cauchy-Schwarz inequality states that
+\begin{equation}
+|(u_h, v_h)_{\bar{I}_h}| \leqslant (u_h, u_h)_{\bar{I}_h}^{1/2} (v_h, v_h)_{\bar{I}_h}^{1/2}.
+\label{eq:d-csi}
+\end{equation}
+If $v_0 = 0$ (or $v_N=0$ or $v_0=v_N=0$), the discrete Poincar\'e inequality holds:
+\begin{equation}
+\|v_h\|_c \leqslant C |v_h|_1, \quad \|v_h\|_0 \leqslant C |v_h|_1,
+\label{eq:d-pi}
+\end{equation}
+where $C$ is a constant depending only on $a$ and $b$.
+
+
+\end{document}
+
