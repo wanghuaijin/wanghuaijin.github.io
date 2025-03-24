@@ -93,7 +93,7 @@ in an uniform mesh $\{x_i \}_{i=0}^N$, $x_i = a+ih$, $h = (b-a)/N$. \\
 \[
 L_h u_i =  -\frac{u_{i+1} - 2u_i + u_{i-1}}{h^2} + \frac{u_{i+1} - u_{i-1}}{2h} + u_i.
 \]
-Then truncation error $R_i = L_h [u(x_i)] - [L u] (x_i)$. By the Tylor development
+Then the truncation error $R_i = L_h [u(x_i)] - [L u] (x_i)$. By the Tylor development
 \[
 u(x_{i+1}) = u(x_i) + h u^\prime(x_i) + \frac{h^2}{2} u^{\prime \prime} (x_i) + \frac{h^3}{3!} u^{(3)} (x_i) + \frac{h^4}{4!} u^{(4)} (\xi_i), \ \text{for some} \ \xi_i \in (x_i, x_{i+1}),
 \]
@@ -121,7 +121,7 @@ Using the fact that $u_0=u_N=0$, it is equivalent to
 \[
 \left( (u_h)_{\bar{x}}, (u_h)_{\bar{x}} \right)_{I_h^+} + \left (u_h,u_h \right )_{\bar{I}_h} = \left (f_h, u_h \right)_{\bar{I}_h}.
 \]
-By the definition of the discrete inner norm \eqref{eq:d-in}, the left-hand side of above formula is $\|u_h\|_1^2$.
+By the definition of the discrete inner norm \eqref{eq:d-in}, the left-hand side of the above formula is $\|u_h\|_1^2$.
 By the discrete Cauchy-Schwarz inequality \eqref{eq:d-csi}, and the discrete Poincar\'e inequality \eqref{eq:d-pi}: $\|u_h\|_0 \leqslant C |u_h|_1 \leqslant C \|u_h\|_1$, we have
 \[
 \|u_h\|_1^2 \leqslant \|f_h\|_0 \|u_h\|_0 \leqslant C\|f_h\|_0 \| u_h\|_1 \ \Longrightarrow \ \|u_h\|_1 \leqslant C \|f_h\|_0.

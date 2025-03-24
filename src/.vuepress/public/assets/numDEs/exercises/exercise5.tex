@@ -91,6 +91,230 @@ R_i^{(1)} = L_h [u(x_i)] - [L u] (x_i) \text{  for  } i=1,\cdots,N-1, \ R^{(2)} 
 3) Establish an a priori estimate for $\|u_h\|_1$. \\
 4) Derive an error estimate for $\|e_h\|_1$, where $e_i = u(x_i) - u_i$.
 \end{exercise}
+\begin{proof}[Solution]
+1). Let the operator $L u = -u_{xx}$ and the discrete operator $L_h$ on $\{u_i\}_{i=1}^{N-1}$ as
+\[
+L_h u_i =  - \frac{u_{i+1} - 2u_i + u_{i-1}}{h^2}.
+\]
+By the Tylor development:
+\[
+u(x_{i+1}) = u(x_i) + h u^\prime(x_i) + \frac{h^2}{2} u^{\prime \prime} (x_i) + \frac{h^3}{3!} u^{(3)} (x_i) + \frac{h^4}{4!} u^{(4)} (\xi_i), \ \text{for some} \ \xi_i \in (x_i, x_{i+1}),
+\]
+\[
+u(x_{i-1}) = u(x_i) - h u^\prime(x_i) + \frac{h^2}{2} u^{\prime \prime} (x_i) - \frac{h^3}{3!} u^{(3)} (x_i) + \frac{h^4}{4!} u^{(4)} (\eta_i), \ \text{for some} \ \eta_i \in (x_{i-1},x_{i}),
+\]
+we obtain that $R^{(1)}_i =  L_h [u(x_i)] - [L u] (x_i) = O(h^2)$, while $R^{(2)} = O(h)$  as $h\to 0$. \\
+2).
+\[
+\left[\begin{array}{ccccc}
+\frac{2}{h^2} & -\frac{1}{h^2} & & & \\
+-\frac{1}{h^2} & \frac{2}{h^2} & -\frac{1}{h^2} & & \\
+& \ddots & \ddots & \ddots & \\
+& & -\frac{1}{h^2} & \frac{2}{h^2} & -\frac{1}{h^2} \\
+& & & -\frac{1}{h} & \frac{1}{h}
+\end{array}\right]\left[\begin{array}{c}
+u_1 \\
+u_2 \\
+\vdots \\
+u_{N-1} \\
+u_N
+\end{array}\right]=\left[\begin{array}{c}
+f_1 \\
+f_2 \\
+\vdots \\
+f_{N-1} \\
+\beta
+\end{array}\right],
+\]
+or
+\[
+\left[\begin{array}{ccccc}
+2 & -1 & & & \\
+-1 & 2 & -1 & & \\
+& \ddots & \ddots & \ddots & \\
+& & -1 & 2 & -1 \\
+& & & -1 & 1
+\end{array}\right]\left[\begin{array}{c}
+u_1 \\
+u_2 \\
+\vdots \\
+u_{N-1} \\
+u_N
+\end{array}\right]=\left[\begin{array}{c}
+h^2 f_1 \\
+h^2 f_2 \\
+\vdots \\
+h^2 f_{N-1} \\
+h \beta
+\end{array}\right].
+\]
+3). Note that $L_h u_i=-\left(\left(u_i\right)_{\bar{x}}\right)_{\hat{x}}$, then multiplying both sides of the finite difference schema $L_h u_i = f_i$ by $u_i h_i$ yields
+\[
+-\left(\left(u_i\right)_{\bar{x}}\right)_{\hat{x}} u_i h_i  = f_i u_i h_i,\quad \forall i=1,\cdots,N-1.
+\]
+Summing in $i$ gives
+\[
+- \left(\left(\left(u_h\right)_{\bar{x}}\right)_{\hat{x}}, u_h \right )_{I_h} = (f_h, u_h)_{I_h}.
+\]
+In virtue of discrete Green formula \eqref{eq:d-gf} and the fact that $u_0=0$, we have
+\[
+- \left(\left(\left(u_h\right)_{\bar{x}}\right)_{\hat{x}}, u_h \right )_{I_h} = \left( (u_h)_{\bar{x}}, (u_h)_{\bar{x}} \right)_{I_h^+} - (u_N)_{\bar{x}} u_N.
+\]
+Note that $(u_N)_{\bar{x}} = \beta$, and
+\[
+u_N = \sum_{i=1}^N (u_i)_{\bar{x}} h \leqslant \left(\sum_{i=1}^N h \right)^{1/2} \left(\sum_{i=1}^N (u_i)_{\bar{x}}^2 h \right)^{1/2} = \sqrt{b-a} |u_h|_1.
+\]
+We have
+\[
+|u_h|_1^2 = \left( (u_h)_{\bar{x}}, (u_h)_{\bar{x}} \right)_{I_h^+} = \beta u_N + (f_h, u_h)_{I_h}.
+\]
+By discrete Cauchy-Schwarz inequality:
+\[
+(f_h, u_h)_{I_h} \leqslant \left( \sum_{i=1}^{N-1} f_i^2 h \right )^{1/2} \left( \sum_{i=1}^{N-1} u_i^2 h\right)^{1/2} \leqslant \|f_h\|_0 \|u_h\|_0.
+\]
+By discrete Poincar\'e inequality: $\|u_h\|_0 \leqslant C |u_h|_1$, we obtain
+\[
+|u_h|_1 \leqslant C (\|f_h\|_0 + |\beta|),
+\]
+where $C$ represents a constant depending only on $a$ and $b$, and it may different in different scenarios. Thus by using discrete Poincar\'e again, we obtain
+\[
+\|u_h\|_1 = \left( \|u_h\|_0^2 + |u_h|_1^2 \right)^{1/2} \leqslant C |u_h|_1 \leqslant C (\|f_h\|_0 + |\beta|).
+\]
+4). It is obvious that 
+\[
+\left\{
+\begin{aligned}
+& L_h e_i=R_i,  \quad \forall i=1,2, \cdots, N-1, \\
+& e_0=0, \\
+& \frac{e_N-e_{N-1}}{h}=R^{(2)}.
+\end{aligned} \right.
+\]
+By 1) and 3) we have
+\[
+\|e_h\|_1 \leqslant C (\|R_h^{(1)}\|_0 + |R^{(2)}|) = O(h)\ \text{as}\ h\to 0.
+\]
+\end{proof}
+
+
+\setcounter{section}{3}
+\setcounter{exercise}{0}
+\begin{exercise}
+Derive an estimate for the truncation error of the 9-point schema.
+\end{exercise}
+\begin{proof}[Solution]
+Consider the 2D problem:
+\[
+\left \{
+\begin{aligned}
+L u (\mathbf{x}) = f(\mathbf{x}),& \quad \forall \mathbf{x} \in \Omega, \\
+u(\mathbf{x}) = 0,&  \quad \forall \mathbf{x} \in \partial \Omega, \\
+\end{aligned}
+\right .
+\]
+where $\Omega = (a,b)^2$ and $L u = -\Delta u$. Let $\{\mathbf{x}_{i, j}: i=0,\cdots,N_x, j=0,\cdots,N_y \}$ be the discrete mesh in $\Omega$ equispaced of $h_x = (b-a)/N_x$ and $h_y = (b-a)/N_y$ over $x$ and $y$ axis respectively. Then the coordinate of $\mathbf{x}_{i,j}$ is $(a+i h_x, a+j h_y)$.
+
+The 9-point schema is
+\[
+\left\{
+\begin{aligned}
+\bar{L}_h u_{i,j} = \bar{f} (\mathbf{x}_{i,j}), & \quad \forall \mathbf{x}_{i,j} \in \Omega, \\
+u_{i,j} = 0,& \quad \forall \mathbf{x}_{i,j} \in \partial \Omega,
+\end{aligned}
+\right.
+\]
+where 
+\begin{equation}
+\begin{aligned}
+\bar{L}_h u_{i,j} = L_h u_{i,j} - \frac{h_x^2+h_y^2}{12 h_x^2 h_y^2} & \left[ u_{i+1,j+1} - 2u_{i,j+1} + u_{i-1,j+1} \right.  \\
+& - 2u_{i+1,j} + 4u_{i,j} - 2u_{i-1,j}  \\
+ & \left.  + u_{i+1,j-1} - 2u_{i,j-1} + u_{i-1,j-1} \right], 
+\end{aligned}
+\label{eq:3-1-1}
+\end{equation}
+\begin{equation}
+L_h u_{i,j} = -\frac{u_{i+1,j} - 2u_{i,j} + u_{i-1,j}}{h_x^2} - \frac{u_{i,j+1} - 2u_{i,j} + u_{i,j-1}}{h_y^2},
+\label{eq:3-1-2}
+\end{equation}
+and $\bar{f} (\mathbf{x}_{i,j})$ is given by
+\begin{equation}
+\bar{f} (\mathbf{x}_{i,j})= f(\mathbf{x}_{i,j}) + \frac{1}{12} \left( h_x^2 \frac{\partial^2 f}{\partial x^2} + h_y^2 \frac{\partial^2 f}{\partial y^2} \right) (\mathbf{x}_{i,j}).
+\label{eq:3-1-3}
+\end{equation}
+The truncation error $\bar{R}_{i,j} = \bar{L}_h [u(\mathbf{x}_{i,j})] - \bar{f}(\mathbf{x}_{i,j})$. By the Tylor development, we have
+\[
+u(\mathbf{x}_{i+1,j}) = u(\mathbf{x}_{i,j}) + h_x \frac{\partial u}{\partial x} (\mathbf{x}_{i,j}) + \frac{h_x^2}{2} \frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j}) + \frac{h_x^3}{3!} \frac{\partial^3 u}{\partial x^3} (\mathbf{x}_{i,j}) 
++ \frac{h_x^4}{4!} \frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i, j}) + O(h_x^4),  
+\]
+\[
+u(\mathbf{x}_{i-1,j}) = u(\mathbf{x}_{i,j}) - h_x \frac{\partial u}{\partial x} (\mathbf{x}_{i,j}) + \frac{h_x^2}{2} \frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j}) - \frac{h_x^3}{3!} \frac{\partial^3 u}{\partial x^3} (\mathbf{x}_{i,j}) 
++ \frac{h_x^4}{4!} \frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i, j}) + O(h_x^4), 
+\]
+\[
+u(\mathbf{x}_{i,j+1}) = u(\mathbf{x}_{i,j}) + h_y \frac{\partial u}{\partial y} (\mathbf{x}_{i,j}) + \frac{h_y^2}{2} \frac{\partial^2 u}{\partial y^2} (\mathbf{x}_{i,j}) + \frac{h_y^3}{3!} \frac{\partial^3 u}{\partial y^3} (\mathbf{x}_{i,j})
++ \frac{h_y^4}{4!} \frac{\partial^4 u}{\partial y^4} (\mathbf{x}_{i,j}) + O(h_y^4),
+\]
+\[
+u(\mathbf{x}_{i,j-1}) = u(\mathbf{x}_{i,j}) - h_y \frac{\partial u}{\partial y} (\mathbf{x}_{i,j}) + \frac{h_y^2}{2} \frac{\partial^2 u}{\partial y^2} (\mathbf{x}_{i,j}) - \frac{h_y^3}{3!} \frac{\partial^3 u}{\partial y^3} (\mathbf{x}_{i,j})
++ \frac{h_y^4}{4!} \frac{\partial^4 u}{\partial y^4} (\mathbf{x}_{i,j}) + O(h_y^4).
+\]
+Replacing $u_{i,j}$ with $u(\mathbf{x}_{i,j})$ in \eqref{eq:3-1-2} and 
+inserting those above formulae into it, we obtain 
+\begin{equation}
+L_h [u(\mathbf{x}_{i,j})] = - \frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j}) - \frac{\partial^2 u}{\partial y^2} (\mathbf{x}_{i,j}) - \frac{1}{12} \left(h_x^2 \frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i,j}) + h_y^2 \frac{\partial^4 u}{\partial y^4} (\mathbf{x}_{i,j}) \right) + O(h_x^2 + h_y^2).
+\label{eq:3-1-4}
+\end{equation}
+Similarly,
+\[
+u(\mathbf{x}_{i+1,j+1}) - 2u(\mathbf{x}_{i,j+1}) + u(\mathbf{x}_{i-1,j+1})
+= h_x^2 \frac{\partial^2 u}{\partial x^2}(\mathbf{x}_{i,j+1}) + \frac{h_x^4}{12} \frac{\partial^4 u}{\partial x^4}(\mathbf{x}_{i,j+1}) + O(h_x^4),
+\]
+\[
+-2u(\mathbf{x}_{i+1,j}) + 4u(\mathbf{x}_{i,j}) - 2u(\mathbf{x}_{i-1,j}) =
+-2h_x^2 \frac{\partial^2 u}{\partial x^2}(\mathbf{x}_{i,j}) - \frac{h_x^4}{6} \frac{\partial^4 u}{\partial x^4}(\mathbf{x}_{i,j}) + O(h_x^4),
+\]
+\[
+u(\mathbf{x}_{i+1,j-1}) - 2u(\mathbf{x}_{i,j-1}) + u(\mathbf{x}_{i-1,j-1})
+= h_x^2 \frac{\partial^2 u}{\partial x^2}(\mathbf{x}_{i,j-1}) + \frac{h_x^4}{12} \frac{\partial^4 u}{\partial x^4}(\mathbf{x}_{i,j-1}) + O(h_x^4).
+\]
+By Tylor development, we have
+\[
+\frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j+1}) = \frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j}) + h_y \frac{\partial^3 u}{\partial y \partial x^2} (\mathbf{x}_{i,j}) + \frac{h_y^2}{2} \frac{\partial^4 u}{\partial y^2 \partial x^2} (\mathbf{x}_{i,j}) + \frac{h_y^3}{3!} \frac{\partial^5 u}{\partial y^3 \partial x^2} (\mathbf{x}_{i,j}) + \frac{h_y^4}{4!} \frac{\partial^6 u}{\partial y^4 \partial x^2} (\mathbf{x}_{i,j}) +O(h_y^4),
+\]
+\[
+\frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j-1}) = \frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j}) - h_y \frac{\partial^3 u}{\partial y \partial x^2} (\mathbf{x}_{i,j}) + \frac{h_y^2}{2} \frac{\partial^4 u}{\partial y^2 \partial x^2} (\mathbf{x}_{i,j}) - \frac{h_y^3}{3!} \frac{\partial^5 u}{\partial y^3 \partial x^2} (\mathbf{x}_{i,j}) + \frac{h_y^4}{4!} \frac{\partial^6 u}{\partial y^4 \partial x^2} (\mathbf{x}_{i,j}) +O(h_y^4),
+\]
+\[
+\frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i,j+1}) = \frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i,j}) +  h_y \frac{\partial^5 u}{\partial y \partial x^4} (\mathbf{x}_{i,j}) + \frac{h_y^2}{2} \frac{\partial^6 u}{\partial y^2 \partial x^4} (\mathbf{x}_{i,j}) + O(h_y^2),
+\]
+\[
+\frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i,j-1}) = \frac{\partial^4 u}{\partial x^4} (\mathbf{x}_{i,j}) -  h_y \frac{\partial^5 u}{\partial y \partial x^4} (\mathbf{x}_{i,j}) + \frac{h_y^2}{2} \frac{\partial^6 u}{\partial y^2 \partial x^4} (\mathbf{x}_{i,j}) + O(h_y^2).
+\]
+Then
+\begin{equation}
+\begin{aligned}
+ & u(\mathbf{x}_{i+1,j+1}) - 2u(\mathbf{x}_{i,j+1}) + u(\mathbf{x}_{i-1,j+1})    -2u(\mathbf{x}_{i+1,j}) + 4u(\mathbf{x}_{i,j}) - 2u(\mathbf{x}_{i-1,j}) +  \\
+&\hspace{17em} u(\mathbf{x}_{i+1,j-1}) - 2u(\mathbf{x}_{i,j-1}) + u(\mathbf{x}_{i-1,j-1})  \\
+& = h_x^2 h_y^2 \frac{\partial^4 u}{\partial y^2 \partial x^2} (\mathbf{x}_{i,j}) +
+\frac{1}{12} h_x^2 h_y^4 \frac{\partial^6 u}{\partial y^4 \partial x^2} (\mathbf{x}_{i,j}) +
+ \frac{1}{12} h_x^4 h_y^2\frac{\partial^6 u}{\partial y^2 \partial x^2} (\mathbf{x}_{i,j}) + O(h_x^2 h_y^4) + O(h_x^4 h_y^2).
+\end{aligned}
+\label{eq:3-1-5}
+\end{equation}
+Combining \eqref{eq:3-1-4} with \eqref{eq:3-1-5}, we have
+\[
+\bar{L}_h [u(\mathbf{x}_{i,j})] = - \frac{\partial^2 u}{\partial x^2} (\mathbf{x}_{i,j}) - \frac{\partial^2 u}{\partial y^2} (\mathbf{x}_{i,j}) 
+-\frac{1}{12} \left( h_x^2 \frac{\partial^2}{\partial x^2} + h_y^2 \frac{\partial^2}{\partial y^2} \right) \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right)  (\mathbf{x}_{i,j}) + O((h_x^2 + h_y^2)^2).
+\]
+It remains to determine $\bar{f}(\mathbf{x}_{i,j})$. 
+We note that$
+{f}(\mathbf{x}_{i,j}) = -[\Delta u](\mathbf{x}_{i,j})
+$, 
+and
+\[
+\frac{1}{12} \left(h_x^2 \frac{\partial^2 f}{\partial x^2} + h_y^2 \frac{\partial^2 f}{\partial y^2} \right) (\mathbf{x}_{i,j}) = -\frac{1}{12} \left( h_x^2 \frac{\partial^2}{\partial x^2} + h_y^2 \frac{\partial^2}{\partial y^2} \right) \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right)  (\mathbf{x}_{i,j}),
+\]
+which leads to the desired result: $\bar{R}_{i,j} = O(h_x^4+h_y^4)$ if $h_x=O(h_y)$.
+\end{proof}
 
 
 \newpage
@@ -116,7 +340,7 @@ Additionally, we define the averaged grid spacing:
 \]
 A discrete function defined on $\bar{I}_h$ is denoted as 
 \[
-v_h = \{v_0,v_1,\cdots, v_N \}.
+v_h = [v_0,v_1,\cdots, v_N ]^\mathrm{T}.
 \]
 We define the following difference operators:
 \[

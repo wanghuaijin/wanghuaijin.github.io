@@ -323,12 +323,102 @@ It is evident that $u_I(x) = \sum_{j=0}^N u(x_j) \phi_j(x)$.
 \section{Implementation in General Framework}
 
 \subsection{Target Problem}
-Let $L$ be the second order linear operator defined by
+Let $I:=(a,b)$ be an interval of $\mathbb{R}$, whose boundary is $\partial I: = \{a,b\}$. We consider the elliptic boundary value problem of the form:
 \[
-L w : = - (a u^\prime)^\prime
+\left \{
+\begin{aligned}
+& L u = f \quad \text{in}\ I, \\
+& Bu =0\quad \text{on} \ \partial I,
+\end{aligned}
+\right.
 \]
-\subsection{Finite Element Spaces}
+where $f$ is a given function, $u$ is the unknown, $B$ is an affine boundary operator, and
+$L$ is the second order linear operator defined by
+\[
+L w : = - (a(x) w^\prime(x))^\prime + (b(x) w(x))^\prime + c(x) w^\prime(x) + d(x) w(x).
+\]
+This problem can generally be reformulated in a weak (or variational) form. 
+The weak form can be derived after multiplication of the differential equation by a suitable set of \textit{test functions} and performing an integration upon the domain. Most often, the integration by parts
+\[
+\int_I u^\prime(x) v(x) \mathrm{d} x = - \int_I u(x) v^\prime(x) \mathrm{d} x + u(b) v(b) - u(a) v(a),
+\]
+is used with the aim of reducing the order of differentiation for the solution $u$.
 
+As a result, we obtain a problem that reads
+\[
+\left\{
+\begin{aligned}
+& \text{Find}\ u\in W \ \text{s.t.} \ \\
+& \mathcal{A} (u,v) = \mathcal{F}(v),\quad \forall v\in V,
+\end{aligned}
+\right.
+\]
+where $W$ is the space of admissible solutions and $V$ is the space of test functions. Both $W$ and $V$ can be assumed to be Hilbert spaces. $\mathcal{F} \in V^\prime$ that accounts for the right hand side $f$ as well as for possible non-homogeneous boundary terms. Finally, $\mathcal{A}(\cdot,\cdot)$ is a bilinear form corresponding to the differential operator $L$.
+
+\begin{remark}
+The boundary conditions of $u$ can be enforced directly in the definition of $W$ (the case of the so-called essential boundary conditions). Otherwise, they can be achieved indirectly through a suitable choice of the bilinear form $\mathcal{A}$ as well as the functional $\mathcal{F}$ (natural boundary conditions).
+\end{remark}
+
+\begin{remark}
+We suppose that $W=V$.
+\end{remark}
+
+To the operator $L$ we may associate the following bilinear form
+\[
+a(w, v) : = \int_I \left[ a(x) w^\prime(x) v^\prime(x) - b(x) w(x) v^\prime(x) + c(x) w^\prime(x) v(x) + d(x) w(x) v(x) \right] \mathrm{d} x.
+\]
+
+\begin{example}
+ Homogeneous Dirichlet problem
+\[
+\left \{
+\begin{aligned}
+&L u(x) = f(x), \ x\in I, \\
+& u(a) = 0,\ u(b) = 0.
+\end{aligned}
+\right .
+\] 
+Let $V = H_0^1(I)$, $\mathcal{A} (u,v) = a(u,v)$, $\mathcal{F} (v) = \int_I f v \mathrm{d} x$. We have the weak form:
+\[
+\left \{
+\begin{aligned}
+& \text{Find}\ u\in V \text{s.t.}\ \\
+&a(u,v) = \mathcal{F} (v), \quad \forall v\in V. \\
+\end{aligned}
+\right.
+\]
+\end{example}
+
+
+\begin{example}
+Neumann problem
+\[
+\left \{
+\begin{aligned}
+&L u(x) = f(x), \ x\in I, \\
+& u^\prime (a) = g_a,\ u^\prime(b) = g_b.
+\end{aligned}
+\right .
+\]
+\end{example}
+
+We consider the general problem
+\[
+\left \{
+\begin{aligned}
+&L u(x) = f(x), \ x\in I, \\
+& \alpha_0 u(a) + \beta_0 u^\prime(a) = \gamma_0,\\
+& \alpha_1 u(b) + \beta_1 u^\prime(b) = \gamma_1.\\
+\end{aligned}
+\right .
+\]
+
+
+
+\subsection{Finite Element Spaces}
+\[
+X_h^k : = \{v_h \in C^0(\bar{I}): v_h|_K \in \mathbb{P}_k \ \ \forall K\in \mathcal{T}_h\}
+\]
 \subsection{Finite Element Discretization}
 
 \subsection{Boundary Treatment}
