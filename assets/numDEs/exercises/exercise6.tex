@@ -1,0 +1,225 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\setcounter{section}{3}
+\setcounter{exercise}{1}
+\begin{exercise}
+Consider the heat conduction problem:
+\[
+\left\{\begin{array}{ll}
+u_t-u_{x x}=f, & \forall t \in(0, T], \forall x \in(a, b), \\
+u(x, 0)=u_0(x), & \forall x \in(a, b), \\
+u(a, t)=u(b, t)=0, & \forall t \in(0, T] .
+\end{array}\right.
+\]
+The Forward Euler/centered schema:
+\[
+L_h u_i^n := \frac{u_{i}^{n+1} - u_i^n}{k} - \frac{u_{i+1}^n - 2u_i^n + u^{n}_{i-1}}{h^2} = f_i^{n+1}, \quad n=0,1,\cdots,M, i=1,2,\cdots,N-1,
+\]
+where $u_i^n$ is an approximation of $u(x_i, t^n)$. Prove that the truncation error $R_i^n = L_h u(x_i,t^n) - [L u] (x_i,t^n) = O(k+h^2)$.
+\end{exercise}
+\begin{proof}
+By Tylor development, we have
+\[
+\begin{aligned}
+& u(x_i, t^{n+1}) - u(x_i, t^n) = k u_t(x_i, t^n) + O(k^2), \\
+& u(x_{i+1}, t^n) - 2u(x_i,t^n) + u(x_{i-1}, t^n) = h^2 u_{xx} (x_i,t^n) + O(h^4).
+\end{aligned}
+\]
+Thus $R_i^n = O(k+h^2)$.
+\end{proof}
+
+
+\setcounter{section}{3}
+\setcounter{exercise}{2}
+\begin{exercise}
+Consider the transport-diffusion problem
+\[
+\begin{aligned}
+u_t - u_{xx} + v u_x = 0, \quad &\forall x\in(a,b),\ t\in (0,T),\\
+ u(a,t) = u(b,t) = 0,  \quad &t\in (0,T),\\
+ u(x,0) = u_0( &x),\quad \forall x\in (a,b),
+\end{aligned}
+\]
+where $v$ is a constant. Derive estimates for the truncation error and global error of the following schema, and prove that
+\[
+\| u_h^n \|_0 \leqslant \|u_h^0\|_0,\quad \forall n=0,1,\dots,
+\]
+- If $v \geqslant 0$,
+\[
+\begin{aligned}
+\frac{u_i^{n+1} - u_i^n}{k} - \frac{u_{i+1}^{n+1} - 2u_{i}^{n+1} + u_{i-1}^{n+1}}{h^2} + v \frac{u_i^{n+1} - u_{i-1}^{n+1}}{h} =0, & \quad \forall i=1,\cdots,N-1, \\
+u_0^{n+1} = u_N^{n+1} = 0, & \\
+u^0 = u_0, &
+\end{aligned}
+\]
+- if $v\leqslant 0$,
+\[
+\begin{aligned}
+\frac{u_i^{n+1} - u_i^n}{k} - \frac{u_{i+1}^{n+1} - 2u_{i}^{n+1} + u_{i-1}^{n+1}}{h^2} + v \frac{u_{i+1}^{n+1} - u_{i}^{n+1}}{h} =0, & \quad \forall i=1,\cdots,N-1, \\
+u_0^{n+1} = u_N^{n+1} = 0, & \\
+u^0 = u_0, &
+\end{aligned}
+\]
+in an uniform mesh $\{x_i\}_{i=0}^N$, $x_i = a+ih$, $h=(b-a)/N$, $\{t^n\}_{n=0}^M$, $t^n = nk$, $k=T/M$.
+\end{exercise}
+\begin{proof}[Solution]
+~\\
+$\bullet$ Truncation Error. \\
+Let $L u = u_t - u_{xx} + v u_x$ and
+\[
+ L_h u_i^n = \left\{
+\begin{aligned}
+\frac{u_i^{n+1} - u_i^n}{k} - \frac{u_{i+1}^{n+1} - 2u_{i}^{n+1} + u_{i-1}^{n+1}}{h^2} + v \frac{u_i^{n+1} - u_{i-1}^{n+1}}{h}, \ \text{if} \ v\geqslant 0,\\
+\frac{u_i^{n+1} - u_i^n}{k} - \frac{u_{i+1}^{n+1} - 2u_{i}^{n+1} + u_{i-1}^{n+1}}{h^2} + v \frac{u_{i+1}^{n+1} - u_{i}^{n+1}}{h},\ \text{if}\ v\leqslant 0.
+\end{aligned}
+\right.
+\]
+Then $R_i^n = L_h u(x_i, t^n) - [Lu] (x_i, t^n)$. If $v \geqslant 0$, by Tylor developments:
+\[
+\begin{aligned}
+& u(x_i, t^{n+1}) - u(x_i, t^n) = k u_t(x_i, t^n) + O(k^2), \\
+& u(x_{i+1}, t^{n+1}) - 2 u(x_i,t^{n+1}) + u(x_{i-1}, t^{n+1}) = h^2 u_{xx} (x_{i}, t^{n+1}) + O(h^4), \\
+& u(x_i,t^{n+1}) - u(x_{i-1}, t^{n+1}) =  h u_x(x_i, t^{n+1}) + O(h^2), \\
+\end{aligned}
+\]
+we have $R_i^{n} = O(k+h)$. The similar result can also be obtained for $v\leqslant 0$.
+~\\
+~\\
+$\bullet$ Global Error. \\
+Let $e_i^n = u(x_i, t^n) - u_i^n$. Then $L_h e^{n}_i = R_i^{n}, \ \forall i=1,\cdots,N-1$.
+~\\
+- If $v\geqslant 0$, we have
+\[
+\left(1+\frac{2k}{h^2} + v \frac{k}{h} \right) e_i^{n+1} =   \frac{k}{h^2}  e_{i+1}^{n+1} + \left( \frac{k}{h^2} + v \frac{k}{h} \right) e_{i-1}^{n+1} + e_i^n + k R_i^n. 
+\]
+Multiplying both sides of the above formula by $e^{n+1}_i h$ and summing in $i$ from $0$ to $N$ gives
+\[
+\left(1+\frac{2k}{h^2} + v \frac{k}{h} \right) \|e_h^{n+1}\|_0^2 = \frac{k}{h^2} 
+\sum_{i=0}^{N-1} e_{i+1}^{n+1} e_i^{n+1} h 
++ \left( \frac{k}{h^2} + v \frac{k}{h} \right) \sum_{i=1}^N e_{i-1}^{n+1} e_i^{n+1} h
++ \sum_{i=0}^N (e_i^n + k R_i^n) e_i^{n+1}h.
+\]
+By Cauchy-Schwarz inequality, we have
+\[
+\left(1+\frac{2k}{h^2} + v \frac{k}{h} \right) \|e_h^{n+1}\|_0^2
+\leqslant \left( \frac{2k}{h^2}+v \frac{k}{h} \right)\|e_h^{n+1} \|_0^2 + (\|e_h^n\|_0 + k \|R_h^n\|_0 ) \|e_h^{n+1}\|_0.
+\]
+Thus
+\[
+\|e_h^{n+1}\|_0 \leqslant \|e_h^n\|_0 + k \|R_h^n\|_0 \leqslant \cdots \leqslant 
+\|e_h^0\|_0 + k \sum_{j=0}^n \|R_h^j\|_0 \leqslant T \max_j \|R_h^j\|_0 = O(k+h).
+\]
+The similar result can be obtained for $v\leqslant 0$.
+~\\
+\noindent
+$\bullet$ Stability. \\
+If $v\geqslant 0$, multiplying both sides of $L_h u_i^n = 0$ by $u^{n+1}_i h$ yields
+\[
+\frac{u_i^{n+1} - u_i^n}{k} u^{n+1}_i h - \frac{u_{i+1}^{n+1} - 2u_i^{n+1} + u_{i-1}^{n+1}}{h} u^{n+1}_i  + v ({u_i^{n+1} - u_{i-1}^{n+1}}) u^{n+1}_i  = 0.
+\]
+Summing in $i$ from $1$ to $N-1$ gives
+\[
+\frac{h}{k} \sum_{i=1}^{N-1} (u_i^{n+1} - u_i^n) u_i^{n+1} -\frac{1}{h} \sum_{i=1}^{N-1} (u_{i+1}^{n+1} - 2u_i^{n+1} + u_{i-1}^{n+1})u_i^{n+1} + v \sum_{i=1}^{N-1} (u_i^{n+1} - u_{i-1}^{n+1}) u_i^{n+1} = 0.
+\]
+The first term
+\[
+\begin{aligned}
+\sum_{i=1}^{N-1}  (u_i^{n+1} - u_i^n) u_i^{n+1} & = \frac{1}{2} \sum_{i=1}^{N-1}  (u_i^{n+1} - u_i^n) (u_i^{n+1} - u_i^n + u_i^{n+1} +  u_i^n) \\
+& \geqslant \frac{1}{2} \sum_{i=1}^{N-1}  (u_i^{n+1} - u_i^n) ( u_i^{n+1} +  u_i^n) \\
+& =  \frac{1}{2 h} \left( \|u_h^{n+1}\|_0^2 - \|u_h^{n}\|_0^2\right).
+\end{aligned}
+\]
+The second term
+\[
+\begin{aligned}
+-\frac{1}{h} \sum_{i=1}^{N-1} (u_{i+1}^{n+1} - 2u_i^{n+1} + u_{i-1}^{n+1})u_i^{n+1}
+& =\frac{1}{h} \sum_{i=1}^{N-1} \left [ 2(u_{i+1}^{n+1})^2 -(u_{i+1}^{n+1} + u_{i-1}^{n+1}) u_{i}^{n+1} \right ] \\
+& =\frac{1}{h} \left[ (u_{N-1}^{n+1})^2 +\sum_{i=1}^{N-1} \left ( u_i^{n+1} - u_{i-1}^{n+1} \right)^2 \right] \geqslant 0,
+\end{aligned}
+\]
+where we note that $\sum_{i=1}^{N-1} u_{i+1}^{n+1} u_i^{n+1} = \sum_{i=1}^{N-1} u_{i}^{n+1} u_{i-1}^{n+1}$ and 
+\[
+\sum_{i=1}^{N-1} ( u_i^{n+1} )^2 = (u_{N-1}^{n+1} )^2 + \sum_{i=1}^{N-1} (u_{i-1}^{n+1})^2.
+\]
+The third term
+\[
+\begin{aligned}
+v \sum_{i=1}^{N-1} (u_i^{n+1} - u_{i-1}^{n+1}) u_i^{n+1} & = \frac{v}{2} \sum_{i=1}^{N-1} (u_i^{n+1} - u_{i-1}^{n+1}) (u_i^{n+1} - u_{i-1}^{n+1} + u_i^{n+1} + u_{i-1}^{n+1}) \\
+& \geqslant \frac{v}{2} \sum_{i=1}^{N-1} \left [ (u_i^{n+1})^2 - (u_{i-1}^{n+1})^2 \right] = \frac{v}{2} (u_{N-1}^{n+1} )^2 \geqslant 0.
+\end{aligned}
+\]
+Thus we obtain $\|u_h^{n+1}\|_0 \leqslant \|u_h^n\|_0$, which leads to $\|u_h^n\|_0 \leqslant \|u_h^0\|_0$. For $v\leqslant 0$, a similar approach can be applied to obtain the desired result, except for the treatment of the third term:
+\[
+\begin{aligned}
+v \sum_{i=1}^{N-1} (u_{i+1}^{n+1} - u_{i}^{n+1}) u_i^{n+1} & = \frac{-v}{2} \sum_{i=1}^{N-1} (u_{i}^{n+1} - u_{i+1}^{n+1}) (u_i^{n+1} - u_{i+1}^{n+1} + u_i^{n+1} + u_{i+1}^{n+1}) \\
+& \geqslant \frac{-v}{2} \sum_{i=1}^{N-1} \left [ (u_i^{n+1})^2 - (u_{i+1}^{n+1})^2 \right] = \frac{-v}{2} (u_{1}^{n+1} )^2 \geqslant 0.
+\end{aligned}
+\]
+\end{proof}
+
+
+
+\end{document}
+
