@@ -87,9 +87,9 @@ Therefore, the conclusion is clear by Cauchy-Schwarz inequality.
 
 $\bullet$ \textbf{Step 2.} Make variable change to subinterval $I_{j+1}=(x_{j},x_{j+1})$ by $x = x_{j-1} + X(x_j-x_{j-1})$, we have
 \[
-\int_{x_{j-1}}^{x_{j}} \tilde{f}(x)^2 \mathrm{d} x \leqslant (x_j-x_{j-1})^2 \int_{x_{j-1}}^{x_j} \tilde{f}^\prime (x) \mathrm{d} x,\ \text{and}\
-\int_{x_{j-1}}^{x_j} \tilde{f}^{\prime} (x) \mathrm{d} x \leqslant 
-(x_j-x_{j-1})^2 \int_{x_{j-1}}^{x_j} \tilde{f}^{\prime\prime}(x) \mathrm{d} x,
+\int_{x_{j-1}}^{x_{j}} \tilde{f}(x)^2 \mathrm{d} x \leqslant (x_j-x_{j-1})^2 \int_{x_{j-1}}^{x_j} \tilde{f}^\prime (x)^2 \mathrm{d} x,\ \text{and}\
+\int_{x_{j-1}}^{x_j} \tilde{f}^{\prime} (x)^2 \mathrm{d} x \leqslant 
+(x_j-x_{j-1})^2 \int_{x_{j-1}}^{x_j} \tilde{f}^{\prime\prime}(x)^2 \mathrm{d} x,
 \]
 where $\tilde{f}(x) = f(X) = f( \frac{x-x_{j-1}}{x_j-x_{j-1}})\in H^2(I_j) \cap H_0^1(I_j)$. The conclusion is obvious since 
 \[
