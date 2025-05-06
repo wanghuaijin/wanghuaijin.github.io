@@ -46,10 +46,10 @@ features:
     link: https://wanghuaijin.github.io/assets/discuss24Dec/intro.pdf
     bgImage: /assets/photos/photo1.jpg
 
-  - title: NDE
-    details: "ss"
+  - title: "Undergraduate Course: Numerical Solution to PDEs."
+    details: "<b>Instructor:</b> Prof. Chuanju Xu. <br> <b> Contents:</b> Introduce FD and FEM for PDEs. <br> Feb. - Jun. 2024."
     icon: 
-    link: /Mathematics/NDE.md
+    link: https://wanghuaijin.github.io/assets/numDEs/status/intro.pdf
     bgImage: /assets/photos/photo1.jpg
   # - title: Title2
   #   details: this is the title 1, you can click on the title name to see details
@@ -84,5 +84,5 @@ features:
 </script> -->
 
 
-## Basic Computations
-- <a href="/coding/jacobi.md"> Jacobi </a>
+<!-- ## Basic Computations
+- <a href="/coding/jacobi.md"> Jacobi </a> -->

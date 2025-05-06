@@ -1,0 +1,97 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\setcounter{section}{1}
+\setcounter{exercise}{0}
+\begin{exercise}
+Let $\{x_n\}_{n=0}^{N+1}$ be a grid in the interval $\Lambda = (0,1)$, i.e., $0=x_0<x_1 <x_2<\cdots < x_N < x_{N+1} =1$. Let $I_n = (x_{n-1},x_n)$, $h_n=x_n-x_{n-1}$, and $h=\max_{1\leqslant n \leqslant N+1} h_n$. Prove
+\[
+\{ v\in C^0 (\Lambda): v|_{I_n} \in H^1(I_n), n = 1,\cdots,N+1\} \subset H^1(\Lambda).
+\]
+\end{exercise}
+\begin{proof}
+For any $v\in \{ v\in C^0 (\Lambda): v|_{I_n} \in H^1(I_n), n = 1,\cdots,N+1\}$, it is clear that $v\in L^2(\Lambda)$ because continuity implies square integrability on the bounded domain $\Lambda$. 
+It remains to show that the weak derivative of $v$ also belongs to $L^2(\Lambda)$. Since $v|_{I_n}\in H^1(I_n)$, we define a piecewise derivative  by
+\[
+g|_{I_n} (x) = (v|_{I_n})^\prime (x), \quad x\in I_n, \ n=1,\cdots,N+1.
+\]
+Obviously, $g\in L^2(\Lambda)$, as each piece $(v|_{I_n})^\prime\in L^2(I_n)$ and the intervals $I_n$ are disjoint and cover $\Lambda$. We claim that $g$ is the derivative of $v$. Indeed, for any test function $ \phi(x) \in C_0^\infty(\Lambda)$, we have
+\[
+\begin{aligned}
+\int_0^1 g(x) \phi(x)  \mathrm{d} x & = \sum_{n=1}^{N+1} \int_{I_n} g |_{I_n} (x) \phi (x) \mathrm{d} x = \sum_{n=1}^{N+1} \int_{I_n} (v|_{I_n})^\prime (x) \phi(x) \mathrm{d} x \\
+& = \sum_{n=1}^{N+1} [v(x)\phi(x)] \big |_{x_{n-1}}^{x_n} - \sum_{n=1}^{N+1} \int_{I_n} (v|_{I_n}) (x) \phi^\prime (x) \mathrm{d} x \\
+& = \sum_{n=1}^{N+1} \left(v(x_n^-)\phi(x_n^-) - v(x_{n-1}^+) \phi(x_{n-1}^+) \right)
+-\sum_{n=1}^{N+1} \int_{I_n} (v|_{I_n}) (x) \phi^\prime (x) \mathrm{d} x.
+\end{aligned}
+\]
+Due to the continuity of $v$ across element interfaces, we have $v(x_n^-) = v(x_n^+)$ for $n=1,\cdots,N$, and since $\phi\in C_0^\infty(\Lambda)$ we have  $\phi(x_0)=\phi(x_{N+1})=0$. Hence, the sum of boundary terms cancels out, yielding
+\[
+\int_0^1 g(x) \phi(x) \mathrm{d} x=-\int_0^1 v(x) \phi^{\prime}(x) \mathrm{d} x,
+\]
+which confirms that $g$ is the weak derivative of $v$. Therefore, $v\in H^1(\Lambda)$.
+\end{proof}
+
+
+\end{document}
+

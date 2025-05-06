@@ -1,0 +1,169 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\setcounter{section}{2}
+\setcounter{exercise}{3}
+\begin{exercise}
+We consider the problem
+\begin{equation}
+\left \{
+\begin{aligned}
+& -(\alpha u^\prime)^\prime (x) + (\beta u^\prime) (x) + (\gamma u) (x) = f(x),\quad x\in (0,1), \\
+& u(0) = u(1) = 0,
+\end{aligned}
+\right .
+\tag{11}
+\label{eq:11}
+\end{equation}
+where $\alpha,\beta$, and $\gamma$ are continuous functions on $[0,1]$ with $\alpha(x) \geqslant \alpha_0 >0$ for all $x\in [0,1]$.
+~\\
+1) Give the weak form of the problem \eqref{eq:11}.
+~\\
+2) Prove the weak problem admits a unique solution under the following assumption
+\begin{enumerate}[label=\alph*.]
+\item $\beta(x)=0$, $\gamma \geqslant 0$ for all $x\in [0,1]$;
+\item $-\frac{1}{2} \beta^\prime + \gamma \geqslant 0$ for all $x\in [0,1]$; 
+\item see [Brezis p. 224].
+\end{enumerate}
+3) Propose a $P1-$FEM for the numerical solution of \eqref{eq:11}.
+~\\
+4) Carry out an error analysis.
+\end{exercise}
+\begin{proof}
+~\\
+1). Let $I = (0,1)$ and $V = H_0^1(I)$. The weak form reads
+\[
+\left \{
+\begin{aligned}
+& \text{Find}\ u\in V \ \text{such that} \\
+& a(u,v) = \mathcal{F}(v), \ \forall v\in V,
+\end{aligned}
+\right .
+\]
+where the bilinear form $a(u,v) = (\alpha u^\prime, v^\prime) + (\beta u^\prime, v^\prime) + (\gamma u,v)$ and $\mathcal{F}(v) = (f,v)$.
+
+\noindent 2). It is clear that $a(\cdot,\cdot)$ is a bilinear form, and $\mathcal{F}$ is a continuous functional from $V$ to $\mathbb{R}$. By Lax-Milgram Lemma, it remains to show that $a(\cdot,\cdot)$ is continuous and coercive. Continuity is clear for all cases since the coefficients are continuous on $\bar{I}$, i.e.,
+\[
+\begin{aligned}
+|a(u,v)| & \leqslant \|\alpha\|_\infty \|u^\prime\|_0 \|v^\prime\|_0 + \|\beta\|_\infty \|u^\prime\|_0 \|v\|_0 + \|\gamma\|_\infty \|u\|_0 \|v\|_0 \\
+& \leqslant (\|\alpha\|_\infty + \|\beta\|_\infty + \|\gamma\|_\infty ) \|u\|_1 \|v\|_1,\quad \forall u,v\in V.
+\end{aligned}
+\]
+For the coercivity, we consider case by case:
+\begin{enumerate}[label=\alph*.]
+\item By Poincar\'e inequality on $H_0^1(I)$, there exists $C>0$ such that
+\[
+a(v,v) = (\alpha v^\prime, v^\prime) + (\gamma v, v) \geqslant \alpha_0\|v^\prime\|_0^2 \geqslant C \|v\|_1^2,\quad \forall v\in V.
+\]
+\item Note that for any $v\in V$, we have $(\beta v^\prime, v)=(\beta/2, (v^2)^\prime) = (-\beta^\prime/2, v^2)$. Thus by Poincar\'e inequality on $H_0^1(I)$, we have
+\[
+\begin{aligned}
+a(v,v) & = (\alpha v^\prime, v^\prime) + (\beta v^\prime, v) + (\gamma v, v)
+= (\alpha v^\prime, v^\prime) + ( (-\beta^\prime/2 + \gamma) v,v) \\
+& \geqslant \alpha_0 \|v^\prime\|_0^2 \geqslant C\|v\|_1^2,\quad \forall v\in V.
+\end{aligned}
+\]
+\item \textcolor{red}{Coming soon...}
+\end{enumerate}
+
+\noindent 3). \textcolor{red}{Obvious.}
+
+\noindent 4). Let $u_h$ be the solution of $P1-$FEM. Note that $a(u-u_h, v_h) = 0$, $\forall v_h\in V_h$. Thus
+\[
+\|u-u_h\|_1^2 \leqslant C a(u-u_h, u-u_h) = C a(u-u_h, u-v_h) \leqslant C\|u-u_h\|_1 \|u-v_h\|_1,
+\]
+for any $v_h\in V_h$. It leads to $\|u-u_h\|_1\leqslant \inf_{v_h\in V_h} \|u-v_h\|_1 \leqslant \|u-u_I\|_1$, where $u_I$ denotes the interpolation of $u$ into $V_h$. By the Poincar\'e inequality, we know that $C \|v\|_1 \leqslant \|v^\prime\|_0 \leqslant C \|v\|_1$, then
+\[
+\|u^\prime-u_h^\prime\|_0 \leqslant \|u^\prime - u_I^\prime\|_0 \leqslant C h \|u^{\prime\prime}\|_0.
+\]
+To obtain error estimate for $\|u-u_h\|_0$, we use duality argument. 
+Given $r\in L^2(I)$,
+ \[
+ \left\{
+ \begin{aligned}
+ &\text{Find}\ \varphi(r)\in V\ \text{such that} \\
+ & a(v,\varphi(r)) = (r,v),\quad \forall v\in V.
+ \end{aligned}
+ \right.
+ \]
+The dual problem admits a unique solution $\varphi(r)$ since $a(\cdot,\cdot)$ is continuous and coercive.  If we suppose $\varphi(r)\in H^2(I)$, and there exists constant $C>0$ such that $\|\varphi^{\prime\prime}(r)\|\leqslant C \|r\|_0$.
+
+Thus we denote $\varphi_I(r)$ being the interpolation of $\varphi(r)$ into $V_h$ and obtain 
+\[
+\begin{aligned}
+\|u-u_h\|_0 & = \sup_{r\in L^2(I), \ r\neq 0} \frac{(r,u-u_h)}{\|r\|_0} = 
+\sup_{r\in L^2(I), \ r\neq 0}  \frac{a(u-u_h, \varphi(r))}{\|r\|_0} \\
+& = \sup_{r\in L^2(I), \ r\neq 0}  \frac{a(u-u_h, \varphi(r) - \varphi_I (r))}{\|r\|_0} \\
+& \leqslant \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u-u_h\|_1 \|\varphi(r) - \varphi_I(r)\|_1 }{\|r\|_0} \\
+ & \leqslant \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u^\prime-u^\prime_h\|_0 \|\varphi^\prime(r) - \varphi^\prime_I(r)\|_0 }{\|r\|_0} \\
+ & \leqslant C h\|u^\prime-u^\prime_h\|_0 \sup_{r\in L^2(I), \ r\neq 0} \frac{\|\varphi^{\prime\prime}(r)\|_0}{\|r\|_0}  \\
+ & \leqslant C h\|u^\prime-u^\prime_h\|_0.
+\end{aligned}
+\]
+\end{proof}
+
+
+
+\end{document}
+

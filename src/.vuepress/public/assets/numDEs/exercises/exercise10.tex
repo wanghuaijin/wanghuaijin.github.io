@@ -1,0 +1,290 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\setcounter{exercise}{0}
+\begin{exercise}[See Remark 1.3]
+Prove 
+\[
+\begin{aligned}
+& \|u-u_I\|_0 \leqslant C h^2\|u^{\prime\prime}\|_0,\\
+& \|u^\prime - u_I^\prime\|_0 \leqslant C h \|u^{\prime\prime}\|_0.
+\end{aligned}
+\]
+\end{exercise}
+\begin{proof}
+$\bullet$ \textbf{Step 1}. Show that for $I=(0,1)$ and $f\in H^2(I)\cap H_0^1(I)$, we have 
+\[
+\int_0^1 f(X)^2 \mathrm{d} X \leqslant \int_0^1 f^\prime(X)^2 \mathrm{d} X,\ \text{and}\
+\int_0^1 f^\prime(X)^2 \mathrm{d} X \leqslant \int_0^1 f^{\prime\prime} (X)^2 \mathrm{d} X.
+\]
+Since $f(0)=f(1)=0$, there exists $X_0\in I$ such that $f^\prime(X_0)=0$. Thus
+\[
+f(X) = \int_0^X f^\prime (X) \mathrm{d} X,\ \text{and}\ 
+f^\prime(X) = \int_{X_0}^X f^{\prime \prime} (X) \mathrm{d} X.
+\]
+Therefore, the conclusion is clear by Cauchy-Schwarz inequality.
+
+$\bullet$ \textbf{Step 2.} Make variable change to subinterval $I_{j+1}=(x_{j},x_{j+1})$ by $x = x_{j-1} + X(x_j-x_{j-1})$, we have
+\[
+\int_{x_{j-1}}^{x_{j}} \tilde{f}(x)^2 \mathrm{d} x \leqslant (x_j-x_{j-1})^2 \int_{x_{j-1}}^{x_j} \tilde{f}^\prime (x) \mathrm{d} x,\ \text{and}\
+\int_{x_{j-1}}^{x_j} \tilde{f}^{\prime} (x) \mathrm{d} x \leqslant 
+(x_j-x_{j-1})^2 \int_{x_{j-1}}^{x_j} \tilde{f}^{\prime\prime}(x) \mathrm{d} x,
+\]
+where $\tilde{f}(x) = f(X) = f( \frac{x-x_{j-1}}{x_j-x_{j-1}})\in H^2(I_j) \cap H_0^1(I_j)$. The conclusion is obvious since 
+\[
+\mathrm{d} x = (x_j-x_{j-1}) \mathrm{d} X,\
+f^\prime(X) = \tilde{f}^\prime(x) (x_j-x_{j-1}),\
+f^{\prime\prime}(X) = \tilde{f}^{\prime\prime} (x) (x_j-x_{j-1})^2.
+\]
+
+$\bullet$ \textbf{Step 3.} Let $\tilde{f}(x) = u(x) - u_I(x)$. It is obvious that $\tilde{f}(x_i) = 0$ for $i=0,\cdots,N+1$. Thus $\left( \tilde{f}\big |_{I_j} \right)^{\prime\prime} = u^{\prime\prime}$ and $\tilde{f} \big |_{I_{j}} \in H^2(I_j)\cap H_0^1 (I_j)$ for $j=1,\cdots,N+1$, and we have
+\[
+\int_{I_j} (u-u_I)^2 \mathrm{d} x \leqslant h_j^2 \int_{I_j} (u^\prime-u^\prime_I)^2 \mathrm{d} x,\ 
+\int_{I_j} (u^\prime - u^\prime_I)^2 \mathrm{d} x \leqslant h_j^2 \int_{I_j} (u^{\prime\prime})^2 \mathrm{d} x,
+\]
+both of which leads to
+\[
+\|u-u_I\|_0 \leqslant h \|u^\prime - u_I^\prime\|_0,\ \text{and}\
+\|u^\prime - u_I^\prime\|_0 \leqslant h \|u^{\prime\prime}\|_0.
+\]
+
+\end{proof}
+
+\begin{exercise}
+Consider the mixed boundary problem
+\[
+\left\{
+\begin{aligned}
+&-u^{\prime \prime}=f, \quad x \in I:=(0,1), \\
+&u(0)=0,\ u^{\prime}(1)=\beta ,
+\end{aligned} \right.
+\]
+where $\beta\in\mathbb{R}$ and $f\in L^2(I)$. Construct and analyze $P_1-$FEM for this problem.
+\end{exercise}
+\begin{proof}
+
+$\bullet$ Variational form. Let $V = \{v\in H^1(I): v(0)=0\}$, the bilinear form  $a(u,v) = (u^\prime, v^\prime)$, and the functional $\mathcal{F}(v) = (f,v) + v(1)$. Then the variational problem reads
+\[
+\left\{
+\begin{aligned}
+&\text{Find}\ u\in V \ \text{such that} \\
+& a(u,v) = \mathcal{F}(v), \quad \forall v\in V,
+\end{aligned}
+\right.
+\]
+which is clearly equivalent to the strong problem.
+
+$\bullet$ Galerkin Approximation. Let $V_h$ be a subspace of $V$ with finite dimension. Then the Galerkin approximation reads
+\[
+\left\{
+\begin{aligned}
+&\text{Find}\ u_h \in V_h \ \text{such that} \\
+& a(u_h, v_h) = \mathcal{F}(v_h), \quad \forall v_h \in V_h.
+\end{aligned}
+\right.
+\]
+
+$\bullet$ $P1-$FEM. By construct the space of piecewise linear polynomials $X_h^1$ and its basis $\varphi_0,\cdots,\varphi_{N+1}$, shown in the Appendix, we let the finite element space $V_h=X_h^1 \cap V$, then 
+\[
+V_h = \mathrm{span}\{\varphi_1,\cdots,\varphi_{N+1}\}.
+\]
+
+$\bullet$ FEM Implementation.
+Let $u_h = \sum_{j=1}^{N+1} u_j \varphi_j(x)$, then 
+\[
+\sum_{j=1}^{N+1} u_j a(\varphi_j, \varphi_i) = \mathcal{F}(\varphi_i),\quad i=1,\cdots,N+1.
+\]
+Let $\mathbf{A} = (a_{i, j})$ be the $(N+1)\times(N+1)$ matrix with its entries $a_{i,j} = a(\varphi_j,\varphi_i)$. Then we have
+\[
+\begin{aligned}
+&a_{N+1,N+1} = \frac{1}{h_{N+1}},\ a_{j,j} = \frac{1}{h_j} + \frac{1}{h_{j+1}}, \quad j=1,\cdots,N, \\
+& a_{j,j-1} = -\frac{1}{h_{j}}, \ j=1,\cdots,N+1, \\
+& a_{i,j} = 0,\ \text{if}\ |i-j|\geqslant 2.
+\end{aligned}
+\]
+Thus
+\[
+\frac{1}{h}
+\begin{bmatrix}
+2 & -1 & & & \\
+-1 & 2 & -1 &&  \\
+ & \ddots &\ddots & \ddots & \\
+ & & -1 & 2 & -1 \\
+ & & & -1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+u_1 \\
+u_2 \\
+\vdots \\
+u_N \\
+u_{N+1}
+\end{bmatrix}
+= 
+\begin{bmatrix}
+(f,\varphi_1) \\
+(f,\varphi_2) \\
+\vdots \\
+(f,\varphi_N) \\
+(f,\varphi_{N+1}) + \beta \\
+\end{bmatrix}.
+\] 
+
+$\bullet$ Error Estimate. We denote $u_I$ being the interpolation of $u$ into $V_h$, then it is clear that 
+\[
+\|u-u_I\|_0 \leqslant Ch \|u^\prime - u_I^\prime\|_0 \leqslant Ch^2 \|u^{\prime\prime}\|_0.
+\]
+ We know $a(u-u_h, v_h) = 0$ for any $v_h\in V_h$. Then
+ \[
+ \|u^\prime-u_h^\prime\|_0^2 = a(u-u_h, u-u_h) = a(u-u_h, u-v_h) \leqslant \|u^\prime-u_h^\prime\|_0 \|u^\prime-v_h^\prime\|_0,\quad \forall v_h\in V_h,
+ \]
+ which leads to
+\[
+\|u^\prime-u^\prime_h\|_0 \leqslant \inf_{v_h\in V_h} \|u^\prime - v^\prime_h\|_0 \leqslant \|u^\prime - u^\prime_I \|_0 \leqslant Ch \|u^{\prime\prime}\|_0.
+\]
+In the following, we derive the estimate for $\|u-u_h\|_0$.
+
+ Dual problem: given $r\in L^2(I)$,
+ \[
+ \left\{
+ \begin{aligned}
+ &\text{Find}\ \varphi(r)\in V\ \text{such that} \\
+ & a(v,\varphi(r)) = (r,v),\quad \forall v\in V.
+ \end{aligned}
+ \right.
+ \]
+The dual problem admits a unique solution $\varphi(r)$ since $a(\cdot,\cdot)$ is continuous and coercive.  Moreover, we have
+ \[
+ a(v,\varphi(r)) = (r,v),\quad \forall v\in C_0^\infty(I),
+ \]
+if we suppose $\varphi(r)\in H^2(I)$, which gives $(-\varphi^{\prime\prime} (r), v) = (r,v),\ \forall v\in C_0^\infty (I)$.
+Since $C_0^\infty(I)$ is dense in $L^2(I)$, we have
+\[
+\|\varphi^{\prime\prime}(r)\|_0 = \sup_{v\in L^2(I), \ v\neq 0} \frac{(\varphi, v)}{\|v\|_0}
+= \sup_{v\in L^2(I), \ v\neq 0} \frac{(r,v)}{\|v\|_0} = \|r\|_0.
+\]
+Thus we denote $\varphi_I(r)$ being the interpolation of $\varphi(r)$ into $V_h$ and obtain 
+\[
+\begin{aligned}
+\|u-u_h\|_0 & = \sup_{r\in L^2(I), \ r\neq 0} \frac{(r,u-u_h)}{\|r\|_0} = 
+\sup_{r\in L^2(I), \ r\neq 0}  \frac{a(u-u_h, \varphi(r))}{\|r\|_0} \\
+& = \sup_{r\in L^2(I), \ r\neq 0}  \frac{a(u-u_h, \varphi(r) - \varphi_I (r))}{\|r\|_0} \\
+ & \leqslant \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u^\prime-u^\prime_h\|_0 \|\varphi^\prime(r) - \varphi^\prime_I(r)\|_0 }{\|r\|_0} \\
+ & \leqslant C h\|u^\prime-u^\prime_h\|_0 \sup_{r\in L^2(I), \ r\neq 0} \frac{\|\varphi^{\prime\prime}(r)\|_0}{\|r\|_0}  \\
+ & \leqslant C h\|u^\prime-u^\prime_h\|_0.
+\end{aligned}
+\]
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+\section*{Appendix}
+Let $I=(0,1)$ and $\{x_n\}_{n=0}^{N+1}$ be a grid on $I$ such that $0=x_0<x_1<\cdots<x_N<x_{N+1}=1$. Denote by each subintervals (or elements) $I_n=(x_{n-1},x_n)$ for $1\leqslant n\leqslant N+1$ of length $h_n=x_n-x_{n-1}$. Let $h = \max_{1\leqslant n \leqslant N+1} h_n$.
+
+The piecewise linear polynomials on such grid is denoted by
+\[
+X_h^1 := \{v\in C(\bar{I}): v\big |_{I_{j+1}} \in \mathbb{P}_1, \ j=0,\cdots,N \}.
+\]
+We construct a nodal basis for $X_h^1$, which is based on nodes in every element (how many nodes in every element depends on the degree of freedom, or the degree of polynomials required parameters to be determined). 
+\[
+\varphi_0 (x) = \left \{
+\begin{aligned}
+&\frac{x_1-x}{x_1-x_0}, &\quad x\in I_1,\\
+& 0, &\quad \text{else},
+\end{aligned}
+\right.
+\qquad 
+\varphi_{N+1}(x) = \left\{
+\begin{aligned}
+& \frac{x-x_N}{x_{N+1}-x_N}, & \quad x\in I_{N+1}, \\
+& 0,& \text{else} ,
+\end{aligned}
+\right .
+\]
+\[
+\varphi_n(x) = \left\{
+\begin{aligned}
+& \frac{x-x_{n-1}}{x_n-x_{n-1}}, & \quad x\in I_n, \\
+& \frac{x_{n+1} - x}{x_{n+1} - x_n}, & \quad x\in I_{n+1}, \\
+& 0,&\quad \text{else}.
+\end{aligned}
+\right.
+\]
+Clearly, we have $X_h^1 = \mathrm{span}\{\varphi_0,\varphi_1,\cdots,\varphi_{N+1}\}$.
+
+For any $u\in C(\bar{I})$, its interpolation into $X_h^1$ is denoted by $u_I(x)$. Clearly, we have $u_I(x) = \sum_{i=0}^{N+1} u(x_i) \varphi_i(x)$ and 
+\[
+u_I \big |_{I_{j+1}} = u(x_j) \varphi_j(x) + u(x_{j+1}) \varphi_{j+1}(x) =
+u(x_j) \frac{x_{j+1}-x}{x_{j+1} - x_j} + u(x_{j+1}) \frac{x-x_j}{x_{j+1}-x_j}.
+\]
+
+\end{document}
+

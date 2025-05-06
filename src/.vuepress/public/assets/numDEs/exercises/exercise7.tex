@@ -1,0 +1,102 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+
+%\maketitle
+
+
+
+
+\newpage
+
+\setcounter{section}{1}
+\setcounter{exercise}{0}
+\begin{exercise}
+Let $A \in \mathbb{R}^{n\times n}$ be a symmetric positive define matrix, $b\in \mathbb{R}^n$. Prove that the following two problems have a same solution:
+~\\
+1. Find $x\in \mathbb{R}^n$ such that 
+\begin{equation}
+Ax=b.  \label{eq:1}
+\end{equation}
+~\\
+2. Find $x\in \mathbb{R}^n$ such that 
+\begin{equation}
+J(x) =\min_{y\in \mathbb{R}^n} J(y),
+\label{eq:2}
+\end{equation}
+ where $J(y) = \frac{1}{2} (Ax,x) - (x,b)$.
+\end{exercise}
+\begin{proof}
+Suppose that $x$ is the solution of \eqref{eq:1}. Then for any $y\in\mathbb{R}^n$, we set $w = y-x$. Then it is clear that $(Ax, w) = (w,b)$, $(Aw,w) \geqslant 0$, and
+\[
+\begin{aligned}
+J(y) & = J(w+x) = \frac{1}{2} (Aw+Ax, w+x) - (w+x,b) \\
+& = \frac{1}{2} (Ax,x)-(x,b) + \frac{1}{2} (Aw, w) + (Ax,w)-(w,b) \\
+& = J(x) + \frac{1}{2} (Aw,w) \geqslant J(x).
+\end{aligned}
+\]
+Suppose that $x$ is the solution of \eqref{eq:2}. Then for any $y\in \mathbb{R}^n$ and $\alpha \in \mathbb{R}$, we have $J(x+\alpha y) \geqslant J(x)$, which is convex over $\alpha$ and attains its minimum at $\alpha=0$. Thus
+\[
+\frac{\mathrm{d} J(x+\alpha y)}{\mathrm{d} \alpha} \Big |_{\alpha=0} = 0,
+\]
+which leads to $(Ax-b, y) = 0$ giving rise to $Ax=b$.
+\end{proof}
+
+
+
+
+\end{document}
+
