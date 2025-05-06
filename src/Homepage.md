@@ -51,6 +51,12 @@ features:
     icon: 
     link: https://wanghuaijin.github.io/assets/numDEs/status/intro.pdf
     bgImage: /assets/photos/photo1.jpg
+  
+  - title: "Slides."
+    details:
+    icon: 
+    link: https://wanghuaijin.github.io/assets/Reports/slides.pdf
+    bgImage: /assets/photos/photo1.jpg
   # - title: Title2
   #   details: this is the title 1, you can click on the title name to see details
   #   icon: highlighter
