@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{General Finite Element and Finite Element Spaces}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Finite Element}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Assembled Finite Element Space}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Xhk Space}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Basis}{subsection.2.3}% 6
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Error Analysis}{subsection.2.3}% 7
+\BOOKMARK [1][-]{section.3}{Programing Considerations}{}% 8
+\BOOKMARK [1][-]{section.4}{Elliptic Problem}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Typical Model: Possion Equation with Homogeneous Dirichlet Boundary}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Other Boundary Conditions}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{P1- FEM}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Error Estimate For P1-FEM}{section.5}% 13
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Interpolation Error bounded by L-norm}{subsection.5.1}% 14
+\BOOKMARK [1][-]{section.6}{P2- FEM}{}% 15
+\BOOKMARK [1][-]{section.7}{Implementation in General Framework}{}% 16
+\BOOKMARK [2][-]{subsection.7.1}{Target Problem}{section.7}% 17
+\BOOKMARK [2][-]{subsection.7.2}{Finite Element Spaces}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.3}{Finite Element Discretization}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.4}{Boundary Treatment}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.5}{Finite Element Method}{section.7}% 21
