@@ -1,0 +1,90 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makecell}  % 表格换行
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     % 启用颜色链接
+    linkcolor=blue,     % 内部链接的颜色
+    citecolor=blue,      % 引用文献的颜色
+    urlcolor=blue,       % URL链接的颜色
+    linktoc=red,      % 不影响目录链接颜色
+}
+
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{
+{\bf \huge Notes on M\"untz-Jackson Theorem}
+%{\bf \large For M\"untz systems on [0,1]}
+}
+\author{Huaijin Wang}
+\date{December 10, 2024}
+
+
+\begin{document}
+
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[]
+\newtheorem{notation}{Notation Declaration}[]
+\newtheorem{question}{Question}[]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise*}{Exercise}[]
+
+%\maketitle
+
+
+
+
+\newpage
+
+
+
+\begin{exercise*}
+Let $\Omega = \{ \mathbf{x}\in \mathbb{R}^2: |\mathbf{x}|<1/2\}$. Define 
+\[
+v(\mathbf{x}) = \left( \log |\mathbf{x}| \right )^k, \ \forall \mathbf{x}\in \Omega \backslash \{0\},\ 0<k<1/2.
+\] 
+Prove $v\in H^1(\Omega)$.
+\end{exercise*}
+\begin{proof}
+It is clear that $v\in L^2(\Omega)$ and 
+\[
+\nabla v (\mathbf{x}) = k (-\log |\mathbf{x}| )^{k-1} \frac{\mathbf{x}}{|\mathbf{x}|^2},
+\]
+which is also in $L^2(\Omega)$, i.e., $\| \nabla v \|_0 < \infty$.
+\end{proof}
+
+
+\begin{exercise*}
+1). If $K$ is a rectangle, $P(K) \hat{=} Q_1(K) = \mathrm{span}\{1,x,y,xy\}$, $\Sigma_K = \{\text{mid-points of four sides}\}$. Prove that $(K,p(K),\Sigma_K)$ is not a finite element. \\
+2). If $K$ is a rectangle, $P(K) \hat{=} Q_1^T(K) = \mathrm{span}\{1,x,y,x^2-y^2\}$, $\Sigma_K = \{\text{mid-points of four sides}\}$. Prove that $(K,P(K), \Sigma_K)$ is a finite element.
+\end{exercise*}
+
+\end{document}
+

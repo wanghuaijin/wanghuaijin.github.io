@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}General Finite Element and Finite Element Spaces}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Finite Element}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Assembled Finite Element Space}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}$X_h^k$ Space}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Basis}{4}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Error Analysis}{4}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Programing Considerations}{4}{section.3}%
+\contentsline {section}{\numberline {4}Elliptic Problem}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Typical Model: Possion Equation with Homogeneous Dirichlet Boundary}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Other Boundary Conditions}{7}{subsection.4.2}%
+\contentsline {section}{\numberline {5}$P1-$ FEM}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Error Estimate For $P1-$FEM}{9}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Interpolation Error bounded by $L^\infty -$norm}{9}{subsubsection.5.1.1}%
+\contentsline {section}{\numberline {6}$P2-$ FEM}{9}{section.6}%
+\contentsline {section}{\numberline {7}Implementation in General Framework}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Target Problem}{9}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Finite Element Spaces}{10}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Finite Element Discretization}{10}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Boundary Treatment}{10}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Finite Element Method}{10}{subsection.7.5}%

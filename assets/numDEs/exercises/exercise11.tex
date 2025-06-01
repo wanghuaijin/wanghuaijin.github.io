@@ -93,17 +93,18 @@ where $\alpha,\beta$, and $\gamma$ are continuous functions on $[0,1]$ with $\al
 \begin{proof}
 ~\\
 1). Let $I = (0,1)$ and $V = H_0^1(I)$. The weak form reads
-\[
+\begin{equation}
 \left \{
 \begin{aligned}
 & \text{Find}\ u\in V \ \text{such that} \\
 & a(u,v) = \mathcal{F}(v), \ \forall v\in V,
 \end{aligned}
 \right .
-\]
+\label{eq:1-1}
+\end{equation}
 where the bilinear form $a(u,v) = (\alpha u^\prime, v^\prime) + (\beta u^\prime, v^\prime) + (\gamma u,v)$ and $\mathcal{F}(v) = (f,v)$.
 
-\noindent 2). It is clear that $a(\cdot,\cdot)$ is a bilinear form, and $\mathcal{F}$ is a continuous functional from $V$ to $\mathbb{R}$. By Lax-Milgram Lemma, it remains to show that $a(\cdot,\cdot)$ is continuous and coercive. Continuity is clear for all cases since the coefficients are continuous on $\bar{I}$, i.e.,
+\noindent 2). It is clear that $a(\cdot,\cdot)$ is a bilinear form, and $\mathcal{F}$ is a continuous functional from $V$ to $\mathbb{R}$. By Lax-Milgram Lemma, it remains to show that $a(\cdot,\cdot)$ is continuous and coercive. Continuity is clear for all cases since the coefficients are continuous over $\bar{I}$, i.e.,
 \[
 \begin{aligned}
 |a(u,v)| & \leqslant \|\alpha\|_\infty \|u^\prime\|_0 \|v^\prime\|_0 + \|\beta\|_\infty \|u^\prime\|_0 \|v\|_0 + \|\gamma\|_\infty \|u\|_0 \|v\|_0 \\
@@ -124,10 +125,13 @@ a(v,v) & = (\alpha v^\prime, v^\prime) + (\beta v^\prime, v) + (\gamma v, v)
 & \geqslant \alpha_0 \|v^\prime\|_0^2 \geqslant C\|v\|_1^2,\quad \forall v\in V.
 \end{aligned}
 \]
-\item \textcolor{red}{Coming soon...}
+\item Omitted.
 \end{enumerate}
 
-\noindent 3). \textcolor{red}{Obvious.}
+\noindent 3). Let $0=x_0<x_1<\cdots<x_N<x_{N+1}=1$ be a grid on $I=(0,1)$. The space of piecewise linear polynomials is denoted by $X_h^1 = \mathrm{span} \{\varphi_0,\cdots,\varphi_{N+1} \}$. Then $V_h=V\cap X_h^1 = \mathrm{span}\{\varphi_1,\cdots,\varphi_N\}$. Let $u_h=\sum_{j=1}^N u_j \varphi_j(x)$ and
+\[
+\sum_{j=1}^N a(\varphi_j,\varphi_i) u_j = \mathcal{F}(\varphi_i),\quad i=1,\cdots,N.
+\]
 
 \noindent 4). Let $u_h$ be the solution of $P1-$FEM. Note that $a(u-u_h, v_h) = 0$, $\forall v_h\in V_h$. Thus
 \[
@@ -137,8 +141,8 @@ for any $v_h\in V_h$. It leads to $\|u-u_h\|_1\leqslant \inf_{v_h\in V_h} \|u-v_
 \[
 \|u^\prime-u_h^\prime\|_0 \leqslant \|u^\prime - u_I^\prime\|_0 \leqslant C h \|u^{\prime\prime}\|_0.
 \]
-To obtain error estimate for $\|u-u_h\|_0$, we use duality argument. 
-Given $r\in L^2(I)$,
+To obtain error estimate for $\|u-u_h\|_0$, we use duality argument. Consider the dual problem of \eqref{eq:1-1}: 
+given $r\in L^2(I)$,
  \[
  \left\{
  \begin{aligned}
@@ -147,7 +151,7 @@ Given $r\in L^2(I)$,
  \end{aligned}
  \right.
  \]
-The dual problem admits a unique solution $\varphi(r)$ since $a(\cdot,\cdot)$ is continuous and coercive.  If we suppose $\varphi(r)\in H^2(I)$, and there exists constant $C>0$ such that $\|\varphi^{\prime\prime}(r)\|\leqslant C \|r\|_0$.
+The dual problem admits a unique solution $\varphi(r)$ since $a(\cdot,\cdot)$ is continuous and coercive.  If we suppose $\varphi(r)\in H^2(I)$, and there exists constant $C>0$ such that $\|\varphi^{\prime\prime}(r)\|_0 \leqslant C \|r\|_0$.
 
 Thus we denote $\varphi_I(r)$ being the interpolation of $\varphi(r)$ into $V_h$ and obtain 
 \[
@@ -155,8 +159,8 @@ Thus we denote $\varphi_I(r)$ being the interpolation of $\varphi(r)$ into $V_h$
 \|u-u_h\|_0 & = \sup_{r\in L^2(I), \ r\neq 0} \frac{(r,u-u_h)}{\|r\|_0} = 
 \sup_{r\in L^2(I), \ r\neq 0}  \frac{a(u-u_h, \varphi(r))}{\|r\|_0} \\
 & = \sup_{r\in L^2(I), \ r\neq 0}  \frac{a(u-u_h, \varphi(r) - \varphi_I (r))}{\|r\|_0} \\
-& \leqslant \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u-u_h\|_1 \|\varphi(r) - \varphi_I(r)\|_1 }{\|r\|_0} \\
- & \leqslant \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u^\prime-u^\prime_h\|_0 \|\varphi^\prime(r) - \varphi^\prime_I(r)\|_0 }{\|r\|_0} \\
+& \leqslant C \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u-u_h\|_1 \|\varphi(r) - \varphi_I(r)\|_1 }{\|r\|_0} \\
+ &  \leqslant  C \sup_{r\in L^2(I), \ r\neq 0}  \frac{\|u^\prime-u^\prime_h\|_0 \|\varphi^\prime(r) - \varphi^\prime_I(r)\|_0 }{\|r\|_0} \\
  & \leqslant C h\|u^\prime-u^\prime_h\|_0 \sup_{r\in L^2(I), \ r\neq 0} \frac{\|\varphi^{\prime\prime}(r)\|_0}{\|r\|_0}  \\
  & \leqslant C h\|u^\prime-u^\prime_h\|_0.
 \end{aligned}
@@ -164,6 +168,61 @@ Thus we denote $\varphi_I(r)$ being the interpolation of $\varphi(r)$ into $V_h$
 \end{proof}
 
 
+
+
+\setcounter{section}{3}
+\setcounter{exercise}{0}
+\begin{exercise}
+Let $\Omega = (a,b)^2$, $f\in L^2(\Omega)$. Consider the Dirichlet elliptic problem
+\[
+\left\{
+\begin{aligned}
+&-\Delta u(\mathbf{x}) = f(\mathbf{x}),\quad \mathbf{x}\in \Omega,\\
+&u\big |_\Gamma = 0.
+\end{aligned}
+\right.
+\]
+1. Prove the following Poincar\'e inequality holds: there exists a constant $c$, depending only on $a$ and $b$, such that
+\[
+\|v\|_1 \leqslant c |v|_1,\quad \forall v\in H_0^1(\Omega).
+\]
+2. Prove that the Dirichlet elliptic problem admits a unique weak solution in $H_0^1(\Omega)$, and the solution $u$ satisfies 
+\[
+\|u\|_1 \leqslant c\|f\|_0,
+\]
+where $c$ is a constant.
+\end{exercise}
+\begin{proof}
+1. Note that for any $y\in (a,b)$,
+\[
+v(x,y) = \int_a^y \partial_y v(x,y) \mathrm{d} y,
+\]
+we have $|v(x,y)|\leqslant (b-a)^{1/2} \|\partial_y v\|_0$. Similarly we have $|v(x,y)|\leqslant (b-a)^{1/2} \|\partial_x v\|_0$. It leads to
+\[
+\|v\|_0 \leqslant \frac{(b-a)^{3/2}}{\sqrt{2}} |v|_1.
+\]
+Thus $\|v\|_1 = (\|v\|_0^2 + |v|_1^2)^{1/2} \leqslant c |v|_1$.
+
+\vspace{1em}
+
+\noindent 2. The variational form reads
+\[
+\left\{
+\begin{aligned}
+& \text{Find} \ u\in H_0^1(\Omega) \ \text{such that} \\
+& a(u,v) = (f,v),\quad \forall v\in H_0^1(\Omega),
+\end{aligned}
+\right .
+\]
+where $a(u,v) = (\nabla u, \nabla v)$. It is clear that $a(\cdot,\cdot)$ is a continuous bilinear form. Its coercivity is guaranteed by Poincar\'e inequality, that is, 
+\[
+a(v,v) = |\nabla v|_1^2 \geqslant c\|v\|_1^2,\quad \forall v\in H_0^1(\Omega).
+\]
+Thus by Lax-Milgram lemma, there exists a unique weak solution $u$ such that
+\[
+\|u\|_1 \leqslant c \sup_{v\in H_0^1(\Omega), v\neq 0} \frac{(f,v)}{\|v\|_1} \leqslant c\|f\|_0.
+\]
+\end{proof}
 
 \end{document}
 
