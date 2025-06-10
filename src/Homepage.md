@@ -47,7 +47,7 @@ features:
     bgImage: /assets/photos/photo1.jpg
 
   - title: "Undergraduate Course: Numerical Solution to PDEs."
-    details: "<b>Instructor:</b> Prof. Chuanju Xu. <br> <b> Contents:</b> Introduce FD and FEM for PDEs. <br> Feb. - Jun. 2024."
+    details: "<b>Instructor:</b> Prof. Chuanju Xu. <br> <b> Contents:</b> Introduce FD and FEM for PDEs. <br> Feb. - Jun. 2025."
     icon: 
     link: https://wanghuaijin.github.io/assets/numDEs/status/intro.pdf
     bgImage: /assets/photos/photo1.jpg
