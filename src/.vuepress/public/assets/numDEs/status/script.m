@@ -153,3 +153,37 @@ for row = 1 : 70
    end
 end
 writetable(EV, [path,'evaluation.xlsx']);
+
+
+%% compute score of continuous evaluation
+SC = EV(1:72,1:6);
+SC.Properties.VariableNames{6} = '平时分(总分50)';
+SC{72,2} = {''};
+
+for row = 1 : 70
+    sc = EV{row, 6}{1};
+    if isscalar(str2num(sc(1)))
+        sc_val = str2num(sc(1:end-1));
+    else
+        sc_val = 0;
+    end
+    
+    rep1 = EV{row,7}{1};
+    if isscalar(str2num(rep1(1)))
+        rep1_val = str2num(rep1(1:end-1));
+    else
+        rep1_val = 0;
+    end
+    
+    rep2 = EV{row,8}{1};
+    if isscalar(str2num(rep2(1)))
+        rep2_val = str2num(rep2(1:end-1));
+    else
+        rep2_val = 0;
+    end
+    
+    val = sc_val * 10/100 + rep1_val * 20/100 + rep2_val * 20/100;
+    SC{row,6} = {num2str(val)};
+end
+
+writetable(SC, [path,'score_part1.xlsx']);
