@@ -66,7 +66,7 @@ for row = 1:70
                 score = score + num;
             else
                 if b{i}(end)=='补'
-                    score = score + 0.5*total;
+                    score = score + 0.2*total;
                 else
                     score = score + 1*total;
                 end
@@ -156,8 +156,12 @@ writetable(EV, [path,'evaluation.xlsx']);
 
 
 %% compute score of continuous evaluation
-SC = EV(1:72,1:6);
-SC.Properties.VariableNames{6} = '平时分(总分50)';
+SC = EV(1:72,1:7);
+SC.Properties.VariableNames{6} = '平时分';
+SC.Properties.VariableNames{7} = '期末分';
+for i = 1 : 72
+    SC{i,7} = {''};
+end
 SC{72,2} = {''};
 
 for row = 1 : 70
@@ -182,8 +186,8 @@ for row = 1 : 70
         rep2_val = 0;
     end
     
-    val = sc_val * 10/100 + rep1_val * 20/100 + rep2_val * 20/100;
-    SC{row,6} = {num2str(val)};
+    val = sc_val * 20/100 + rep1_val * 40/100 + rep2_val * 40/100;
+    SC{row,6} = {[num2str(val),'%']};
 end
 
 writetable(SC, [path,'score_part1.xlsx']);
