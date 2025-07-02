@@ -186,7 +186,7 @@ for row = 1 : 70
         rep2_val = 0;
     end
     
-    val = sc_val * 20/100 + rep1_val * 40/100 + rep2_val * 40/100;
+    val = ceil(sc_val * 20/100 + rep1_val * 40/100 + rep2_val * 40/100);
     SC{row,6} = {[num2str(val),'%']};
 end
 
