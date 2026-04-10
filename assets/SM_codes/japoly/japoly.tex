@@ -305,6 +305,23 @@ Similarly, we denote $\{\xi_{R_r,N,j}^{\alpha,\beta}, \omega_{R_r,N,j}^{\alpha,\
 \end{equation}
 Both \eqref{eq:jagsrd1-gs} and \eqref{eq:jagsrd2-gs} inform us that the computation of Jacobi Gauss-Radau quadratures can be transformed into computing Jacobi Gauss quadratures.
 
+Moreover, we have the asymptotic estimations:
+\[
+\begin{aligned}
+& \xi_{{R_l},N,j}^{\alpha,\beta} = \cos \theta_j,\ \theta_j = \frac{1}{N}\{j \pi+O(1)\}, \quad 1 \leqslant j \leqslant N, \\
+& \omega_{{R_l},N,j}^{\alpha,\beta} \cong \frac{2^{\alpha+\beta+1} \pi}{N} \left( \sin \frac{\theta_j}{2} \right)^{2\alpha+1} \left( \cos \frac{\theta_j}{2} \right)^{2\beta+1},\quad 1\leqslant j \leqslant N, \\
+& \omega_{{R_l},N,0}^{\alpha,\beta} = O(N^{-2\beta-2}),
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+& \xi_{{R_r},N,j}^{\alpha,\beta} = \cos \theta_j,\ \theta_j = \frac{1}{N}\{j \pi+O(1)\}, \quad 0 \leqslant j \leqslant N-1, \\
+& \omega_{{R_r},N,j}^{\alpha,\beta} \cong \frac{2^{\alpha+\beta+1} \pi}{N} \left( \sin \frac{\theta_j}{2} \right)^{2\alpha+1} \left( \cos \frac{\theta_j}{2} \right)^{2\beta+1},\quad 0\leqslant j \leqslant N-1, \\
+& \omega_{{R_r},N,N}^{\alpha,\beta} = O(N^{-2\alpha-2}).
+\end{aligned}
+\]
+
 \begin{algorithm}[htbp] 
     \caption{Computation of Jacobi Gauss-Radau Quadrature with $x_0=-1$ fixed.}
     \begin{algorithmic} \label{alg:jagsrd1}
