@@ -7,6 +7,12 @@ on:
     branches:
       - main
 
+# 允许 GitHub Actions 自带的 GITHUB_TOKEN
+# 向 gh-pages branch 写入内容
+permissions:
+  contents: write
+
+
 jobs:
   # 构建网站并部署到 GitHub Pages
   deploy-gh-pages:
@@ -41,7 +47,6 @@ jobs:
           folder: src/.vuepress/dist
           clean: true
           force: true
-          token: ${{ secrets.ACCESS_TOKEN }}
       # - name: Deploy
       #   uses: JamesIves/github-pages-deploy-action@releases/v4
       #   with:
